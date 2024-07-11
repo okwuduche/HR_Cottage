@@ -1,0 +1,122 @@
+html{
+    background-color: whitesmoke;
+
+}
+h1{
+    color: #f59a12;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+#logoo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgb(250, 250, 244);
+
+}
+
+.upper_overall {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.tabs {
+    list-style: none;
+    display: inline-flex;
+    gap: 2rem;
+    margin-top: 30px;
+}
+.demo {
+    background-color: seagreen;
+    border: 0px;
+    margin-top: 5px;
+    padding: 1rem;
+    border-radius: 30%;
+}
+
+.bodi {
+    display: inline-flex;
+    gap: 10px;
+}
+
+.housing {
+    display: grid;
+    grid-template-columns: 2fr 4fr 3fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+    
+}
+.flooww-1 {
+    
+    height: auto;
+
+}
+
+.flooww-2 {
+    height: auto;
+}
+
+.flooww-2 img{
+    float: left;
+    border-radius: 45%;
+}
+
+.flooww-3 {
+
+    height: auto;  
+}
+
+.before-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    background-color: gray;
+}
+
+.b4-footer h2 {
+    text-align: center;
+    text-decoration: underline;
+    color: blue;
+    font-weight: bold;
+    padding-top: 20px;
+    margin: 0;
+}
+
+.b4-footer li {
+    text-align: left;
+    list-style: none;
+    color: white;
+    font-size: larger;
+    margin: 0;
+}
+
+.line {
+    margin: 0;
+    padding: 0;
+    border-color: white;
+}
+footer {
+    background-color: gray;
+    flex-wrap: wrap;
+    width: 100%;
+    display: inline-flex;
+    gap: 3rem;
+    justify-content: space-evenly;
+    color: aliceblue;
+    padding-top: 20px;
+    
+}
+
+.SM {
+    justify-content: end;
+    color: blue;
+    align-items: end;
+}
