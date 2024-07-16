@@ -1,5 +1,12 @@
 html{
-    background-color: whitesmoke;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+
+}
+body {
+    background-color: white;
+    margin-top: 0;
 
 }
 h1{
@@ -22,7 +29,7 @@ h1{
     width: 100%;
     justify-content: space-around;
     flex-wrap: wrap;
-    background-color: #f8f9fa;
+    background-color: white;
     margin: 0;
     padding: 0;
 }
@@ -35,10 +42,11 @@ h1{
 }
 .demo {
     background-color: seagreen;
-    border: 0px;
+    border: 0;
     margin-top: 5px;
     padding: 1rem;
     border-radius: 30%;
+    color: white;
 }
 
 .bodi {
@@ -49,16 +57,74 @@ h1{
     background-color: white;
     display: block;
     justify-content: center;
-    
+    margin: 0;
+    padding: 0;
     align-items: center;
     width: 100%;
-    gap: 2rem;
 }
 
 
-.heroes button{
+.hero-demo{
+    border-radius: 25%;
+    background-color: seagreen;
+    text-align: center0;
+    color: white;
+    border-color: white;
+    padding: 1rem;
+    border: 0;
+
+}
+
+.hero-contact{
+    border-radius: 25%;
+    background-color: orange;
+    text-align: center0;
+    color: black;
+    border-color: white;
+    padding: 1rem;
+    border: 0;
+}
+
+.call-to-action{
+    display: inline-flex;
+    width: 100%;
+    gap: 2rem;
+    margin-bottom: 20px;
+    justify-content: center;
+
+
+}
+.hero-image{
     display: flex;
+    width: 100%;
+    gap: 2rem;
+    margin-bottom: 20px;
+    justify-content: center;
     align-items: center;
+    border-radius: 2%;
+
+}
+
+
+
+.heroes h2{
+    width: 100%;
+    text-align: center;
+    padding-top: 25px;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.heroes h3{
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+    font-size: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-style: italic;
 }
 .housing {
     display: grid;
