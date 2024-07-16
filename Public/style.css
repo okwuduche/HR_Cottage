@@ -45,7 +45,21 @@ h1{
     display: inline-flex;
     gap: 10px;
 }
+.heroes{
+    background-color: white;
+    display: block;
+    justify-content: center;
+    
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+}
 
+
+.heroes button{
+    display: flex;
+    align-items: center;
+}
 .housing {
     display: grid;
     grid-template-columns: 2fr 4fr 3fr;
