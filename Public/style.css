@@ -137,6 +137,11 @@ h1{
     font-family: Arial, Helvetica, serif;
     
 }
+.paras {
+    display: inline-block;
+    justify-content: left;
+    width: 100%;
+}
 
 .upper-sunrise {
     display: flex;
@@ -212,6 +217,7 @@ h1{
     flex-wrap: wrap;
     font-family: Arial, Helvetica, serif;
     gap: 1rem;
+
 }
 
 .line {
