@@ -24,7 +24,70 @@ li{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    color: #f59a12;
+    background-color: white;
+    color: seagreen;
     padding: 20px;
+}
+
+.nav-links a {
+    color: rgb(100, 96, 96);
+}
+
+.logo{
+    size: 32px;
+}
+
+
+/* NAVBAR MENU*/
+
+.menu{
+    display: flex;
+    gap: 1rem;
+    font-size: 18px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu li:hover{
+    background-color: seagreen;
+    transition: 0.3s ease;
+    border-radius: 5px;
+}
+
+.menu li {
+    padding: 10px 14px;
+}
+
+/* DROPDOWN MENU*/
+.products{
+    position: relative;
+}
+
+
+.dropdown{
+    padding: 1em 0;
+    position: absolute; /*WITH RESPECT TO PARENT*/
+    top: 35px;
+    background-color: rgb(235, 236, 213);
+    display: none;
+    border-radius: 8px;
+}
+
+.dropdown li + li{
+    border-top: 10px;
+}
+
+.dropdown li{
+    padding: 0.5em 1em;
+    width: 8em;
+    text-align: center;
+}
+
+.dropdown li:hover{
+    background-color: rgb(176, 180, 178);
+
+}
+
+.products:hover .dropdown{
+    display: block;
 }
