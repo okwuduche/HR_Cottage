@@ -23,7 +23,7 @@ h1{
 
 }
 
-#logoo {
+.logo {
     
     height: 70px;
     border-radius: 50%;
@@ -41,7 +41,7 @@ h1{
     margin: 0;
     padding: 0;
 }
-
+<!-- /*NAVBAR STYLING STARTS
 .tabs {
     list-style: none;
     display: inline-flex;
@@ -49,10 +49,11 @@ h1{
     margin-top: 30px;
     flex-wrap: wrap;
 }
+*/-->
 .demo {
     background-color: seagreen;
     border: 0;
-    margin-top: 15px;
+    margin-top: 30px;
     padding: 1rem;
     border-radius: 30%;
     color: white;
@@ -157,9 +158,8 @@ h1{
     border-radius: 2.8%;
 }
 .housing {
-    display: grid;
-    grid-template-columns: 2fr 4fr 3fr;
-    grid-template-rows: 1fr;
+    display: inline-flex;
+    justify-content: center;
     gap: 10px;
     margin-bottom: 20px;
     margin: 10px;
@@ -187,11 +187,12 @@ h1{
 }
 
 .before-footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 2rem;
+    display: inline-flex;
+    justify-content: space-around;
+    gap: 5px;
     background-color: #2c2c2c;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .b4-footer h2 {
@@ -204,6 +205,7 @@ h1{
     justify-content: left;
     flex-wrap: wrap;
     font-family: Arial, Helvetica, serif;
+    box-sizing: border-box;
 }
 
 .b4-footer li {
@@ -217,6 +219,7 @@ h1{
     flex-wrap: wrap;
     font-family: Arial, Helvetica, serif;
     gap: 1rem;
+    box-sizing: border-box;
 
 }
 
@@ -257,3 +260,161 @@ footer {
     font-family: Arial, Helvetica, serif;
 
 }
+
+<!-- /*sheet2 content starts*/-->
+
+/* UTILITIES*/
+
+*{
+
+    box-sizing: content-box;
+}
+
+body{
+    font-family: Arial, Helvetica, serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+/*NAVBAR STYLING STARTS*/
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(250, 250, 244);
+    color: seagreen;
+    padding: 10px;
+}
+
+.nav-links a {
+    color: rgb(100, 96, 96);
+}
+
+.logo {
+    
+  border-radius: 50%;
+  background-color: rgb(250, 250, 244);
+  border: 0;
+  margin-top: 20px;
+
+}
+
+/* NAVBAR MENU*/
+
+.menu{
+  
+    list-style: none;
+    display: inline-flex;
+    gap: 2rem;
+    margin-top: 30px;
+    flex-wrap: 20px;
+}
+
+.menu li:hover{
+    background-color: rgb(236, 211, 191);
+    transition: 0.3s ease;
+    border-radius: 5px;
+}
+
+.menu li {
+    padding: 10px 14px;
+}
+
+/* DROPDOWN MENU*/
+.products{
+    position: relative;
+}
+
+
+.dropdown{
+    padding: 1em 0;
+    position: absolute; /*WITH RESPECT TO PARENT*/
+    top: 45px;
+    background-color: rgb(235, 236, 213);
+    display: none;
+    border-radius: 8px;
+}
+
+.dropdown li + li{
+    border-top: 10px;
+}
+
+.dropdown li{
+    padding: 0.5em 1em;
+    width: 8em;
+    text-align: center;
+}
+
+.dropdown li:hover{
+    background-color: rgb(176, 180, 178);
+
+}
+
+.products:hover .dropdown{
+    display: block;
+}
+
+
+/* RESPONSIVE NAVBAR MENU STARTS */
+
+/* CHECKBOX HACK */
+
+input[type=checkbox] {
+    display: none;
+  } 
+  
+  /* HAMBURGER MENU */
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+  }
+  
+  /* APPLYING MEDIA QUERIES */
+  @media (max-width: 768px) {
+   .menu {
+      display:none;
+      position: absolute;
+      background-color:rgb(235, 241, 241);
+      right: 0;
+      left: 0;
+      text-align: center;
+      padding: 16px 0;
+      margin-top: 20px;
+    }
+  
+    .menu li:hover {
+      display: inline-block;
+      background-color:#4c9e9e;
+      transition: 0.3s ease;
+    }
+  
+    .menu li + li {
+      margin-top: 12px;
+    }
+  
+    input[type=checkbox]:checked ~ .menu {
+      display: block;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  
+    .dropdown {
+      left: 50%;
+      top: 30px;
+      transform: translateX(35%);
+    }
+  
+    .dropdown li:hover {
+      background-color: #4c9e9e;
+    }
+  }
