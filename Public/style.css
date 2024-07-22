@@ -54,12 +54,13 @@ h1{
 .bodi {
     display: inline-flex;
     gap: 10px;
-    margin: 10px;
-    padding: 10px;
-    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
     flex-wrap: wrap;
     font-family: Arial, Helvetica, serif;
-    width: 100%;
+    max-width: 100%;
+
     
 }
 
@@ -67,10 +68,68 @@ h1{
     display: inline-flex;
     gap: 5px;
     flex-wrap: wrap;
-    width: 100%;
     float: right;
     align-items: flex-end;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    text-align: right;
 }
+
+.two {
+    display: inline-flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    float: right;
+    align-items: flex-end;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    text-align: center;
+}
+
+.two {
+    display: inline-flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    float: right;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+
+.one img {
+    max-width: 100%;
+    float: right;
+}
+.two img {
+    max-width: 100%;
+    float: left;
+}
+.three img {
+    max-width: 100%;
+    float: right;
+}
+.flooww-2 {
+    max-width: 100%;
+   
+}
+
+.flooww-2 img {
+    max-width: 100%;
+    float: right;
+}
+
+.flooww-3 {
+    max-width: 100%;
+}
+
+.flooww-3 img {
+    max-width: 100%;
+    float: left;
+}
+
 .heroes{
     background-color: white;
     justify-content: center;
@@ -165,23 +224,24 @@ h1{
 .housing {
     display: inline-flex;
     justify-content: space-around;
-    gap: 10px;
+    gap: 5px;
     margin-bottom: 20px;
-    margin: 10px;
-    padding: 10px;
+    margin: 0;
+    padding: 0;
     font-family: Arial, Helvetica, serif;
     flex-wrap: wrap;
-    align-items: center;
+    max-width: 100%;
 }
 
-.floww2 {
+.housing p {
     display: inline-flex;
-    flex: auto;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, serif;
     flex-wrap: wrap;
+    max-width: 100%;
 }
-.floww2 img {
-    float: left;
-}
+
 .before-footer {
     display: inline-flex;
     justify-content: space-around;
@@ -216,6 +276,7 @@ h1{
     font-family: Arial, Helvetica, serif;
     gap: 1rem;
     box-sizing: border-box;
+    width: 100%;
 
 }
 
@@ -236,8 +297,8 @@ footer {
     align-items: center;
     margin-top: 0;
     padding-top: 15px;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    margin: 0;
+    padding: 0;
     font-family: Arial, Helvetica, serif;
     
 }
@@ -260,12 +321,6 @@ footer {
 <!-- /*sheet2 content starts*/-->
 
 /* UTILITIES*/
-
-*{
-
-    box-sizing: content-box;
-}
-
 body{
     font-family: Arial, Helvetica, serif;
 }
