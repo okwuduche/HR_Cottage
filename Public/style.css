@@ -41,15 +41,7 @@ h1{
     margin: 0;
     padding: 0;
 }
-<!-- /*NAVBAR STYLING STARTS
-.tabs {
-    list-style: none;
-    display: inline-flex;
-    gap: 2rem;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
-*/-->
+
 .demo {
     background-color: seagreen;
     border: 0;
@@ -64,7 +56,20 @@ h1{
     gap: 10px;
     margin: 10px;
     padding: 10px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: Arial, Helvetica, serif;
+    width: 100%;
     
+}
+
+.one {
+    display: inline-flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    width: 100%;
+    float: right;
+    align-items: flex-end;
 }
 .heroes{
     background-color: white;
@@ -109,8 +114,6 @@ h1{
     margin-bottom: 20px;
     justify-content: center;
     font-family: Arial, Helvetica, serif;
-
-
 }
 
 
@@ -142,6 +145,8 @@ h1{
     display: inline-block;
     justify-content: left;
     width: 100%;
+    font-family: Arial, Helvetica, serif;
+    flex-wrap: wrap;
 }
 
 .upper-sunrise {
@@ -159,33 +164,24 @@ h1{
 }
 .housing {
     display: inline-flex;
-    justify-content: center;
+    justify-content: space-around;
     gap: 10px;
     margin-bottom: 20px;
     margin: 10px;
     padding: 10px;
-    
-}
-.flooww-1 {
-    
-    height: auto;
-
+    font-family: Arial, Helvetica, serif;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-.flooww-2 {
-    height: auto;
+.floww2 {
+    display: inline-flex;
+    flex: auto;
+    flex-wrap: wrap;
 }
-
-.flooww-2 img{
+.floww2 img {
     float: left;
-    border-radius: 45%;
 }
-
-.flooww-3 {
-
-    height: auto;  
-}
-
 .before-footer {
     display: inline-flex;
     justify-content: space-around;
