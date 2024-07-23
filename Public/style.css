@@ -68,7 +68,7 @@ h1{
     display: inline-flex;
     gap: 5px;
     flex-wrap: wrap;
-    float: right;
+    
     align-items: flex-end;
     padding: 0;
     margin: 0;
@@ -85,15 +85,15 @@ h1{
     padding: 0;
     margin: 0;
     max-width: 100%;
-    text-align: center;
+    
 }
 
-.two {
+.three {
     display: inline-flex;
     gap: 5px;
     flex-wrap: wrap;
     float: right;
-    align-items: center;
+    align-items: flex-end;
     padding: 0;
     margin: 0;
     max-width: 100%;
@@ -101,15 +101,15 @@ h1{
 
 .one img {
     max-width: 100%;
-    float: right;
+    
 }
 .two img {
     max-width: 100%;
-    float: left;
+    
 }
 .three img {
     max-width: 100%;
-    float: right;
+    
 }
 .flooww-2 {
     max-width: 100%;
@@ -118,8 +118,8 @@ h1{
 
 .flooww-2 img {
     max-width: 100%;
-    float: right;
-}
+    
+}e
 
 .flooww-3 {
     max-width: 100%;
@@ -127,7 +127,7 @@ h1{
 
 .flooww-3 img {
     max-width: 100%;
-    float: left;
+    
 }
 
 .heroes{
@@ -467,4 +467,65 @@ input[type=checkbox] {
     .dropdown li:hover {
       background-color: #4c9e9e;
     }
+  }
+
+  /* Company Purpose section including Mission and Vission*/
+  .company-purpose {
+    display: inline-flex;
+    font-family: Arial, Helvetica, serif;
+    justify-content: space-between;
+    gap: 2rem;
+    flex: auto;
+    padding-top: 0;
+    margin-top: 60px;
+    padding: 1rem;
+    flex-wrap: nowrap;
+  }
+
+  .company-purpose h3 {
+    color: #f59a12;
+    padding-top: 0;
+  }
+
+  
+
+  .mission {
+    border-color: seagreen;
+    border: 2px solid;
+    color: #4b4a48;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    width: 30.333333%;
+    position: relative;
+
+  }
+
+  .vision {
+    border-color: seagreen;
+    border: 2px solid;
+    color: #4b4a48;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    width: 30.333333%;
+    position: relative;
+    text-align: center;
+  }
+
+  .strategy {
+    border-color: seagreen;
+    border: 2px solid;
+    color: #4b4a48;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    width: 30.333333%;
+    position: relative;
+  }
+
+  .black {
+    color: #4b4a48;
+  }
+
+  .green {
+    color: seagreen;
   }
