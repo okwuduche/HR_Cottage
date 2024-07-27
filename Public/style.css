@@ -20,14 +20,6 @@ h1{
     font-family: Arial, Helvetica, serif;
 }
 
-.logo {
-    
-    height: 70px;
-    border-radius: 50%;
-    background-color: rgb(250, 250, 244);
-    border: 0;
-}
-
 .upper_overall {
     display: inline-flex;
     width: 100%;
@@ -343,12 +335,11 @@ li{
 }
 
 .logo {
-    
-  border-radius: 50%;
   background-color: rgb(250, 250, 244);
   border: 0;
   margin-top: 20px;
-
+  height: 60px;
+  width: 85%;
 }
 
 /* NAVBAR MENU*/
@@ -404,6 +395,7 @@ li{
 
 .products:hover .dropdown{
     display: block;
+    transparence: 0.3s ease;
 }
 
 
@@ -431,7 +423,7 @@ input[type=checkbox] {
       right: 0;
       left: 0;
       text-align: center;
-      padding: 16px 0;
+      padding: 0;
       margin-top: 20px;
     }
   
@@ -482,39 +474,31 @@ input[type=checkbox] {
     padding-top: 0;
   }
 
-  
-
-  .mission {
-    border-color: seagreen;
-    border: 2px solid;
-    color: #4b4a48;
-    padding: 1rem;
-    border-radius: 0.75rem;
-    width: 30.333333%;
-    position: relative;
-
-  }
-
-  .vision {
-    border-color: seagreen;
-    border: 2px solid;
-    color: #4b4a48;
-    padding: 1rem;
-    border-radius: 0.75rem;
-    width: 30.333333%;
-    position: relative;
-    text-align: center;
-  }
-
+  .mission,
+  .vision,
   .strategy {
     border-color: seagreen;
     border: 2px solid;
     color: #4b4a48;
-    text-align: center;
     padding: 1rem;
     border-radius: 0.75rem;
     width: 30.333333%;
     position: relative;
+
+  }
+
+  @media screen and (max-width: 768px) {
+    .company-purpose {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .mission,
+    .vision,
+    .strategy {
+      width: 100%;
+    }
+    
   }
 
   .black {
@@ -523,4 +507,65 @@ input[type=checkbox] {
 
   .green {
     color: seagreen;
+  }
+
+  .contact-form{
+    display: inline-block;
+    max-width: 100%;
+    justify-content: center;
+    border-radius: 25%;
+    padding: 10px;
+  }
+  .contact-form form {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+
+  /* Pricing 2 section*/
+  .pricing2 {
+    display: inline-flex;
+    font-family: Arial, Helvetica, serif;
+    justify-content: space-evenly;
+    gap: 2rem;
+    flex: auto;
+    padding-top: 0;
+    margin-top: 60px;
+    padding: 1rem;
+    flex-wrap: nowrap;
+    width: 93%;
+  }
+
+  .pricing2 h3 {
+    color: #f59a12;
+  }
+
+    .basic,
+    .standard,
+    .premium {
+    border-color: seagreen;
+    color: #4b4a48;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    width: 30.333333%;
+    position: relative;
+    background-color: rgb(250, 250, 244);
+    display: inline-flex;
+    justify-content: center;
+
+  }
+
+  @media screen and (max-width: 768px) {
+    .pricing2 {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .basic,
+    .standard,
+    .premium {
+      width: 100%;
+    }
+    
   }
