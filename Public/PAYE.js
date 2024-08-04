@@ -1,17 +1,17 @@
-var band_1_tax, band_2_tax, band_3_tax, band_4_tax, band_5_tax, band_6_tax, previous_tax_0, previous_tax_1, previous_tax_2, previous_tax_3, previous_tax_4, previous_tax_5, rate_1, rate_2, rate_3, rate_4, rate_5, rate_6, tax, taxable_income;
+let band_1_tax, band_2_tax, band_3_tax, band_4_tax, band_5_tax, band_6_tax, previous_tax_0, previous_tax_1, previous_tax_2, previous_tax_3, previous_tax_4, previous_tax_5, rate_1, rate_2, rate_3, rate_4, rate_5, rate_6, tax, taxable_income;
 
 function staff_salary_details() {
   /*
   This function collects tax payer's details and returns annual taxable income.
    */
-  var NHF, TCRA, allowed_percentage, base_allowance, pension, total_income, user_NHF, user_annual_13th_month, user_annual_B, user_annual_H, user_annual_Leave_allowance, user_annual_T, user_annual_basic, user_annual_gross, user_annual_housing, user_annual_transport;
-  user_annual_gross = Number.parseFloat(input("Enter Your Annual Gross Earnings: "));
-  user_annual_B = Number.parseFloat(input("Enter Percentage of Basic Salary: "));
-  user_annual_H = Number.parseFloat(input("Enter Percentage of Housing Salary: "));
-  user_annual_T = Number.parseFloat(input("Enter Percentage of Transport Salary: "));
-  user_annual_Leave_allowance = Number.parseFloat(input("Enter Annual Leave Allowance: "));
-  user_annual_13th_month = Number.parseFloat(input("Enter 13th Month Allowance: "));
-  user_NHF = input(" Do You Have NHF? 'Yes or No': ").upper();
+  let NHF, TCRA, allowed_percentage, base_allowance, pension, total_income, user_NHF, user_annual_13th_month, user_annual_B, user_annual_H, user_annual_Leave_allowance, user_annual_T, user_annual_basic, user_annual_gross, user_annual_housing, user_annual_transport;
+  user_annual_gross = Number.parseFloat(prompt("Enter Your Annual Gross Earnings: "));
+  user_annual_B = Number.parseFloat(prompt("Enter Percentage of Basic Salary: "));
+  user_annual_H = Number.parseFloat(prompt("Enter Percentage of Housing Salary: "));
+  user_annual_T = Number.parseFloat(prompt("Enter Percentage of Transport Salary: "));
+  user_annual_Leave_allowance = Number.parseFloat(prompt("Enter Annual Leave Allowance: "));
+  user_annual_13th_month = Number.parseFloat(prompt("Enter 13th Month Allowance: "));
+  user_NHF = prompt(" Do You Have NHF? 'Yes or No': ").upper();
   user_annual_basic = user_annual_B / 100;
   user_annual_housing = user_annual_H / 100;
   user_annual_transport = user_annual_T / 100;
