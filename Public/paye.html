@@ -9,6 +9,96 @@
     href="./style.css"
     />
     <link rel="icon" type="image/png" href="./favicon-32x32.png">
+    <script>
+        function staffSalaryDetails() {
+            /*
+            This function collects tax payer's details and returns annual taxable income.
+            */
+
+            let userAnnualGross = parseFloat(prompt("Enter Your Annual Gross Earnings: "));
+            let userAnnualB = parseFloat(prompt("Enter Percentage of Basic Salary: "));
+            let userAnnualH = parseFloat(prompt("Enter Percentage of Housing Salary: "));
+            let userAnnualT = parseFloat(prompt("Enter Percentage of Transport Salary: "));
+            let userAnnualLeaveAllowance = parseFloat(prompt("Enter Annual Leave Allowance: "));
+            let userAnnual13thMonth = parseFloat(prompt("Enter 13th Month Allowance: "));
+            let userNHF = prompt("Do You Have NHF? 'Yes or No': ").toUpperCase();
+
+            let userAnnualBasic = userAnnualB / 100;
+            let userAnnualHousing = userAnnualH / 100;
+            let userAnnualTransport = userAnnualT / 100;
+
+            let NHF;
+            if (userNHF === 'YES') {
+                NHF = (2.5 / 100) * (userAnnualGross * userAnnualBasic);
+            } else {
+                NHF = 0;
+            }
+
+            let totalIncome = userAnnualGross + userAnnualLeaveAllowance + userAnnual13thMonth;
+
+            let pension = (8 / 100) * ((userAnnualGross * userAnnualBasic) + 
+                                       (userAnnualGross * userAnnualHousing) + 
+                                       (userAnnualGross * userAnnualTransport));
+
+            let baseAllowance = 200000;
+            let allowedPercentage = 20 / 100;
+
+            let TCRA = baseAllowance + (allowedPercentage * (totalIncome - pension - NHF));
+            let taxableIncome = totalIncome - TCRA - pension - NHF;
+            return taxableIncome;
+        }
+
+        function computeTax() {
+            let taxableIncome = staffSalaryDetails(); // used function to collect tax payer's details
+
+            let rate1 = 0.07;
+            let rate2 = 0.11;
+            let rate3 = 0.15;
+            let rate4 = 0.19;
+            let rate5 = 0.21;
+            let rate6 = 0.24;
+            let tax;
+
+            if (taxableIncome > 0 && taxableIncome <= 300000) {
+                let previousTax0 = 0;
+                let band1Tax = (taxableIncome * rate1) + previousTax0;
+                tax = band1Tax;
+            }
+
+            if (taxableIncome > 300000 && taxableIncome <= 600000) {
+                let previousTax1 = rate1 * 300000;
+                let band2Tax = ((taxableIncome - 300000) * rate2) + previousTax1;
+                tax = band2Tax;
+            }
+
+            if (taxableIncome > 600000 && taxableIncome <= 1100000) {
+                let previousTax2 = (rate1 * 300000) + (rate2 * 300000);
+                let band3Tax = ((taxableIncome - 600000) * rate3) + previousTax2;
+                tax = band3Tax;
+            }
+
+            if (taxableIncome > 1100000 && taxableIncome <= 1600000) {
+                let previousTax3 = (rate1 * 300000) + (rate2 * 300000) + (rate3 * 500000);
+                let band4Tax = ((taxableIncome - 1100000) * rate4) + previousTax3;
+                tax = band4Tax;
+            }
+
+            if (taxableIncome > 1600000 && taxableIncome <= 3200000) {
+                let previousTax4 = (rate1 * 300000) + (rate2 * 300000) + (rate3 * 500000) + (rate4 * 500000);
+                let band5Tax = ((taxableIncome - 1600000) * rate5) + previousTax4;
+                tax = band5Tax;
+            }
+
+            if (taxableIncome > 3200000) {
+                let previousTax5 = (rate1 * 300000) + (rate2 * 300000) + (rate3 * 500000) + (rate4 * 500000) + (rate5 * 1600000);
+                let band6Tax = ((taxableIncome - 3200000) * rate6) + previousTax5 - 120000;
+                tax = band6Tax;
+            }
+
+            console.log(tax / 12);
+            alert("Your monthly tax is: " + (tax / 12));
+        }
+    </script>
 </head>
 <body>
 
@@ -55,8 +145,6 @@
         </div>
         
 
-       
-    <!--Placeholder begin-->
 
 
     <div class="heroes">
@@ -68,9 +156,8 @@
         <p>&#x1f447 </p>
 
         <!-- Begining of PAYE Calculator -->
-        <p><button class="hero-demo" onclick="
-        // staff_salary_details()
-        "> Calculate PAYE</button></p>
+        <p><button class="hero-demo" onclick="computeTax()">Calculate PAYE</button></p>
+
         <!-- Ask for an email address to send the result to.  VERY IMPORTANT!!-->
         <!-- End of PAYE Calculator -->
         <p>Overcome HR challenges with real-time insights and automated compliance.</p>
@@ -82,7 +169,7 @@
         </div>
     </div>
 
-<!--Placeholder end-->
+
 
 <div class="before-footer">
     <div class="b4-footer"> <h2> Products</h2>
@@ -144,97 +231,7 @@
         </div>
     </footer>
 
-<!-- start Code for PAYE -->
-
-<script>
-//     let band_1_tax, band_2_tax, band_3_tax, band_4_tax, band_5_tax, band_6_tax, previous_tax_0, previous_tax_1, previous_tax_2, previous_tax_3, previous_tax_4, previous_tax_5, rate_1, rate_2, rate_3, rate_4, rate_5, rate_6, tax, taxable_income;
-
-// function staff_salary_details() {
-//   /*
-//   This function collects tax payer's details and returns annual taxable income.
-//    */
-//   let NHF, TCRA, allowed_percentage, base_allowance, pension, total_income, user_NHF, user_annual_13th_month, user_annual_B, user_annual_H, user_annual_Leave_allowance, user_annual_T, user_annual_basic, user_annual_gross, user_annual_housing, user_annual_transport;
-//   user_annual_gross = Number.parseFloat(prompt("Enter Your Annual Gross Earnings: "));
-//   user_annual_B = Number.parseFloat(prompt("Enter Percentage of Basic Salary: "));
-//   user_annual_H = Number.parseFloat(prompt("Enter Percentage of Housing Salary: "));
-//   user_annual_T = Number.parseFloat(prompt("Enter Percentage of Transport Salary: "));
-//   user_annual_Leave_allowance = Number.parseFloat(prompt("Enter Annual Leave Allowance: "));
-//   user_annual_13th_month = Number.parseFloat(prompt("Enter 13th Month Allowance: "));
-//   user_NHF = prompt(" Do You Have NHF? 'Yes or No': ").upper();
-//   user_annual_basic = user_annual_B / 100;
-//   user_annual_housing = user_annual_H / 100;
-//   user_annual_transport = user_annual_T / 100;
-
-//   if (user_NHF === "YES") {
-//     NHF = 2.5 / 100 * (user_annual_gross * user_annual_basic);
-//   } else {
-//     NHF = 0;
-//   }
-
-//   total_income = user_annual_gross + user_annual_Leave_allowance + user_annual_13th_month;
-//   pension = 8 / 100 * (user_annual_gross * user_annual_basic + user_annual_gross * user_annual_housing + user_annual_gross * user_annual_transport);
-//   base_allowance = 200000;
-//   allowed_percentage = 20 / 100;
-//   TCRA = base_allowance + allowed_percentage * (total_income - pension - NHF);
-//   taxable_income = total_income - TCRA - pension - NHF;
-//   return taxable_income;
-// }
-
-// taxable_income = staff_salary_details();
-// rate_1 = 0.07;
-
-// if (taxable_income > 0 && taxable_income <= 300000) {
-//   previous_tax_0 = 0;
-//   band_1_tax = taxable_income * rate_1 + previous_tax_0;
-//   tax = band_1_tax;
-// }
-
-// rate_2 = 0.11;
-
-// if (taxable_income > 300000 && taxable_income <= 600000) {
-//   previous_tax_1 = rate_1 * 300000;
-//   band_2_tax = (taxable_income - 300000) * rate_2 + previous_tax_1;
-//   tax = band_2_tax;
-// }
-
-// rate_3 = 0.15;
-
-// if (taxable_income > 600000 && taxable_income <= 1100000) {
-//   previous_tax_2 = rate_1 * 300000 + rate_2 * 300000;
-//   band_3_tax = (taxable_income - 300000 - 300000) * rate_3 + previous_tax_2;
-//   tax = band_3_tax;
-// }
-
-// rate_4 = 0.19;
-
-// if (taxable_income > 1100000 && taxable_income <= 1600000) {
-//   previous_tax_3 = rate_1 * 300000 + rate_2 * 300000 + rate_3 * 500000;
-//   band_4_tax = (taxable_income - 300000 - 300000 - 500000) * rate_4 + previous_tax_3;
-//   tax = band_4_tax;
-// }
-
-// rate_5 = 0.21;
-
-// if (taxable_income > 1600000 && taxable_income <= 3200000) {
-//   previous_tax_4 = rate_1 * 300000 + rate_2 * 300000 + rate_3 * 500000 + rate_4 * 500000;
-//   band_5_tax = (taxable_income - 300000 - 300000 - 500000 - 500000) * rate_5 + previous_tax_4;
-//   tax = band_5_tax;
-// }
-
-// rate_6 = 0.24;
-
-// if (taxable_income > 3200000) {
-//   previous_tax_5 = rate_1 * 300000 + rate_2 * 300000 + rate_3 * 500000 + rate_4 * 500000 + rate_5 * 1600000;
-//   band_6_tax = (taxable_income - 300000 - 300000 - 500000 - 500000 - 1100000) * rate_6 + previous_tax_5 - 120000;
-//   tax = band_6_tax;
-// }
-
-// console.log(tax / 12);
-// alert("Your Monthly PAYE is: " + tax / 12);
-</script>
-
-<!-- End Code for PAYE -->
-        <!-- Default Statcounter code for HR Cottage
+<!-- Default Statcounter code for HR Cottage
 https://www.hrcottage.com -->
 <script type="text/javascript">
     var sc_project=13019953; 
