@@ -8,6 +8,15 @@ a {
     text-decoration: none;
     color: rgb(100, 96, 96);
 }
+
+p {
+    color: rgb(100, 96, 96);
+    font-family: Arial, Helvetica, serif;
+    margin: 10px;
+    padding: 10px;
+    
+}
+
 body {
     background-color: white;
     margin: 0;
@@ -39,83 +48,6 @@ h1{
     color: white;
 }
 
-.bodi {
-    display: inline-flex;
-    gap: 10px;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    flex-wrap: wrap;
-    font-family: Arial, Helvetica, serif;
-    max-width: 100%;
-    
-}
-
-.one {
-    display: inline-flex;
-    gap: 5px;
-    flex-wrap: wrap;
-    
-    align-items: flex-end;
-    padding: 0;
-    margin: 0;
-    max-width: 100%;
-    text-align: right;
-}
-
-.two {
-    display: inline-flex;
-    gap: 5px;
-    flex-wrap: wrap;
-    float: right;
-    align-items: flex-end;
-    padding: 0;
-    margin: 0;
-    max-width: 100%;
-    
-}
-
-.three {
-    display: inline-flex;
-    gap: 5px;
-    flex-wrap: wrap;
-    float: right;
-    align-items: flex-end;
-    padding: 0;
-    margin: 0;
-    max-width: 100%;
-}
-
-.one img {
-    max-width: 100%;
-    
-}
-.two img {
-    max-width: 100%;
-    
-}
-.three img {
-    max-width: 100%;
-    
-}
-.flooww-2 {
-    max-width: 100%;
-   
-}
-
-.flooww-2 img {
-    max-width: 100%;
-    
-}e
-
-.flooww-3 {
-    max-width: 100%;
-}
-
-.flooww-3 img {
-    max-width: 100%;
-    
-}
 
 .heroes{
     background-color: white;
@@ -207,26 +139,6 @@ h1{
     justify-content: center;
     align-items: center;
     border-radius: 2.8%;
-}
-.housing {
-    display: inline-flex;
-    justify-content: space-around;
-    gap: 5px;
-    margin-bottom: 20px;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, serif;
-    flex-wrap: wrap;
-    max-width: 100%;
-}
-
-.housing p {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, Helvetica, serif;
-    flex-wrap: wrap;
-    max-width: 100%;
 }
 
 .before-footer {

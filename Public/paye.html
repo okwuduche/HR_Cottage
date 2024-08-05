@@ -9,16 +9,20 @@
     href="./style.css"
     />
     <link rel="icon" type="image/png" href="./favicon-32x32.png">
-    <script>
+        <script>
         function staffSalaryDetails() {
-            /*
-            This function collects tax payer's details and returns annual taxable income.
-            */
-
             let userAnnualGross = parseFloat(prompt("Enter Your Annual Gross Earnings: "));
             let userAnnualB = parseFloat(prompt("Enter Percentage of Basic Salary: "));
             let userAnnualH = parseFloat(prompt("Enter Percentage of Housing Salary: "));
             let userAnnualT = parseFloat(prompt("Enter Percentage of Transport Salary: "));
+            let userAnnualA = parseFloat(prompt("Enter Percentage of Other Allowances: "));
+            let userVC = prompt("Do You Have Voluntary Pension? 'Yes or No': ").toUpperCase();
+            let userVCValue = 0;
+            if (userVC === 'YES') {
+                userVCValue = parseFloat(prompt("Enter Monthly Voluntary Contribution Amount: "));
+            }
+            let userPensionCalc = prompt("Is your Employee Contributing 10% or 8%?: ");
+            let userPensionBasis = prompt("Is Your Pension Based on 100% of Earnings?: ('Yes or No')").toUpperCase();
             let userAnnualLeaveAllowance = parseFloat(prompt("Enter Annual Leave Allowance: "));
             let userAnnual13thMonth = parseFloat(prompt("Enter 13th Month Allowance: "));
             let userNHF = prompt("Do You Have NHF? 'Yes or No': ").toUpperCase();
@@ -26,19 +30,42 @@
             let userAnnualBasic = userAnnualB / 100;
             let userAnnualHousing = userAnnualH / 100;
             let userAnnualTransport = userAnnualT / 100;
+            let userAnnualAllowance = userAnnualA / 100;
 
-            let NHF;
-            if (userNHF === 'YES') {
-                NHF = (2.5 / 100) * (userAnnualGross * userAnnualBasic);
-            } else {
-                NHF = 0;
-            }
+            let NHF = userNHF === 'YES' ? (2.5 / 100) * (userAnnualGross * userAnnualBasic) : 0;
 
             let totalIncome = userAnnualGross + userAnnualLeaveAllowance + userAnnual13thMonth;
 
-            let pension = (8 / 100) * ((userAnnualGross * userAnnualBasic) + 
-                                       (userAnnualGross * userAnnualHousing) + 
-                                       (userAnnualGross * userAnnualTransport));
+            let pension;
+            if (userPensionBasis === 'YES') {
+                if (userPensionCalc === '10%' || userPensionCalc === '10') {
+                    pension = (10 / 100) * ((userAnnualGross * userAnnualBasic) + 
+                                            (userAnnualGross * userAnnualHousing) + 
+                                            (userAnnualGross * userAnnualTransport) + 
+                                            (userAnnualGross * userAnnualAllowance) + 
+                                            (userVCValue * 12));
+                } else {
+                    pension = (8 / 100) * ((userAnnualGross * userAnnualBasic) + 
+                                           (userAnnualGross * userAnnualHousing) + 
+                                           (userAnnualGross * userAnnualTransport) + 
+                                           (userAnnualGross * userAnnualAllowance) + 
+                                           (userVCValue * 12));
+                }
+            } else {
+                if (userPensionCalc === '10%' || userPensionCalc === '10') {
+                    pension = (10 / 100) * ((userAnnualBasic * userAnnualGross) + 
+                                            (userAnnualHousing * userAnnualGross) + 
+                                            (userAnnualTransport * userAnnualGross) + 
+                                            (userAnnualAllowance * userAnnualGross) + 
+                                            (userVCValue * 12));
+                } else {
+                    pension = (8 / 100) * ((userAnnualBasic * userAnnualGross) + 
+                                           (userAnnualHousing * userAnnualGross) + 
+                                           (userAnnualTransport * userAnnualGross) + 
+                                           (userAnnualAllowance * userAnnualGross) + 
+                                           (userVCValue * 12));
+                }
+            }
 
             let baseAllowance = 200000;
             let allowedPercentage = 20 / 100;
@@ -48,8 +75,8 @@
             return taxableIncome;
         }
 
-        function computeTax() {
-            let taxableIncome = staffSalaryDetails(); // used function to collect tax payer's details
+        function calculateTax() {
+            let taxableIncome = staffSalaryDetails();
 
             let rate1 = 0.07;
             let rate2 = 0.11;
@@ -57,49 +84,46 @@
             let rate4 = 0.19;
             let rate5 = 0.21;
             let rate6 = 0.24;
-            let tax;
 
+            let tax;
             if (taxableIncome > 0 && taxableIncome <= 300000) {
                 let previousTax0 = 0;
                 let band1Tax = (taxableIncome * rate1) + previousTax0;
                 tax = band1Tax;
-            }
-
-            if (taxableIncome > 300000 && taxableIncome <= 600000) {
+            } else if (taxableIncome > 300000 && taxableIncome <= 600000) {
                 let previousTax1 = rate1 * 300000;
                 let band2Tax = ((taxableIncome - 300000) * rate2) + previousTax1;
                 tax = band2Tax;
-            }
-
-            if (taxableIncome > 600000 && taxableIncome <= 1100000) {
+            } else if (taxableIncome > 600000 && taxableIncome <= 1100000) {
                 let previousTax2 = (rate1 * 300000) + (rate2 * 300000);
                 let band3Tax = ((taxableIncome - 600000) * rate3) + previousTax2;
                 tax = band3Tax;
-            }
-
-            if (taxableIncome > 1100000 && taxableIncome <= 1600000) {
+            } else if (taxableIncome > 1100000 && taxableIncome <= 1600000) {
                 let previousTax3 = (rate1 * 300000) + (rate2 * 300000) + (rate3 * 500000);
                 let band4Tax = ((taxableIncome - 1100000) * rate4) + previousTax3;
                 tax = band4Tax;
-            }
-
-            if (taxableIncome > 1600000 && taxableIncome <= 3200000) {
+            } else if (taxableIncome > 1600000 && taxableIncome <= 3200000) {
                 let previousTax4 = (rate1 * 300000) + (rate2 * 300000) + (rate3 * 500000) + (rate4 * 500000);
                 let band5Tax = ((taxableIncome - 1600000) * rate5) + previousTax4;
                 tax = band5Tax;
-            }
-
-            if (taxableIncome > 3200000) {
+            } else {
                 let previousTax5 = (rate1 * 300000) + (rate2 * 300000) + (rate3 * 500000) + (rate4 * 500000) + (rate5 * 1600000);
                 let band6Tax = ((taxableIncome - 3200000) * rate6) + previousTax5 - 120000;
                 tax = band6Tax;
             }
 
-            console.log(tax / 12);
-            alert("Your monthly tax is: " + (tax / 12) + " and your annual tax is: " + tax + ". For more information, please contact us using the contact form.");
-        
+            let monthlyTax = (tax / 12).toFixed(2);
+            alert("Monthly Tax: ₦" + monthlyTax) + " and your annual tax is: " + tax + ". For Custom Built Solution and more information, please contact us using the contact form or by sending us an email on info@hrcottage.com.";
+            
+            console.log("Monthly Tax: ₦" + monthlyTax);
+
+            
         }
     </script>
+            
+        
+        
+    
 </head>
 <body>
 
@@ -149,7 +173,7 @@
 
 
     <div class="heroes">
-        <h2> Home of Everything  <strong class="strongg"> HR </strong> </h2>
+        <h2> Free PAYE Calculator From <slot> - </slot><strong class="strongg"> HR <slot class="black"> ~ </slot> </strong> <strong class="green"> Cottage </strong>  </h2>
         <div class="paras">
         <p> We know that a lot of people have for long wished that there is a FREE tool that genuinely help with Nigeria's PAYE calculation. </p>
         <p>Worry not as we have provided that long awaited tool to help you either calculate PAYE as an HR professional or confirm the PAYE figure on your payslip.</p>
@@ -157,7 +181,9 @@
         <p>&#x1f447 </p>
 
         <!-- Begining of PAYE Calculator -->
-        <p><button class="hero-demo" onclick="computeTax()">Calculate PAYE</button></p>
+        <p><button class="hero-demo" onclick="calculateTax()">Calculate Tax</button></p>
+        <div id="taxResult"></div>
+    
 
         <!-- Ask for an email address to send the result to.  VERY IMPORTANT!!-->
         <!-- End of PAYE Calculator -->
