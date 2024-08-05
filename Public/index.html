@@ -132,6 +132,15 @@
                 <a href=""> <img src="./white-twitterx-icon.png" height="55"></a>
                 <a href=""> <img src="./instagram-icon.png" height="55"></a>
             </div>
+
+            <div class="footer-container">
+                <div class="blog-feed">
+                    <h3>Latest Blog Posts</h3>
+                    <ul id="blog-list">
+                        <!-- Blog posts will be injected here -->
+                    </ul>
+                </div>
+            </div>
         </footer>
 
 <!-- Default Statcounter code for HR Cottage
@@ -151,5 +160,30 @@ src="https://c.statcounter.com/13019953/0/5e778fb5/1/"
 alt="Web Analytics Made Easy - Statcounter"
 referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 <!-- End of Statcounter Code -->
+
+<!-- Blog feed-->
+<script>
+    async function loadBlogPosts() {
+        try {
+            const response = await fetch('https://www.hrcottage.com/blog/posts.json');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const blogPosts = await response.json();
+
+            const blogList = document.getElementById('blog-list');
+            blogPosts.forEach(post => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<a href="${post.url}">${post.title}</a> <span class="date">${new Date(post.date).toLocaleDateString()}</span>`;
+                blogList.appendChild(listItem);
+            });
+        } catch (error) {
+            console.error('Error fetching blog posts:', error);
+        }
+    }
+
+    // Load blog posts when the page loads
+    window.onload = loadBlogPosts;
+</script>
 </body>
 </html>
