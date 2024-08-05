@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculation Form</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+</head>
+<body>
+    <form id="taxForm">
+        <label for="annualGross">Annual Gross Earnings:</label>
+        <input type="number" id="annualGross" name="annualGross" step="0.01"><br><br>
+
+        <label for="annualB">Percentage of Basic Salary:</label>
+        <input type="number" id="annualB" name="annualB" step="0.01"><br><br>
+
+        <label for="annualH">Percentage of Housing Salary:</label>
+        <input type="number" id="annualH" name="annualH" step="0.01"><br><br>
+
+        <label for="annualT">Percentage of Transport Salary:</label>
+        <input type="number" id="annualT" name="annualT" step="0.01"><br><br>
+
+        <label for="annualA">Percentage of Other Allowances:</label>
+        <input type="number" id="annualA" name="annualA" step="0.01"><br><br>
+
+        <label for="VC">Voluntary Pension (Yes or No):</label>
+        <input type="text" id="VC" name="VC"><br><br>
+
+        <label for="VCValue">Monthly Voluntary Contribution Amount:</label>
+        <input type="number" id="VCValue" name="VCValue" step="0.01" value="0"><br><br>
+
+        <label for="pensionCalc">Employer Contribution (10% or 8%):</label>
+        <input type="text" id="pensionCalc" name="pensionCalc"><br><br>
+
+        <label for="pensionBasis">Pension Based on 100% of Earnings (Yes or No):</label>
+        <input type="text" id="pensionBasis" name="pensionBasis"><br><br>
+
+        <label for="leaveAllowance">Annual Leave Allowance:</label>
+        <input type="number" id="leaveAllowance" name="leaveAllowance" step="0.01"><br><br>
+
+        <label for="thirteenthMonth">13th Month Allowance:</label>
+        <input type="number" id="thirteenthMonth" name="thirteenthMonth" step="0.01"><br><br>
+
+        <label for="NHF">NHF (Yes or No):</label>
+        <input type="text" id="NHF" name="NHF"><br><br>
+
+        <button type="button" onclick="calculateTax()">Calculate Tax</button>
+        <button type="button" onclick="downloadExcel()">Download Excel</button>
+    </form>
+    <div id="taxResult"></div>
+
+    <script>
+        function calculateTax() {
+            let userAnnualGross = parseFloat(document.getElementById('annualGross').value);
+            let userAnnualB = parseFloat(document.getElementById('annualB').value);
+            let userAnnualH = parseFloat(document.getElementById('annualH').value);
+            let userAnnualT = parseFloat(document.getElementById('annualT').value);
+            let userAnnualA = parseFloat(document.getElementById('annualA').value);
+            let userVC = document.getElementById('VC').value.toUpperCase();
+            let userVCValue = userVC === 'YES' ? parseFloat(document.getElementById('VCValue').value) : 0;
+            let userPensionCalc = document.getElementById('pensionCalc').value;
+            let userPensionBasis = document.getElementById('pensionBasis').value.toUpperCase();
+            let userAnnualLeaveAllowance = parseFloat(document.getElementById('leaveAllowance').value);
+            let userAnnual13thMonth = parseFloat(document.getElementById('thirteenthMonth').value);
+            let userNHF = document.getElementById('NHF').value.toUpperCase();
+
+            let userAnnualBasic = userAnnualB / 100;
+            let userAnnualHousing = userAnnualH / 100;
+            let userAnnualTransport = userAnnualT / 100;
+            let userAnnualAllowance = userAnnualA / 100;
+
+            let NHF = userNHF === 'YES' ? (2.5 / 100) * (userAnnualGross * userAnnualBasic) : 0;
+
+            let totalIncome = userAnnualGross + userAnnualLeaveAllowance + userAnnual13thMonth;
+
+            let pension;
+            if (userPensionBasis === 'YES') {
+                if (userPensionCalc === '10%' || userPensionCalc === '10') {
+                    pension = (10 / 100) * ((userAnnualGross * userAnnualBasic) + 
+                                            (userAnnualGross * userAnnualHousing) + 
+                                            (userAnnualGross * userAnnualTransport) + 
+                                            (userAnnualGross * userAnnualAllowance) + 
+                                            (userVCValue * 12));
+                } else {
+                    pension = (8 / 100) * ((userAnnualGross * userAnnualBasic) + 
+                                           (userAnnualGross * userAnnualHousing) + 
+                                           (userAnnualGross * userAnnualTransport) + 
+                                           (userAnnualGross * userAnnualAllowance) + 
+                                           (userVCValue * 12));
+                }
+            } else {
+                if (userPensionCalc === '10%' || userPensionCalc === '10') {
+                    pension = (10 / 100) * ((userAnnualBasic * userAnnualGross) + 
+                                            (userAnnualHousing * userAnnualGross) + 
+                                            (userAnnualTransport * userAnnualGross) + 
+                                            (userAnnualAllowance * userAnnualGross) + 
+                                            (userVCValue * 12));
+                } else {
+                    pension = (8 / 100) * ((userAnnualBasic * userAnnualGross) + 
+                                           (userAnnualHousing * userAnnualGross) + 
+                                           (userAnnualTransport * userAnnualGross) + 
+                                           (userAnnualAllowance * userAnnualGross) + 
+                                           (userVCValue * 12));
+                }
+            }
+
+            let baseAllowance = 200000;
+            let allowedPercentage = 20 / 100;
+
+            let TCRA = baseAllowance + (allowedPercentage * (totalIncome - pension - NHF));
+            let taxableIncome = totalIncome - TCRA - pension - NHF;
+
+            let rate1 = 0.07;
+            let rate2 = 0.11;
+            let rate3 = 0.15;
+            let rate4 = 0.19;
+            let rate5 = 0.21;
+            let rate6 = 0.24;
+
+            let tax;
+            if (taxableIncome > 0 && taxableIncome <= 300000) {
+                let previousTax0 = 0;
+                let band1Tax = (taxableIncome * rate1) + previousTax0;
+                tax = band1Tax;
+            } else if (taxableIncome > 300000 && taxableIncome <= 600000) {
+                let previousTax1 = rate1 * 300000;
+                let band2Tax = ((taxableIncome - 300000) * rate2) + previousTax1;
+                tax = band2Tax;
+            } else if (taxableIncome > 600000 && taxableIncome <= 1100000) {
+                let previousTax2 = (rate1 * 300000) + (rate2 * 300000);
+                let band3Tax = ((taxableIncome - 600000) * rate3) + previousTax2;
+                tax = band3Tax;
+            } else if (taxableIncome > 1100000 && taxableIncome <= 1600000) {
+                let previousTax3 = (rate1 * 300000) + (rate2 * 300000) + (rate3 * 500000);
+                let band4Tax = ((taxableIncome - 1100000) * rate4) + previousTax3;
+                tax = band4Tax;
+            } else if (taxableIncome > 1600000 && taxableIncome <= 3200000) {
+                let previousTax4 = (rate1 * 300000) + (rate2 * 300000) + (rate3 * 500000) + (rate4 * 500000);
+                let band5Tax = ((taxableIncome - 1600000) * rate5) + previousTax4;
+                tax = band5Tax;
+            } else {
+                let previousTax5 = (rate1 * 300000) + (rate2 * 300000) + (rate3 * 500000) + (rate4 * 500000) + (rate5 * 1600000);
+                let band6Tax = ((taxableIncome - 3200000) * rate6) + previousTax5 - 120000;
+                tax = band6Tax;
+            }
+
+            let monthlyTax = (tax / 12).toFixed(2);
+            let result = "Monthly Tax: ₦" 
+
+            document.getElementById('taxResult').innerHTML = result + monthlyTax;
+        }
+
+            </script>
