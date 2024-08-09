@@ -3,54 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tax Calculation Form</title>
+    <title>Tax Calculation</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #0288d1;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #0277bd;
+        }
+        #taxResult {
+            background-color: #e0f7fa;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            display: none;
+        }
+        #dialogBox {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+            margin-top: 20px;
+            display: none;
+        }
+        #dialogBox h3 {
+            margin-top: 0;
+        }
+        .button-group {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <form id="taxForm">
+        <!-- Input fields -->
         <label for="annualGross">Annual Gross Earnings:</label>
-        <input type="number" id="annualGross" name="annualGross" step="0.01"><br><br>
+        <input type="number" id="annualGross" name="annualGross" step="0.01">
 
         <label for="annualB">Percentage of Basic Salary:</label>
-        <input type="number" id="annualB" name="annualB" step="0.01"><br><br>
+        <input type="number" id="annualB" name="annualB" step="0.01">
 
         <label for="annualH">Percentage of Housing Salary:</label>
-        <input type="number" id="annualH" name="annualH" step="0.01"><br><br>
+        <input type="number" id="annualH" name="annualH" step="0.01">
 
         <label for="annualT">Percentage of Transport Salary:</label>
-        <input type="number" id="annualT" name="annualT" step="0.01"><br><br>
+        <input type="number" id="annualT" name="annualT" step="0.01">
 
         <label for="annualA">Percentage of Other Allowances:</label>
-        <input type="number" id="annualA" name="annualA" step="0.01"><br><br>
+        <input type="number" id="annualA" name="annualA" step="0.01">
 
         <label for="VC">Voluntary Pension (Yes or No):</label>
-        <input type="text" id="VC" name="VC"><br><br>
+        <input type="text" id="VC" name="VC">
 
         <label for="VCValue">Monthly Voluntary Contribution Amount:</label>
-        <input type="number" id="VCValue" name="VCValue" step="0.01" value="0"><br><br>
+        <input type="number" id="VCValue" name="VCValue" step="0.01" value="0">
 
         <label for="pensionCalc">Employer Contribution (10% or 8%):</label>
-        <input type="text" id="pensionCalc" name="pensionCalc"><br><br>
+        <input type="text" id="pensionCalc" name="pensionCalc">
 
         <label for="pensionBasis">Pension Based on 100% of Earnings (Yes or No):</label>
-        <input type="text" id="pensionBasis" name="pensionBasis"><br><br>
+        <input type="text" id="pensionBasis" name="pensionBasis">
 
         <label for="leaveAllowance">Annual Leave Allowance:</label>
-        <input type="number" id="leaveAllowance" name="leaveAllowance" step="0.01"><br><br>
+        <input type="number" id="leaveAllowance" name="leaveAllowance" step="0.01">
 
         <label for="thirteenthMonth">13th Month Allowance:</label>
-        <input type="number" id="thirteenthMonth" name="thirteenthMonth" step="0.01"><br><br>
+        <input type="number" id="thirteenthMonth" name="thirteenthMonth" step="0.01">
 
         <label for="NHF">NHF (Yes or No):</label>
-        <input type="text" id="NHF" name="NHF"><br><br>
+        <input type="text" id="NHF" name="NHF">
 
-        <button type="button" onclick="calculateTax()">Calculate Tax</button>
-        <button type="button" onclick="downloadExcel()">Download Excel</button>
+        <!-- Buttons -->
+        <div class="button-group">
+            <button type="button" onclick="calculateTax()">Calculate Tax</button>
+            <button type="button" onclick="downloadExcel()">Download Excel</button>
+        </div>
     </form>
+
+    <!-- Result display -->
     <div id="taxResult"></div>
+    <div id="dialogBox">
+        <h3>Tax Calculation Result</h3>
+        <p id="dialogContent"></p>
+        <button onclick="closeDialog()">Close</button>
+    </div>
 
     <script>
         function calculateTax() {
+            // Collecting input values
             let userAnnualGross = parseFloat(document.getElementById('annualGross').value);
             let userAnnualB = parseFloat(document.getElementById('annualB').value);
             let userAnnualH = parseFloat(document.getElementById('annualH').value);
@@ -64,6 +142,7 @@
             let userAnnual13thMonth = parseFloat(document.getElementById('thirteenthMonth').value);
             let userNHF = document.getElementById('NHF').value.toUpperCase();
 
+            // Calculating individual components
             let userAnnualBasic = userAnnualB / 100;
             let userAnnualHousing = userAnnualH / 100;
             let userAnnualTransport = userAnnualT / 100;
@@ -110,6 +189,7 @@
             let TCRA = baseAllowance + (allowedPercentage * (totalIncome - pension - NHF));
             let taxableIncome = totalIncome - TCRA - pension - NHF;
 
+            // Tax brackets
             let rate1 = 0.07;
             let rate2 = 0.11;
             let rate3 = 0.15;
@@ -117,6 +197,7 @@
             let rate5 = 0.21;
             let rate6 = 0.24;
 
+            // Tax calculation
             let tax;
             if (taxableIncome > 0 && taxableIncome <= 300000) {
                 let previousTax0 = 0;
@@ -145,9 +226,54 @@
             }
 
             let monthlyTax = (tax / 12).toFixed(2);
-            let result = "Monthly Tax: ₦" 
+            let result = "Monthly Tax: ₦" + monthlyTax;
 
-            document.getElementById('taxResult').innerHTML = result + monthlyTax;
+            // Display result in the dialog box
+            document.getElementById('dialogContent').innerText = result;
+            document.getElementById('dialogBox').style.display = 'block';
         }
 
-            </script>
+        function closeDialog() {
+            document.getElementById('dialogBox').style.display = 'none';
+        }
+
+        function downloadExcel() {
+            let userAnnualGross = parseFloat(document.getElementById('annualGross').value);
+            let userAnnualB = parseFloat(document.getElementById('annualB').value);
+            let userAnnualH = parseFloat(document.getElementById('annualH').value);
+            let userAnnualT = parseFloat(document.getElementById('annualT').value);
+            let userAnnualA = parseFloat(document.getElementById('annualA').value);
+            let userVC = document.getElementById('VC').value.toUpperCase();
+            let userVCValue = userVC === 'YES' ? parseFloat(document.getElementById('VCValue').value) : 0;
+            let userPensionCalc = document.getElementById('pensionCalc').value;
+            let userPensionBasis = document.getElementById('pensionBasis').value.toUpperCase();
+            let userAnnualLeaveAllowance = parseFloat(document.getElementById('leaveAllowance').value);
+            let userAnnual13thMonth = parseFloat(document.getElementById('thirteenthMonth').value);
+            let userNHF = document.getElementById('NHF').value.toUpperCase();
+
+            let monthlyTax = document.getElementById('dialogContent').innerText;
+
+            let data = [
+                ['Annual Gross Earnings', userAnnualGross],
+                ['Percentage of Basic Salary', userAnnualB],
+                ['Percentage of Housing Salary', userAnnualH],
+                ['Percentage of Transport Salary', userAnnualT],
+                ['Percentage of Other Allowances', userAnnualA],
+                ['Voluntary Pension', userVC],
+                ['Monthly Voluntary Contribution Amount', userVCValue],
+                ['Employer Contribution', userPensionCalc],
+                ['Pension Based on 100% of Earnings', userPensionBasis],
+                ['Annual Leave Allowance', userAnnualLeaveAllowance],
+                ['13th Month Allowance', userAnnual13thMonth],
+                ['NHF', userNHF],
+                ['Monthly Tax', monthlyTax]
+            ];
+
+            let worksheet = XLSX.utils.aoa_to_sheet(data);
+            let workbook = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(workbook, worksheet, "Tax Calculation");
+            XLSX.writeFile(workbook, "Tax_Calculation.xlsx");
+        }
+    </script>
+</body>
+</html>

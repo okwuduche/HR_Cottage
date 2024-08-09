@@ -486,6 +486,7 @@ input[type=checkbox] {
     font-size: 1em;
     margin-bottom: 10px;
     color: #333;
+    text-align: justify;
 }
 
 .plan-button {
