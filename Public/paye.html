@@ -15,17 +15,20 @@
         form {
             width: 95%;
             max-width: 100%;
-            background-color: #fff;
             padding: 20px;
-            margin: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px seagreen;;
             box-sizing: border-box;
             margin-top: 20px;
             align-items: center;
             justify-content: center;
+            margin: auto;
+            background-color: #f9f9f9;
+            
         }
 
+
+        
         form div {
             margin-bottom: 15px;
         }
@@ -133,6 +136,31 @@
                 padding: 6px;
             }
         }
+        .tax-form-legend {
+            font-size: 20px;
+            font-weight: bold;
+            color: seagreen;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tax-form-fieldset {
+            border: 1px solid orange;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px;
+        }
+
+        .tax-calc-button {
+            width: 15%;
+            justify-content: center;
+            align-items: center;
+            max-width: 80%;
+            /* padding: .5rem; */
+            margin-left: 40%;
+    
+        }
+
     </style>
 </head>
 <body>
@@ -183,8 +211,6 @@
             <div class="paras">
             <p> We know that a lot of people have for long wished that there is a FREE tool that genuinely help with Nigeria's PAYE calculation. </p>
             <p>Worry not as we have provided that long awaited tool to help you either calculate PAYE as an HR professional or confirm the PAYE figure on your payslip.</p>
-            <p>Simply fill in your Salary details in the dialog box.</p>
-            <p>&#x1f447 </p>
             
             </div>
             
@@ -195,37 +221,50 @@
             </div>
             
         </div>
+        <div class="heroes">
+            
+            <div class="paras">
+            <p>Simply fill in your Salary details in the HR Cottage's Tax Calculator Form below.</p>
+            <p>&#x1f447 </p>
+            
+            </div>
+            
+            
+            
+        </div>
 
 
 <form id="taxForm">
-    <div>
+    <fieldset class="tax-form-fieldset">
+        <legend class="tax-form-legend">HR Cottage Free Tax Calculator Form - None of Your Information Is Saved</legend>
+        <div>
         <label for="grossEarnings">Annual Gross Earnings:</label>
-        <input type="number" id="grossEarnings" required>
+        <input type="number" placeholder="Enter Your Yearly Gross Earnings e.g 10000000" id="grossEarnings" required>
         <span class="error" id="grossEarningsError"></span>
     </div>
     <div>
         <label for="basicSalary">Percentage of Basic Salary:</label>
-        <input type="number" id="basicSalary" required>
+        <input type="number" placeholder="Enter Percentage of Your Basic Salary e.g 50 - Do not add %"  id="basicSalary" required>
         <span class="error" id="basicSalaryError"></span>
     </div>
     <div>
         <label for="housingSalary">Percentage of Housing Salary:</label>
-        <input type="number" id="housingSalary" required>
+        <input type="number" placeholder="Enter Percentage of Your Housing Allowance e.g 20 - Do not add %" id="housingSalary" required>
         <span class="error" id="housingSalaryError"></span>
     </div>
     <div>
         <label for="transportSalary">Percentage of Transport Salary:</label>
-        <input type="number" id="transportSalary" required>
+        <input type="number" placeholder="Enter Percentage of Your Transport Allowance e.g 20 - Do not add %" id="transportSalary" required>
         <span class="error" id="transportSalaryError"></span>
     </div>
     <div>
         <label for="otherAllowances">Percentage of Other Allowances:</label>
-        <input type="number" id="otherAllowances" required>
+        <input type="number" placeholder="Enter Percentage of Your Other Allowances e.g 50 - Do not add %" id="otherAllowances" required>
         <span class="error" id="otherAllowancesError"></span>
     </div>
     <div>
         <label for="voluntaryPension">Do You Have Voluntary Pension? (Yes or No):</label>
-        <input type="text" id="voluntaryPension" required>
+        <input type="text" placeholder="Enter Yes or No" id="voluntaryPension" required>
         <span class="error" id="voluntaryPensionError"></span>
     </div>
     <div>
@@ -235,36 +274,42 @@
     </div>
     <div>
         <label for="employerPension">Is your Employer Contributing 10% or 8%?:</label>
-        <input type="text" id="employerPension" required>
+        <input type="text" placeholder="Enter Relevant Percentage e.g 8 - Do Not Include % Sign" id="employerPension" required>
         <span class="error" id="employerPensionError"></span>
     </div>
     <div>
         <label for="pensionBasis">Is Your Pension Based on 100% of Earnings? (Yes or No):</label>
-        <input type="text" id="pensionBasis" required>
+        <input type="text" placeholder="Yes or No" id="pensionBasis" required>
         <span class="error" id="pensionBasisError"></span>
     </div>
     <div>
         <label for="leaveAllowance">Annual Leave Allowance:</label>
-        <input type="number" id="leaveAllowance" required>
+        <input type="number" placeholder="Enter Your Yearly Leave Allowance, Enter 0 If Not Applicable" id="leaveAllowance" required>
         <span class="error" id="leaveAllowanceError"></span>
     </div>
     <div>
         <label for="monthAllowance">13th Month Allowance:</label>
-        <input type="number" id="monthAllowance" required>
+        <input type="number" placeholder="Enter Your 13TH Month or Monetary Equivalent of All Benefits In Kind, Enter 0 If Not Applicable" id="monthAllowance" required>
         <span class="error" id="monthAllowanceError"></span>
     </div>
     <div>
         <label for="nhf">Do You Have NHF? (Yes or No):</label>
-        <input type="text" id="nhf" required>
+        <input type="text"  placeholder="Enter Yes or No" id="nhf" required>
         <span class="error" id="nhfError"></span>
     </div>
+    </fieldset>
+    
+    <div class="tax-calc-button" >
     <button type="button" onclick="calculateTax()">Calculate Tax</button>
+    </div>
+    
+    <div id="resultDialog">
+        <p id="resultText"></p>
+        <button onclick="closeDialog()">Close</button>
+    </div>
 </form>
 
-<div id="resultDialog">
-    <p id="resultText"></p>
-    <button onclick="closeDialog()">Close</button>
-</div>
+
 
 <div class="heroes">
     <div class="paras">
@@ -281,102 +326,104 @@
 
 <script>
     function validateInputs() {
-        let isValid = true;
+    let isValid = true;
 
-        function showError(elementId, errorMessage) {
-            const errorElement = document.getElementById(elementId);
-            errorElement.innerText = errorMessage;
-            errorElement.style.display = 'block';
-            isValid = false;
-        }
-
-        function clearError(elementId) {
-            const errorElement = document.getElementById(elementId);
-            errorElement.style.display = 'none';
-            errorElement.innerText = "";
-        }
-
-        let grossEarnings = document.getElementById('grossEarnings').value;
-        let basicSalary = document.getElementById('basicSalary').value;
-        let housingSalary = document.getElementById('housingSalary').value;
-        let transportSalary = document.getElementById('transportSalary').value;
-        let otherAllowances = document.getElementById('otherAllowances').value;
-        let voluntaryPension = document.getElementById('voluntaryPension').value.toUpperCase();
-        let employerPension = document.getElementById('employerPension').value;
-        let pensionBasis = document.getElementById('pensionBasis').value.toUpperCase();
-        let leaveAllowance = document.getElementById('leaveAllowance').value;
-        let monthAllowance = document.getElementById('monthAllowance').value;
-        let nhf = document.getElementById('nhf').value.toUpperCase();
-
-        // Validate Gross Earnings
-        if (grossEarnings <= 0 || isNaN(grossEarnings)) {
-            showError('grossEarningsError', 'Please enter a valid gross earning.');
-        } else {
-            clearError('grossEarningsError');
-        }
-
-        // Validate Percentage Fields (Basic Salary, Housing Salary, Transport Salary, Other Allowances)
-        if (basicSalary < 0 || basicSalary > 100 || isNaN(basicSalary)) {
-            showError('basicSalaryError', 'Please enter a valid percentage (0-100).');
-        } else {
-            clearError('basicSalaryError');
-        }
-
-        if (housingSalary < 0 || housingSalary > 100 || isNaN(housingSalary)) {
-            showError('housingSalaryError', 'Please enter a valid percentage (0-100).');
-        } else {
-            clearError('housingSalaryError');
-        }
-
-        if (transportSalary < 0 || transportSalary > 100 || isNaN(transportSalary)) {
-            showError('transportSalaryError', 'Please enter a valid percentage (0-100).');
-        } else {
-            clearError('transportSalaryError');
-        }
-
-        if (otherAllowances < 0 || otherAllowances > 100 || isNaN(otherAllowances)) {
-            showError('otherAllowancesError', 'Please enter a valid percentage (0-100).');
-        } else {
-            clearError('otherAllowancesError');
-        }
-
-        // Validate Voluntary Pension
-        if (voluntaryPension !== 'YES' && voluntaryPension !== 'NO') {
-            showError('voluntaryPensionError', 'Please enter "Yes" or "No".');
-        } else {
-            clearError('voluntaryPensionError');
-        }
-
-        // Validate Pension Amount
-        if (voluntaryPension === 'YES' && (pensionAmount <= 0 || isNaN(pensionAmount))) {
-            showError('pensionAmountError', 'Please enter a valid pension amount.');
-        } else {
-            clearError('pensionAmountError');
-        }
-
-        // Validate Employer Pension Contribution
-        if (employerPension !== '10%' && employerPension !== '8%' && employerPension !== '10' && employerPension !== '8') {
-            showError('employerPensionError', 'Please enter "10%" or "8%".');
-        } else {
-            clearError('employerPensionError');
-        }
-
-        // Validate Pension Basis
-        if (pensionBasis !== 'YES' && pensionBasis !== 'NO') {
-            showError('pensionBasisError', 'Please enter "Yes" or "No".');
-        } else {
-            clearError('pensionBasisError');
-        }
-
-        // Validate NHF
-        if (nhf !== 'YES' && nhf !== 'NO') {
-            showError('nhfError', 'Please enter "Yes" or "No".');
-        } else {
-            clearError('nhfError');
-        }
-
-        return isValid;
+    function showError(elementId, errorMessage) {
+        const errorElement = document.getElementById(elementId);
+        errorElement.innerText = errorMessage;
+        errorElement.style.display = 'block';
+        isValid = false;
     }
+
+    function clearError(elementId) {
+        const errorElement = document.getElementById(elementId);
+        errorElement.style.display = 'none';
+        errorElement.innerText = "";
+    }
+
+    let grossEarnings = document.getElementById('grossEarnings').value;
+    let basicSalary = document.getElementById('basicSalary').value;
+    let housingSalary = document.getElementById('housingSalary').value;
+    let transportSalary = document.getElementById('transportSalary').value;
+    let otherAllowances = document.getElementById('otherAllowances').value;
+    let voluntaryPension = document.getElementById('voluntaryPension').value.toUpperCase();
+    let pensionAmount = document.getElementById('pensionAmount').value;
+    let employerPension = document.getElementById('employerPension').value;
+    let pensionBasis = document.getElementById('pensionBasis').value.toUpperCase();
+    let leaveAllowance = document.getElementById('leaveAllowance').value;
+    let monthAllowance = document.getElementById('monthAllowance').value;
+    let nhf = document.getElementById('nhf').value.toUpperCase();
+
+    // Validate Gross Earnings
+    if (grossEarnings <= 0 || isNaN(grossEarnings)) {
+        showError('grossEarningsError', 'Please enter a valid gross earning.');
+    } else {
+        clearError('grossEarningsError');
+    }
+
+    // Validate Percentage Fields (Basic Salary, Housing Salary, Transport Salary, Other Allowances)
+    if (basicSalary < 0 || basicSalary > 100 || isNaN(basicSalary)) {
+        showError('basicSalaryError', 'Please enter a valid percentage (0-100).');
+    } else {
+        clearError('basicSalaryError');
+    }
+
+    if (housingSalary < 0 || housingSalary > 100 || isNaN(housingSalary)) {
+        showError('housingSalaryError', 'Please enter a valid percentage (0-100).');
+    } else {
+        clearError('housingSalaryError');
+    }
+
+    if (transportSalary < 0 || transportSalary > 100 || isNaN(transportSalary)) {
+        showError('transportSalaryError', 'Please enter a valid percentage (0-100).');
+    } else {
+        clearError('transportSalaryError');
+    }
+
+    if (otherAllowances < 0 || otherAllowances > 100 || isNaN(otherAllowances)) {
+        showError('otherAllowancesError', 'Please enter a valid percentage (0-100).');
+    } else {
+        clearError('otherAllowancesError');
+    }
+
+    // Validate Voluntary Pension
+    if (voluntaryPension !== 'YES' && voluntaryPension !== 'NO') {
+        showError('voluntaryPensionError', 'Please enter "Yes" or "No".');
+    } else {
+        clearError('voluntaryPensionError');
+    }
+
+    // Validate Pension Amount
+    if (voluntaryPension === 'YES' && (pensionAmount <= 0 || isNaN(pensionAmount))) {
+        showError('pensionAmountError', 'Please enter a valid pension amount.');
+    } else {
+        clearError('pensionAmountError');
+    }
+
+    // Validate Employer Pension Contribution
+    if (employerPension !== '10%' && employerPension !== '8%' && employerPension !== '10' && employerPension !== '8') {
+        showError('employerPensionError', 'Please enter "10%" or "8%".');
+    } else {
+        clearError('employerPensionError');
+    }
+
+    // Validate Pension Basis
+    if (pensionBasis !== 'YES' && pensionBasis !== 'NO') {
+        showError('pensionBasisError', 'Please enter "Yes" or "No".');
+    } else {
+        clearError('pensionBasisError');
+    }
+
+    // Validate NHF
+    if (nhf !== 'YES' && nhf !== 'NO') {
+        showError('nhfError', 'Please enter "Yes" or "No".');
+    } else {
+        clearError('nhfError');
+    }
+
+    return isValid;
+}
+
 
     function calculateTax() {
         if (!validateInputs()) {
