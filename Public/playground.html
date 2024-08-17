@@ -3,365 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tax Calculation Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+    <title>HR Cottage</title>
+    <link
+    rel="stylesheet"
+    href="./style.css"
+    />
+    <link rel="icon" type="image/png" href="./favicon-32x32.png">
 
-        form {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-        }
-
-        form div {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input[type="text"], input[type="number"] {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .error {
-            color: red;
-            font-size: 12px;
-            display: none;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: Seagreen;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background-color: orange;
-        }
-
-        #resultDialog {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            width: 90%;
-            max-width: 300px;
-        }
-
-        #resultDialog button {
-            margin-top: 10px;
-            background-color: orange;
-            font-size: 14px;
-        }
-
-        #resultDialog button:hover {
-            background-color: Seagreen;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-
-            form {
-                max-width: 100%;
-                padding: 15px;
-            }
-
-            button {
-                font-size: 14px;
-                padding: 8px;
-            }
-
-            #resultDialog {
-                padding: 15px;
-            }
-
-            #resultDialog button {
-                font-size: 12px;
-                padding: 8px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            form {
-                padding: 10px;
-            }
-
-            button {
-                font-size: 12px;
-                padding: 8px;
-            }
-
-            #resultDialog {
-                padding: 10px;
-                max-width: 80%;
-            }
-
-            #resultDialog button {
-                font-size: 12px;
-                padding: 6px;
-            }
-        }
-    </style>
 </head>
 <body>
+    <div class="upper_overall"> 
+        <a href="./index.html"><img class="logo" src="./Flat 400x100.png" alt="Company Logo" /></a>
 
-<form id="taxForm">
-    <div>
-        <label for="grossEarnings">Annual Gross Earnings:</label>
-        <input type="number" id="grossEarnings" required>
-        <span class="error" id="grossEarningsError"></span>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+        <!-- Using Checkbox Hack-->
+         <input type="checkbox" id="checkbox_toggle">
+         <label for="checkbox_toggle" class="hamburger">&#9776</label>
+        <!-- NAVIGATION MENU-->
+         <div class="menu">
+            <li> <a href="./index.html">Home </a></li>
+            <li class="products"> 
+
+                <a href="./products.html">Products</a>
+                <!-- DROPDOWN MENU-->
+                 <ul class="dropdown">
+                    <li></li>
+                    <li><a href="./compensation.html"> Compensation and Benefits</a></li>
+                    <li><a href="./data.html"> HR Data and Analytics </a></li>
+                    <li><a href="./infosys.html"> HR Information System</a></li>
+                    <li><a href="./learning.html"> Learning and Development </a></li>
+                    <li><a href="./performance.html"> Performance Management </a></li>
+                    <li><a href="./recruitment.html"> Recruitment </a></li>
+                    <li><a href="./attendance.html"> Time and Attendance </a></li>
+                    <li><a href="./pricing.html"> Pricing </a></li>
+                    <li><a href="./paye.html"> Free PAYE Calculator </a></li>
+                    <li><a href="./demo.html"> Request a Demo </a></li>
+                 </ul>
+            </li>
+            <li> <a href="./pricing.html" >Pricing </a></li>
+            <li> <a href="./contact.html">Contact Us </a></li>
+            <li> <a href="./about.html">About </a></li>
+            <li> <a href="https://www.hrcottage.com/blog">Blog</a></li>
+            <li> <a href="./paye.html" >Free PAYE Calculator </a></li>
+         </div> 
+     </ul>
+     <div>
+        <a href="./demo.html"> <button class="demo"> REQUEST DEMO </button></a>
+        </div>
     </div>
-    <div>
-        <label for="basicSalary">Percentage of Basic Salary:</label>
-        <input type="number" id="basicSalary" required>
-        <span class="error" id="basicSalaryError"></span>
+    <div class="heroes">
+        <h2> Legal  <slot> ~ Privacy ~</slot> <strong class="strongg"> Cookies </strong> </h2>
+        <div class="paras">
+        <p> Legals Here </p>
+       
+        <p>Overcome HR challenges with real-time insights and automated compliance.</p>
+        <p>Join HR Cottage today to enhance efficiency, drive growth, and improve employee satisfaction effortlessly.</p>
+        </div>
+        <div class="call-to-action">
+            <a href="./demo.html"><button class="hero-demo"> Request Demo</button></a>
+            <a href="./contact.html"><button class="hero-contact"> Contact Us</button></a>
+        </div>
     </div>
-    <div>
-        <label for="housingSalary">Percentage of Housing Salary:</label>
-        <input type="number" id="housingSalary" required>
-        <span class="error" id="housingSalaryError"></span>
-    </div>
-    <div>
-        <label for="transportSalary">Percentage of Transport Salary:</label>
-        <input type="number" id="transportSalary" required>
-        <span class="error" id="transportSalaryError"></span>
-    </div>
-    <div>
-        <label for="otherAllowances">Percentage of Other Allowances:</label>
-        <input type="number" id="otherAllowances" required>
-        <span class="error" id="otherAllowancesError"></span>
-    </div>
-    <div>
-        <label for="voluntaryPension">Do You Have Voluntary Pension? (Yes or No):</label>
-        <input type="text" id="voluntaryPension" required>
-        <span class="error" id="voluntaryPensionError"></span>
-    </div>
-    <div>
-        <label for="pensionAmount">Monthly Voluntary Contribution Amount:</label>
-        <input type="number" id="pensionAmount" value="0" required>
-        <span class="error" id="pensionAmountError"></span>
-    </div>
-    <div>
-        <label for="employerPension">Is your Employer Contributing 10% or 8%?:</label>
-        <input type="text" id="employerPension" required>
-        <span class="error" id="employerPensionError"></span>
-    </div>
-    <div>
-        <label for="pensionBasis">Is Your Pension Based on 100% of Earnings? (Yes or No):</label>
-        <input type="text" id="pensionBasis" required>
-        <span class="error" id="pensionBasisError"></span>
-    </div>
-    <div>
-        <label for="leaveAllowance">Annual Leave Allowance:</label>
-        <input type="number" id="leaveAllowance" required>
-        <span class="error" id="leaveAllowanceError"></span>
-    </div>
-    <div>
-        <label for="monthAllowance">13th Month Allowance:</label>
-        <input type="number" id="monthAllowance" required>
-        <span class="error" id="monthAllowanceError"></span>
-    </div>
-    <div>
-        <label for="nhf">Do You Have NHF? (Yes or No):</label>
-        <input type="text" id="nhf" required>
-        <span class="error" id="nhfError"></span>
-    </div>
-    <button type="button" onclick="calculateTax()">Calculate Tax</button>
-</form>
-
-<div id="resultDialog">
-    <p id="resultText"></p>
-    <button onclick="closeDialog()">Close</button>
-</div>
-
-<script>
-    function validateInputs() {
-    let isValid = true;
-
-    function showError(elementId, errorMessage) {
-        const errorElement = document.getElementById(elementId);
-        errorElement.innerText = errorMessage;
-        errorElement.style.display = 'block';
-        isValid = false;
-    }
-
-    function clearError(elementId) {
-        const errorElement = document.getElementById(elementId);
-        errorElement.style.display = 'none';
-        errorElement.innerText = "";
-    }
-
-    let grossEarnings = document.getElementById('grossEarnings').value;
-    let basicSalary = document.getElementById('basicSalary').value;
-    let housingSalary = document.getElementById('housingSalary').value;
-    let transportSalary = document.getElementById('transportSalary').value;
-    let otherAllowances = document.getElementById('otherAllowances').value;
-    let voluntaryPension = document.getElementById('voluntaryPension').value.toUpperCase();
-    let pensionAmount = document.getElementById('pensionAmount').value;
-    let employerPension = document.getElementById('employerPension').value;
-    let pensionBasis = document.getElementById('pensionBasis').value.toUpperCase();
-    let leaveAllowance = document.getElementById('leaveAllowance').value;
-    let monthAllowance = document.getElementById('monthAllowance').value;
-    let nhf = document.getElementById('nhf').value.toUpperCase();
-
-    // Validate Gross Earnings
-    if (grossEarnings <= 0 || isNaN(grossEarnings)) {
-        showError('grossEarningsError', 'Please enter a valid gross earning.');
-    } else {
-        clearError('grossEarningsError');
-    }
-
-    // Validate Percentage Fields (Basic Salary, Housing Salary, Transport Salary, Other Allowances)
-    if (basicSalary < 0 || basicSalary > 100 || isNaN(basicSalary)) {
-        showError('basicSalaryError', 'Please enter a valid percentage (0-100).');
-    } else {
-        clearError('basicSalaryError');
-    }
-
-    if (housingSalary < 0 || housingSalary > 100 || isNaN(housingSalary)) {
-        showError('housingSalaryError', 'Please enter a valid percentage (0-100).');
-    } else {
-        clearError('housingSalaryError');
-    }
-
-    if (transportSalary < 0 || transportSalary > 100 || isNaN(transportSalary)) {
-        showError('transportSalaryError', 'Please enter a valid percentage (0-100).');
-    } else {
-        clearError('transportSalaryError');
-    }
-
-    if (otherAllowances < 0 || otherAllowances > 100 || isNaN(otherAllowances)) {
-        showError('otherAllowancesError', 'Please enter a valid percentage (0-100).');
-    } else {
-        clearError('otherAllowancesError');
-    }
-
-    // Validate Voluntary Pension
-    if (voluntaryPension !== 'YES' && voluntaryPension !== 'NO') {
-        showError('voluntaryPensionError', 'Please enter "Yes" or "No".');
-    } else {
-        clearError('voluntaryPensionError');
-    }
-
-    // Validate Pension Amount
-    if (voluntaryPension === 'YES' && (pensionAmount <= 0 || isNaN(pensionAmount))) {
-        showError('pensionAmountError', 'Please enter a valid pension amount.');
-    } else {
-        clearError('pensionAmountError');
-    }
-
-    // Validate Employer Pension Contribution
-    if (employerPension !== '10%' && employerPension !== '8%' && employerPension !== '10' && employerPension !== '8') {
-        showError('employerPensionError', 'Please enter "10%" or "8%".');
-    } else {
-        clearError('employerPensionError');
-    }
-
-    // Validate Pension Basis
-    if (pensionBasis !== 'YES' && pensionBasis !== 'NO') {
-        showError('pensionBasisError', 'Please enter "Yes" or "No".');
-    } else {
-        clearError('pensionBasisError');
-    }
-
-    // Validate NHF
-    if (nhf !== 'YES' && nhf !== 'NO') {
-        showError('nhfError', 'Please enter "Yes" or "No".');
-    } else {
-        clearError('nhfError');
-    }
-
-    return isValid;
-}
-
+        <div class="upper-sunrise">
+            <div>
+            <img class="sunrise" src="./happy staff.png" alt="happy staff"/>
+            </div>
+        </div>
+        
     
+        <div class="before-footer">
+        <div class="b4-footer"> <h2> Products</h2>
+            <ul>
+                <li></li>
+                <li><a href="./compensation.html"> Compensation and Benefits</a></li>
+                <li><a href="./data.html"> HR Data and Analytics </a></li>
+                <li><a href="./infosys.html"> HR Information System</a></li>
+                <li><a href="./learning.html"> Learning and Development </a></li>
+                <li><a href="./performance.html"> Performance Management </a></li>
+                <li><a href="./recruitment.html"> Recruitment </a></li>
+                <li><a href="./attendance.html"> Time and Attendance </a></li>
+                <li><a href="./pricing.html"> Pricing </a></li>
+                <li><a href="./paye.html"> Free PAYE Calculator </a></li>
+                <li><a href="./demo.html"> Request a Demo </a></li>
+            </ul>
+        </div>
+        <div class="b4-footer"> <h2> Company</h2>
+            <ul>
+                <li><a href="./about.html"> About</a></li>
+                <li><a href="./about.html"> Mission </a></li>
+                <li><a href="./about.html"> Vision </a></li>
+                <li><a href="./about.html"> Strategy </a></li>
+                <li><a href="./careers.html"> Careers </a></li>
+                <li><a href="./legal.html"> Legal - Privacy - Cookies </a></li>
+                <li><a href="./about.html"> Management Team</a></li>
+            </ul>
+        </div>
+        <div class="b4-footer"> <h2> Supports</h2>
+            <ul>
+                <li><a href="./tutorials.html"> Tutorials</a></li>
+                <li>Installations</li>
+                <li><a href="./contact.html"> Contact Us</a></li>
+                <li><a href="./faq.html"> FAQ</a></li>
+                <li><a href="./demo.html"> Request a Demo</a></li>
+            </ul>
+        </div>
+        <div class="b4-footer"> <h2> Resources</h2>
+            <ul>
+                <li><a href="https://www.hrcottage.com/blog">Blog</a></li>
+                <li>News Letter</li>
+                <li>Podcasts</li>
+                <li>Seminars</li>
+                <li>Testimonies</li>
+                <li><a href="./demo.html"> Request a Demo</a></li>
+            </ul>
+        </div>
+        </div>
+        <hr class="line"/>
+        <footer> 
+            <div>
+                <a href="https://hrcottage.com">HR Cottage</a>  &copy; 2024 All Rights Reserved 
+            </div>
+            <div class="SM">
+                <a href="https://www.linkedin.com/showcase/hr-cottage/?viewAsMember=true"> <img src="./linkedin-icon.png" height="55"></a>
+                <a href="https://web.facebook.com/profile.php?id=61563759020293"> <img src="./facebook-icon.png" height="55"></a>
+                <a href=""> <img src="./white-twitterx-icon.png" height="55"></a>
+                <a href=""> <img src="./instagram-icon.png" height="55"></a>
+            </div>
 
-    function calculateTax() {
-        if (!validateInputs()) {
-            return;
-        }
+            <div class="footer-container">
+                <div class="blog-feed">
+                    <h3>Latest Blog Posts</h3>
+                    <ul id="blog-list">
+                        <!-- Blog posts will be injected here -->
+                    </ul>
+                </div>
+            </div>
+        </footer>
 
-        // Proceed with tax calculation if all inputs are valid
-        let grossEarnings = parseFloat(document.getElementById('grossEarnings').value);
-        let basicSalary = parseFloat(document.getElementById('basicSalary').value) / 100;
-        let housingSalary = parseFloat(document.getElementById('housingSalary').value) / 100;
-        let transportSalary = parseFloat(document.getElementById('transportSalary').value) / 100;
-        let otherAllowances = parseFloat(document.getElementById('otherAllowances').value) / 100;
-        let voluntaryPension = document.getElementById('voluntaryPension').value.toUpperCase();
-        let pensionAmount = parseFloat(document.getElementById('pensionAmount').value);
-        let employerPension = document.getElementById('employerPension').value;
-        let pensionBasis = document.getElementById('pensionBasis').value.toUpperCase();
-        let leaveAllowance = parseFloat(document.getElementById('leaveAllowance').value);
-        let monthAllowance = parseFloat(document.getElementById('monthAllowance').value);
-        let nhf = document.getElementById('nhf').value.toUpperCase();
-
-        let NHF = nhf === 'YES' ? (2.5 / 100) * (grossEarnings * basicSalary) : 0;
-        let totalIncome = grossEarnings + leaveAllowance + monthAllowance;
-        let pensionRate = employerPension === '10%' || employerPension === '10' ? 0.10 : 0.08;
-        let pension = pensionRate * (pensionBasis === 'YES' ? grossEarnings * (basicSalary + housingSalary + transportSalary + otherAllowances) : basicSalary * grossEarnings + housingSalary * grossEarnings + transportSalary * grossEarnings + otherAllowances * grossEarnings) + (voluntaryPension === 'YES' ? pensionAmount * 12 : 0);
-
-        let baseAllowance = 200000;
-        let allowedPercentage = 0.20;
-        let TCRA = baseAllowance + (allowedPercentage * (totalIncome - pension - NHF));
-        let taxableIncome = totalIncome - TCRA - pension - NHF;
-
-        let tax;
-        if (taxableIncome <= 300000) {
-            tax = 0.07 * taxableIncome;
-        } else if (taxableIncome <= 600000) {
-            tax = 21000 + (taxableIncome - 300000) * 0.11;
-        } else if (taxableIncome <= 1100000) {
-            tax = 54000 + (taxableIncome - 600000) * 0.15;
-        } else if (taxableIncome <= 1600000) {
-            tax = 129000 + (taxableIncome - 1100000) * 0.19;
-        } else if (taxableIncome <= 3200000) {
-            tax = 224000 + (taxableIncome - 1600000) * 0.21;
-        } else {
-            tax = 560000 + (taxableIncome - 3200000) * 0.24;
-        }
-
-        let monthlyTax = tax / 12;
-
-        document.getElementById('resultText').innerText = "The calculated monthly tax is: ₦" + monthlyTax.toFixed(2);
-        document.getElementById('resultDialog').style.display = 'block';
-    }
-
-    function closeDialog() {
-        document.getElementById('resultDialog').style.display = 'none';
-    }
+<!-- Default Statcounter code for HR Cottage
+https://www.hrcottage.com -->
+<script type="text/javascript">
+var sc_project=13019953; 
+var sc_invisible=1; 
+var sc_security="5e778fb5"; 
 </script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics
+Made Easy - Statcounter" href="https://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/13019953/0/5e778fb5/1/"
+alt="Web Analytics Made Easy - Statcounter"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
 
+<!-- Blog feed-->
+<script>
+    async function loadBlogPosts() {
+        try {
+            const response = await fetch('https://www.hrcottage.com/blog/posts.json');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const blogPosts = await response.json();
+
+            const blogList = document.getElementById('blog-list');
+            blogPosts.forEach(post => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<a href="${post.url}">${post.title}</a> <span class="date">${new Date(post.date).toLocaleDateString()}</span>`;
+                blogList.appendChild(listItem);
+            });
+        } catch (error) {
+            console.error('Error fetching blog posts:', error);
+        }
+    }
+
+    // Load blog posts when the page loads
+    window.onload = loadBlogPosts;
+</script>
 </body>
 </html>
