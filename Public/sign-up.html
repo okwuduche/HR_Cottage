@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact HR Consultant in Nigeria</title>
+    <title>SignIn To Your HR Cottage Account</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="./favicon-32x32.png">
 </head>
@@ -79,8 +79,6 @@
     <div class="contact-form">
         <form>
             <fieldset>
-                <legend>Contact HR Cottage</legend>
-                <h3>Contact Information</h3>
                 <section>
                     <label for="f-name">First Name</label>
                     <input type="text" id="f-name" placeholder="Enter your First Name" required name="fi-name">
@@ -101,25 +99,19 @@
                     <label for="coy-name">Company Name</label>
                     <input type="text" id="coy-name" placeholder="Enter Company Name" required name="co-name">
                 </section>
+                <legend>Sign=Up For Your HR Cottage</legend>
                 <section>
-                    <label for="country">Select Your Country</label>
-                    <select name="country" id="country">
-                        <option value="" selected disabled>Countries</option>
-                        <option value="nigeria">Nigeria</option>
-                        <option value="ghana">Ghana</option>
-                        <option value="kenya">Kenya</option>
-                        <option value="sa">South Africa</option>
-                    </select>
+                    <label for="u-name">Username</label>
+                    <input type="text" id="f-name" placeholder="Type a Username of Your Choice" required name="fi-name">
                 </section>
-                <button type="submit">Submit</button>
+                <section>
+                    <label for="p-word">Password</label>
+                    <input type="text" id="p-word" placeholder="Choose a Password with a minimum of 8 characters comprising of alphanumeric and Symbol" required name="p-word">
+                </section>
+                
+                <button type="submit">Create Account</button>
             </fieldset>
         </form>
-    </div>
-    <div  style="text-align: center; font-size: larger; background-color: seagreen; padding: 5px; margin: 5px; max-width: 100%;">
-        <p style="color: white">Alternatively, you can send us a direct email through:  </p>
-        <p style="color: white">info@hrcottage.com</p>
-        <p style="color: white">Or</p>
-        <p style="color: white">Ring us on +2348110458340</p>
     </div>
     
     <!--Contact Form begin-->
@@ -198,6 +190,144 @@ https://www.hrcottage.com -->
     alt="Web Analytics Made Easy - Statcounter"
     referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
     <!-- End of Statcounter Code -->
+
+    <script>
+    // Wait for the DOM to fully load
+document.addEventListener('DOMContentLoaded', () => {
+    // Select the signup form
+    const signupForm = document.getElementById('signup-form');
+
+    // Add a submit event listener to the form
+    signupForm.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Clear any previous error messages
+        clearErrors();
+
+        // Collect form data
+        const formData = new FormData(signupForm);
+        const data = {
+            firstName: formData.get('firstName').trim(),
+            lastName: formData.get('lastName').trim(),
+            email: formData.get('email').trim(),
+            phoneNumber: formData.get('phoneNumber').trim(),
+            companyName: formData.get('companyName').trim(),
+            username: formData.get('username').trim(),
+            password: formData.get('password').trim(),
+        };
+
+        // Client-side validation
+        const validationErrors = validateFormData(data);
+        if (validationErrors.length > 0) {
+            displayErrors(validationErrors);
+            return;
+        }
+
+        try {
+            // Send the data to the server for authentication/registration
+            const response = await fetch('/api/signup', { // Replace with your actual endpoint
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            // Check if the response is OK (status code in the range 200-299)
+            if (!response.ok) {
+                // Extract error message from the response
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'An error occurred during signup.');
+            }
+
+            // If signup is successful, you can redirect the user or display a success message
+            const successData = await response.json();
+            alert('Account created successfully!');
+            // Optionally, redirect to a login page
+            // window.location.href = '/login';
+            signupForm.reset(); // Reset the form fields
+        } catch (error) {
+            // Handle errors (network issues, server errors, etc.)
+            displayErrors([error.message]);
+            console.error('Signup error:', error);
+        }
+    });
+
+    // Function to validate form data
+    function validateFormData(data) {
+        const errors = [];
+
+        // Validate first name
+        if (data.firstName.length < 2) {
+            errors.push('First Name must be at least 2 characters long.');
+        }
+
+        // Validate last name
+        if (data.lastName.length < 2) {
+            errors.push('Last Name must be at least 2 characters long.');
+        }
+
+        // Validate email using a regex pattern
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(data.email)) {
+            errors.push('Please enter a valid email address.');
+        }
+
+        // Validate phone number (basic validation for international format)
+        const phonePattern = /^\+?[1-9]\d{1,14}$/;
+        if (!phonePattern.test(data.phoneNumber)) {
+            errors.push('Please enter a valid phone number in international format.');
+        }
+
+        // Validate company name
+        if (data.companyName.length < 2) {
+            errors.push('Company Name must be at least 2 characters long.');
+        }
+
+        // Validate username
+        if (data.username.length < 4) {
+            errors.push('Username must be at least 4 characters long.');
+        }
+
+        // Validate password (minimum 8 characters, includes letters, numbers, and symbols)
+        const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+        if (!passwordPattern.test(data.password)) {
+            errors.push('Password must be at least 8 characters long and include letters, numbers, and symbols.');
+        }
+
+        return errors;
+    }
+
+    // Function to display errors to the user
+    function displayErrors(errors) {
+        // Create or select an element to display error messages
+        let errorContainer = document.getElementById('error-messages');
+        if (!errorContainer) {
+            errorContainer = document.createElement('div');
+            errorContainer.id = 'error-messages';
+            errorContainer.style.color = 'red';
+            errorContainer.style.marginBottom = '1em';
+            signupForm.prepend(errorContainer);
+        }
+
+        // Populate the error container with messages
+        errorContainer.innerHTML = '';
+        errors.forEach((error) => {
+            const errorPara = document.createElement('p');
+            errorPara.textContent = error;
+            errorContainer.appendChild(errorPara);
+        });
+    }
+
+    // Function to clear previous error messages
+    function clearErrors() {
+        const errorContainer = document.getElementById('error-messages');
+        if (errorContainer) {
+            errorContainer.innerHTML = '';
+        }
+    }
+});
+</script>
 </body>
 
 </html>
