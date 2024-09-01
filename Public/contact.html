@@ -77,8 +77,10 @@
 </div>
     <!--Contact Form begin-->
     <div class="contact-form">
-        <form>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            
             <fieldset>
+                <input type="hidden" name="access_key" value="b23d7ca6-344b-4eda-9010-6b051d595a36">
                 <legend>Contact HR Cottage</legend>
                 <h3>Contact Information</h3>
                 <section>
@@ -100,6 +102,10 @@
                 <section>
                     <label for="coy-name">Company Name</label>
                     <input type="text" id="coy-name" placeholder="Enter Company Name" required name="co-name">
+                </section>
+                <section>
+                    <label for="message">Leave a message</label>
+                    <input style="height: 150px;" type="textarea" id="message" placeholder="Describe the nature of your enquiry" required name="message">
                 </section>
                 <section>
                     <label for="country">Select Your Country</label>
@@ -166,7 +172,6 @@
         
         </div>
 
-        </div>
         <hr class="line"/>
             <footer> 
                 <div>
@@ -179,7 +184,6 @@
                     <a href="https://www.instagram.com/hrcottagetech/"> <img src="./instagram-icon.png" height="55"></a>
                 </div>
             </footer>
-        </footer>
 
     <!-- Default Statcounter code for HR Cottage
 https://www.hrcottage.com -->

@@ -3,161 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Nigerian PAYE Calculator</title>
+    <title>Contact HR Consultant in Nigeria</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="./favicon-32x32.png">
-    <link
-    rel="stylesheet"
-    href="./style.css"
-    />
-    <style>
-        form {
-            width: 95%;
-            max-width: 100%;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px seagreen;
-            box-sizing: border-box;
-            margin-top: 20px;
-            align-items: center;
-            justify-content: center;
-            margin: auto;
-            background-color: #f9f9f9;
-        }
-    
-        form div {
-            margin-bottom: 15px;
-        }
-    
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-    
-        input[type="text"], input[type="number"], select {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    
-        .error {
-            color: red;
-            font-size: 12px;
-            display: none;
-        }
-    
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: Seagreen;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-    
-        button:hover {
-            background-color: rgb(236, 211, 191);
-        }
-    
-        #resultDialog {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            width: 90%;
-            max-width: 300px;
-        }
-    
-        #resultDialog button {
-            margin-top: 10px;
-            background-color: orange;
-            font-size: 14px;
-        }
-    
-        #resultDialog button:hover {
-            background-color: Seagreen;
-        }
-    
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-    
-            form {
-                max-width: 100%;
-                padding: 15px;
-            }
-    
-            button {
-                font-size: 14px;
-                padding: 8px;
-            }
-    
-            #resultDialog {
-                padding: 15px;
-            }
-    
-            #resultDialog button {
-                font-size: 12px;
-                padding: 8px;
-            }
-        }
-    
-        @media (max-width: 480px) {
-            form {
-                padding: 10px;
-            }
-    
-            button {
-                font-size: 12px;
-                padding: 8px;
-            }
-    
-            #resultDialog {
-                padding: 10px;
-                max-width: 80%;
-            }
-    
-            #resultDialog button {
-                font-size: 12px;
-                padding: 6px;
-            }
-        }
-    
-        .tax-form-legend {
-            font-size: 20px;
-            font-weight: bold;
-            color: seagreen;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-    
-        .tax-form-fieldset {
-            border: 1px solid orange;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 15px;
-        }
-    
-        .tax-calc-button {
-            width: 15%;
-            justify-content: center;
-            align-items: center;
-            max-width: 80%;
-            margin-left: 40%;
-        }
-    </style>
-    
 </head>
 <body>
+    
     <div class="upper_overall">
  
         <div><a href="./index.html"><img class="logo" src="./Flat 400x100.png" alt="Company Logo" /></a></div>
@@ -200,357 +51,137 @@
         </div>
         </div>
         
-        <div class="heroes">
-            <h2> Free PAYE Calculator From <slot> - </slot><strong class="strongg"> HR <slot class="black"> ~ </slot> </strong> <strong class="green"> Cottage </strong>  </h2>
-            <div class="paras">
-            <p> We know that a lot of people have for long wished that there is a FREE tool that genuinely help with Nigeria's PAYE calculation. </p>
-            <p>Worry not as we have provided that long awaited tool to help you either calculate PAYE as an HR professional or confirm the PAYE figure on your payslip.</p>
-            
-            </div>
-            
-            <div class="upper-sunrise">
-                <div>
-                    <img class="sunrise" src="./happy staff.png" alt="happy staff"/>
-                </div>
-            </div>
-            
-        </div>
-        <div class="heroes">
-            
-            <div class="paras">
-            <p>Simply fill in your Salary details in the HR Cottage's Tax Calculator Form below.</p>
-            <p>&#x1f447 </p>
-            
-            </div>
-            
-            
-            
-        </div>
-
-
-        <form id="taxForm">
-            <fieldset class="tax-form-fieldset">
-                <legend title="Visit Our Legal-Privacy-Cookies Page Through the Footer Section for More Information on How Your Data is Handled" class="tax-form-legend">HR Cottage Free Tax Calculator Form - None of Your Information Is Saved</legend>
-                <div>
-                    <label for="grossEarnings">Annual Gross Earnings:</label>
-                    <input type="number" placeholder="Enter Your Yearly Gross Earnings e.g 10000000" id="grossEarnings" required>
-                    <span class="error" id="grossEarningsError"></span>
-                </div>
-                <div>
-                    <label for="basicSalary">Percentage of Basic Salary:</label>
-                    <input title="Divide your Annual Basic Salary by your Annual Gross Salary. e.g 500000/2500000 = 20% or 0.20" type="number" placeholder="Enter Percentage of Your Basic Salary e.g 50 - Do not add %" id="basicSalary" required oninput="validatePercentage(this)">
-                    <span class="error" id="basicSalaryError"></span>
-                </div>
-                <div>
-                    <label for="housingSalary">Percentage of Housing Salary:</label>
-                    <input title="Divide your Annual Housing Allowance by your Annual Gross Salary. e.g 500000/2500000 = 20% or 0.20" type="number" placeholder="Enter Percentage of Your Housing Allowance e.g 20 - Do not add %" id="housingSalary" required oninput="validatePercentage(this)">
-                    <span class="error" id="housingSalaryError"></span>
-                </div>
-                <div>
-                    <label for="transportSalary">Percentage of Transport Salary:</label>
-                    <input title="Divide your Annual Transport Allowance by your Annual Gross Salary. e.g 500000/2500000 = 20% or 0.20" type="number" placeholder="Enter Percentage of Your Transport Allowance e.g 20 - Do not add %" id="transportSalary" required oninput="validatePercentage(this)">
-                    <span class="error" id="transportSalaryError"></span>
-                </div>
-                <div>
-                    <label for="otherAllowances">Percentage of Other Allowances:</label>
-                    <input title="Divide your Annual Other Allowances by your Annual Gross Salary. e.g 500000/2500000 = 20% or 0.20" type="number" placeholder="Enter Percentage of Your Other Allowances e.g 50 - Do not add %" id="otherAllowances" required oninput="validatePercentage(this)">
-                    <span class="error" id="otherAllowancesError"></span>
-                </div>
-                <div>
-                    <label for="voluntaryPension">Do You Have Voluntary Pension? 
-                        <select title="This is any additional Pension that a staff is contributing. This also includes qualified Contribution Schemes" id="voluntaryPension" required>
-                            <option value="">Select Yes or No</option>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </label>
-                    <span class="error" id="voluntaryPensionError"></span>
-                </div>
-                <div>
-                    <label for="pensionAmount">Monthly Voluntary Contribution Amount:</label>
-                    <input type="number" id="pensionAmount" value="0" required>
-                    <span class="error" id="pensionAmountError"></span>
-                </div>
-                <div>
-                    <label for="employerPension">Is your Employer Contributing 10% or 8%?:</label>
-                    <select id="employerPension" required>
-                        <option value="">Select Percentage</option>
-                        <option value="10">10%</option>
-                        <option value="8">8%</option>
-                    </select>
-                    <span class="error" id="employerPensionError"></span>
-                </div>
-                <div>
-                    <label for="pensionBasis">Is Your Pension Based on 100% of Earnings? 
-                        <select id="pensionBasis" required>
-                            <option value="">Select Yes or No</option>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </label>
-                    <span class="error" id="pensionBasisError"></span>
-                </div>
-                <div>
-                    <label for="leaveAllowance">Annual Leave Allowance:</label>
-                    <input type="number" placeholder="Enter Your Yearly Leave Allowance, Enter 0 If Not Applicable" id="leaveAllowance" required>
-                    <span class="error" id="leaveAllowanceError"></span>
-                </div>
-                <div>
-                    <label for="monthAllowance">13th Month Allowance:</label>
-                    <input type="number" placeholder="Enter Your 13TH Month or Monetary Equivalent of All Benefits In Kind, Enter 0 If Not Applicable" id="monthAllowance" required>
-                    <span class="error" id="monthAllowanceError"></span>
-                </div>
-                <div>
-                    <label for="nhf">Do You Have NHF? 
-                        <select title="National Housing Fund at the rate of 2.5%. It is now optional for Private Sector. Hence, the reason we give the option of selecting Yes or No" id="nhf" required>
-                            <option value="">Select Yes or No</option>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </label>
-                    <span class="error" id="nhfError"></span>
-                </div>
-            </fieldset>
-        
-            <div class="tax-calc-button">
-                <button type="button" onclick="calculateTax()">Calculate Tax</button>
-            </div>
-        
-            <div id="resultDialog">
-                <p id="resultText"></p>
-                <button onclick="closeDialog()">Close</button>
-            </div>
-        </form>
 
 
 
 <div class="heroes">
+    <h2> Contact <slot> - </slot><strong class="strongg"> HR <slot class="black"> ~ </slot> </strong> <strong class="green"> Cottage </strong>  </h2>
     <div class="paras">
-        <p>Overcome HR challenges with real-time insights and automated compliance.</p>
-    <p>Join HR Cottage today to enhance efficiency, drive growth, and improve employee satisfaction effortlessly.</p>
-    </div>
-    </div>
+    <p>
+        Thank you for checking us out. 
+    </p>
+    <p>
+        Now is the time to contact us.
+    </p>     
     
-    
+    </div>
     <div class="call-to-action">
         <a href="./demo.html"><button class="hero-demo"> Request Demo</button></a>
         <a href="./contact.html"><button class="hero-contact"> Contact Us</button></a>
     </div>
-
-    <script>
-        function validateInputs() {
-            let isValid = true;
-    
-            function showError(elementId, errorMessage) {
-                const errorElement = document.getElementById(elementId);
-                errorElement.innerText = errorMessage;
-                errorElement.style.display = 'block';
-                isValid = false;
-            }
-    
-            function clearError(elementId) {
-                const errorElement = document.getElementById(elementId);
-                errorElement.style.display = 'none';
-                errorElement.innerText = "";
-            }
-    
-            let grossEarnings = document.getElementById('grossEarnings').value;
-            let basicSalary = document.getElementById('basicSalary').value;
-            let housingSalary = document.getElementById('housingSalary').value;
-            let transportSalary = document.getElementById('transportSalary').value;
-            let otherAllowances = document.getElementById('otherAllowances').value;
-            let voluntaryPension = document.getElementById('voluntaryPension').value.toUpperCase();
-            let pensionAmount = document.getElementById('pensionAmount').value;
-            let employerPension = document.getElementById('employerPension').value;
-            let pensionBasis = document.getElementById('pensionBasis').value.toUpperCase();
-            let nhf = document.getElementById('nhf').value.toUpperCase();
-    
-            // Validate Gross Earnings
-            if (grossEarnings <= 0 || isNaN(grossEarnings)) {
-                showError('grossEarningsError', 'Please enter a valid gross earning.');
-            } else {
-                clearError('grossEarningsError');
-            }
-    
-            // Validate Percentage Fields (Basic Salary, Housing Salary, Transport Salary, Other Allowances)
-            if (basicSalary < 0 || basicSalary > 100 || isNaN(basicSalary)) {
-                showError('basicSalaryError', 'Please enter a valid percentage (0-100).');
-            } else {
-                clearError('basicSalaryError');
-            }
-    
-            if (housingSalary < 0 || housingSalary > 100 || isNaN(housingSalary)) {
-                showError('housingSalaryError', 'Please enter a valid percentage (0-100).');
-            } else {
-                clearError('housingSalaryError');
-            }
-    
-            if (transportSalary < 0 || transportSalary > 100 || isNaN(transportSalary)) {
-                showError('transportSalaryError', 'Please enter a valid percentage (0-100).');
-            } else {
-                clearError('transportSalaryError');
-            }
-    
-            if (otherAllowances < 0 || otherAllowances > 100 || isNaN(otherAllowances)) {
-                showError('otherAllowancesError', 'Please enter a valid percentage (0-100).');
-            } else {
-                clearError('otherAllowancesError');
-            }
-    
-            // Validate Voluntary Pension
-            if (voluntaryPension !== 'YES' && voluntaryPension !== 'NO') {
-                showError('voluntaryPensionError', 'Please enter "Yes" or "No".');
-            } else {
-                clearError('voluntaryPensionError');
-            }
-    
-            // Validate Pension Amount
-            if (voluntaryPension === 'YES' && (pensionAmount <= 0 || isNaN(pensionAmount))) {
-                showError('pensionAmountError', 'Please enter a valid pension amount.');
-            } else {
-                clearError('pensionAmountError');
-            }
-    
-            // Validate Employer Pension Contribution
-            if (employerPension !== '10%' && employerPension !== '8%' && employerPension !== '10' && employerPension !== '8') {
-                showError('employerPensionError', 'Please enter "10%" or "8%".');
-            } else {
-                clearError('employerPensionError');
-            }
-    
-            // Validate Pension Basis
-            if (pensionBasis !== 'YES' && pensionBasis !== 'NO') {
-                showError('pensionBasisError', 'Please enter "Yes" or "No".');
-            } else {
-                clearError('pensionBasisError');
-            }
-    
-            // Validate NHF
-            if (nhf !== 'YES' && nhf !== 'NO') {
-                showError('nhfError', 'Please enter "Yes" or "No".');
-            } else {
-                clearError('nhfError');
-            }
-    
-            return isValid;
-        }
-    
-        function calculateTax() {
-            if (!validateInputs()) {
-                return;
-            }
-    
-            // Proceed with tax calculation if all inputs are valid
-            let grossEarnings = parseFloat(document.getElementById('grossEarnings').value);
-            let basicSalary = parseFloat(document.getElementById('basicSalary').value) / 100;
-            let housingSalary = parseFloat(document.getElementById('housingSalary').value) / 100;
-            let transportSalary = parseFloat(document.getElementById('transportSalary').value) / 100;
-            let otherAllowances = parseFloat(document.getElementById('otherAllowances').value) / 100;
-            let voluntaryPension = document.getElementById('voluntaryPension').value.toUpperCase();
-            let pensionAmount = parseFloat(document.getElementById('pensionAmount').value);
-            let employerPension = document.getElementById('employerPension').value;
-            let pensionBasis = document.getElementById('pensionBasis').value.toUpperCase();
-            let leaveAllowance = parseFloat(document.getElementById('leaveAllowance').value);
-            let monthAllowance = parseFloat(document.getElementById('monthAllowance').value);
-            let nhf = document.getElementById('nhf').value.toUpperCase();
-    
-            let NHF = nhf === 'YES' ? (2.5 / 100) * (grossEarnings * basicSalary) : 0;
-            let totalIncome = grossEarnings + leaveAllowance + monthAllowance;
-            let pensionRate = employerPension === '10%' || employerPension === '10' ? 0.10 : 0.08;
-            let pension = pensionRate * (pensionBasis === 'YES' ? grossEarnings * (basicSalary + housingSalary + transportSalary + otherAllowances) : basicSalary * grossEarnings + housingSalary * grossEarnings + transportSalary * grossEarnings + otherAllowances * grossEarnings) + (voluntaryPension === 'YES' ? pensionAmount * 12 : 0);
-    
-            let baseAllowance = 200000;
-            let allowedPercentage = 0.20;
-            let TCRA = baseAllowance + (allowedPercentage * (totalIncome - pension - NHF));
-            let taxableIncome = totalIncome - TCRA - pension - NHF;
-    
-            let tax;
-            if (taxableIncome <= 300000) {
-                tax = 0.07 * taxableIncome;
-            } else if (taxableIncome <= 600000) {
-                tax = 21000 + (taxableIncome - 300000) * 0.11;
-            } else if (taxableIncome <= 1100000) {
-                tax = 54000 + (taxableIncome - 600000) * 0.15;
-            } else if (taxableIncome <= 1600000) {
-                tax = 129000 + (taxableIncome - 1100000) * 0.19;
-            } else if (taxableIncome <= 3200000) {
-                tax = 224000 + (taxableIncome - 1600000) * 0.21;
-            } else {
-                tax = 560000 + (taxableIncome - 3200000) * 0.24;
-            }
-    
-            let monthlyTax = tax / 12;
-    
-            document.getElementById('resultText').innerText = "The Calculated monthly tax is: ₦" + monthlyTax.toFixed(2) + " Your annual tax is: ₦" + tax.toFixed(2) + ". For Custom Built Solutions and more information, please contact us using the contact form on this webpage or by sending us an email to info@hrcottage.com.";
-            document.getElementById('resultDialog').style.display = 'block';
-        }
-    
-        function closeDialog() {
-            document.getElementById('resultDialog').style.display = 'none';
-        }
-    </script>
-
-<div class="before-footer">
-    <div class="b4-footer"> <h2> Products</h2>
-        <ul>
-            <li></li>
-            <li><a href="./compensation.html"> Compensation and Benefits</a></li>
-            <li><a href="./data.html"> HR Data and Analytics </a></li>
-            <li><a href="./infosys.html"> HR Information System</a></li>
-            <li><a href="./learning.html"> Learning and Development </a></li>
-            <li><a href="./performance.html"> Performance Management </a></li>
-            <li><a href="./recruitment.html"> Recruitment </a></li>
-            <li><a href="./attendance.html"> Time and Attendance </a></li>
-            <li><a href="./pricing.html"> Pricing </a></li>
-            <li><a href="./paye.html"> Free PAYE Calculator </a></li>
-            <li><a href="./demo.html"> Request a Demo </a></li>
-        </ul>
-    </div>
-    <div class="b4-footer"> <h2> Company</h2>
-        <ul>
-            <li><a href="./about.html"> About</a></li>
-            <li><a href="./about.html"> Mission </a></li>
-            <li><a href="./about.html"> Vision </a></li>
-            <li><a href="./about.html"> Strategy </a></li>
-            <li><a href="./careers.html"> Careers </a></li>
-            <li><a href="./legal.html"> Legal - Privacy - Cookies </a></li>
-            <li><a href="./about.html"> Management Team</a></li>
-        </ul>
-    </div>
-    <div class="b4-footer"> <h2> Supports</h2>
-        <ul>
-            <li><a href="./tutorials.html"> Tutorials</a></li>
-            <li>Installations</li>
-            <li><a href="./contact.html"> Contact Us</a></li>
-            <li><a href="./faq.html"> FAQ</a></li>
-            <li><a href="./demo.html"> Request a Demo</a></li>
-        </ul>
-    </div>
-    <div class="b4-footer"> <h2> Resources</h2>
-        <ul>
-            <li><a href="https://www.hrcottage.com/blog">Blog</a></li>
-            <li>News Letter</li>
-            <li>Podcasts</li>
-            <li>Seminars</li>
-            <li>Testimonies</li>
-            <li><a href="./demo.html"> Request a Demo</a></li>
-        </ul>
+</div>
+<div class="upper-sunrise">
+    <div>
+        <img class="sunrise" src="./happy staff.png" alt="happy staff"/>
     </div>
 </div>
-<hr class="line"/>
-    <footer> 
-        <div>
-            <a href="https://hrcottage.com">HR Cottage</a>  &copy; 2024 All Rights Reserved 
-        </div>
-        <div class="SM">
-            <a href="https://www.linkedin.com/showcase/hr-cottage/?viewAsMember=true"> <img src="./linkedin-icon.png" height="55"></a>
-            <a href="https://web.facebook.com/profile.php?id=61563759020293"> <img src="./facebook-icon.png" height="55"></a>
-            <a href=""> <img src="./white-twitterx-icon.png" height="55"></a>
-            <a href=""> <img src="./instagram-icon.png" height="55"></a>
-        </div>
-    </footer>
+    <!--Contact Form begin-->
+    <div class="contact-form">
+        <form onsubmit="sendEmail(); reset(); return false">
+            <fieldset>
+                <legend>Contact HR Cottage</legend>
+                <h3>Contact Information</h3>
+                <section>
+                    <label for="f-name">First Name</label>
+                    <input type="text" id="f-name" placeholder="Enter your First Name" required name="fi-name">
+                </section>
+                <section>
+                    <label for="l-name">Last Name</label>
+                    <input type="text" id="l-name" placeholder="Enter your Last Name" required name="la-name">
+                </section>
+                <section>
+                    <label for="e-mail">E-mail Address</label>
+                    <input type="email" id="e-mail" placeholder="abc@hrcottage.com" required name="em-name">
+                </section>
+                <section>
+                    <label for="phone-number">phone-number</label>
+                    <input type="phone-number" id="phone-number" placeholder="+2349011111111" required name="em-name">
+                </section>
+                <section>
+                    <label for="coy-name">Company Name</label>
+                    <input type="text" id="coy-name" placeholder="Enter Company Name" required name="co-name">
+                </section>
+                <section>
+                    <label for="country">Select Your Country</label>
+                    <select name="country" id="country">
+                        <option value="" selected disabled>Countries</option>
+                        <option value="nigeria">Nigeria</option>
+                        <option value="ghana">Ghana</option>
+                        <option value="kenya">Kenya</option>
+                        <option value="sa">South Africa</option>
+                    </select>
+                </section>
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+    <div  style="text-align: center; font-size: larger; background-color: seagreen; padding: 5px; margin: 5px; max-width: 100%;">
+        <p style="color: white">Alternatively, you can send us a direct email through:  </p>
+        <p style="color: white">info@hrcottage.com</p>
+        <p style="color: white">Or</p>
+        <p style="color: white">Ring us on +2348110458340</p>
+    </div>
+    
+    <!--Contact Form begin-->
 
-<!-- Default Statcounter code for HR Cottage
+    <div class="before-footer">
+        <div class="b4-footer"> <h2> Products</h2>
+            <ul>
+                <li></li>
+                <li><a href="./compensation.html"> Compensation and Benefits</a></li>
+                <li><a href="./data.html"> HR Data and Analytics </a></li>
+                <li><a href="./infosys.html"> HR Information System</a></li>
+                <li><a href="./learning.html"> Learning and Development </a></li>
+                <li><a href="./performance.html"> Performance Management </a></li>
+                <li><a href="./recruitment.html"> Recruitment </a></li>
+                <li><a href="./attendance.html"> Time and Attendance </a></li>
+                
+                
+                
+            </ul>
+        </div>
+        <div class="b4-footer"> <h2> Company</h2>
+            <ul>
+                <li><a href="./about.html"> About</a></li>
+                <li><a href="./about.html"> Mission </a></li>
+                <li><a href="./about.html"> Vision </a></li>
+                <li><a href="./about.html"> Strategy </a></li>
+                <li><a href="./careers.html"> Careers </a></li>
+                <li><a href="./about.html"> Management Team</a></li>
+                <li><a href="./pricing.html"> Pricing </a></li> 
+                
+            </ul>
+        </div>
+        <div class="b4-footer"> <h2> Supports And Resources</h2>
+            <ul>
+                <li><a href="./paye.html"> Free PAYE Calculator </a></li>
+                <li><a href="./demo.html"> Request a Demo </a></li>
+                <li><a href="https://www.hrcottage.com/blog">Blog</a></li>
+                <li><a href="./legal.html"> Legal - Privacy - Cookies </a></li>
+                <li><a href="./tutorials.html"> Tutorials</a></li>
+                <li><a href="./contact.html"> Contact Us</a></li>
+                <li><a href="./faq.html"> FAQ</a></li>
+            </ul>
+        </div>
+        
+        </div>
+
+        </div>
+        <hr class="line"/>
+            <footer> 
+                <div>
+                    <a href="https://hrcottage.com">HR Cottage</a>  &copy; 2024 All Rights Reserved 
+                </div>
+                <div class="SM">
+                    <a href="https://www.linkedin.com/showcase/hr-cottage/?viewAsMember=true"> <img src="./linkedin-icon.png" height="55"></a>
+                    <a href="https://web.facebook.com/profile.php?id=61563759020293"> <img src="./facebook-icon.png" height="55"></a>
+                    <a href="https://x.com/HrCottageTech"> <img src="./white-twitterx-icon.png" height="55"></a>
+                    <a href="https://www.instagram.com/hrcottagetech/"> <img src="./instagram-icon.png" height="55"></a>
+                </div>
+            </footer>
+        </footer>
+
+    <!-- Default Statcounter code for HR Cottage
 https://www.hrcottage.com -->
 <script type="text/javascript">
     var sc_project=13019953; 
@@ -567,5 +198,25 @@ https://www.hrcottage.com -->
     alt="Web Analytics Made Easy - Statcounter"
     referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
     <!-- End of Statcounter Code -->
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+        function sendEmail() {
+            Email.send({
+    Host : "smtp.gmail.com",
+    Username : "hrcottagetech@gmail.com",
+    Password : "Easterhit11",
+    To : 'chilearsap@gmail.com',
+    From : document.getElementById("e-mail").value,
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+        }
+        
+    </script>
 </body>
+
 </html>

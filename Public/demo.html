@@ -76,9 +76,11 @@
        
     <!--Placeholder begin-->
     <div class="contact-form">
-        <form>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            
             <fieldset>
-                <legend>Request for a Demo</legend>
+                <input type="hidden" name="access_key" value="b23d7ca6-344b-4eda-9010-6b051d595a36">
+                <legend>Contact HR Cottage</legend>
                 <h3>Contact Information</h3>
                 <section>
                     <label for="f-name">First Name</label>
@@ -101,6 +103,10 @@
                     <input type="text" id="coy-name" placeholder="Enter Company Name" required name="co-name">
                 </section>
                 <section>
+                    <label for="message">Leave a message</label>
+                    <input style="height: 150px;" type="textarea" id="message" placeholder="Describe the nature of your enquiry" required name="message">
+                </section>
+                <section>
                     <label for="country">Select Your Country</label>
                     <select name="country" id="country">
                         <option value="" selected disabled>Countries</option>
@@ -114,7 +120,6 @@
             </fieldset>
         </form>
     </div>
-
     <div  style="text-align: center; font-size: larger; background-color: seagreen; padding: 5px; margin: 5px; max-width: 100%;">
         <p style="color: white">Alternatively, you can send us a direct email through:  </p>
         <p style="color: white">info@hrcottage.com</p>
