@@ -3,29 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact HR Consultant in Nigeria</title>
-    <link rel="stylesheet" href="style.css">
+    <title>HR Cottage – Simple, Smart HR for African Businesses</title>
+    <link
+      rel="stylesheet"
+      href="./style.css"
+    />
     <link rel="icon" type="image/png" href="./favicon-32x32.png">
+
+    <!-- Minimal extra styles for hero tweaks, brand highlight & blog slider -->
+    <style>
+      /* Slight hero tightening, especially on mobile */
+      .heroes h2 {
+        margin-bottom: 10px;
+      }
+      .heroes .hero-tagline {
+        font-weight: bold;
+        color: seagreen;
+        margin-bottom: 10px;
+      }
+      @media (max-width: 768px) {
+        .heroes .paras p {
+          margin: 4px 10px;
+          padding: 2px 10px;
+        }
+      }
+
+      /* Brand highlight: "At HR Cottage" */
+      .brand-highlight {
+        font-weight: bold;
+      }
+      .brand-hr {
+        color: #f59a12; /* orange */
+      }
+      .brand-cottage {
+        color: seagreen;
+      }
+
+      /* Blog slider */
+      .blog-section-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0 20px;
+      }
+
+      .blog-slider-wrapper {
+        width: 95%;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .blog-slider {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        min-height: 80px;
+      }
+
+      .blog-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10px;
+      }
+
+      .blog-slide a {
+        font-weight: bold;
+        color: seagreen;
+      }
+
+      .blog-slide .date {
+        font-size: 0.8rem;
+        color: rgb(120, 116, 116);
+        white-space: nowrap;
+      }
+
+      .blog-slide.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+        .blog-slide {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
 </head>
 <body>
     
-    <div class="upper_overall">
- 
-        <div><a href="./index.html"><img class="logo" src="./Flat 400x100.png" alt="Company Logo" /></a></div>
-    
+    <!-- TOP NAVBAR -->
+    <div class="upper_overall"> 
+        <a href="./index.html">
+            <img class="logo" src="./Flat 400x100.png" alt="Company Logo" />
+        </a>
+
         <!-- NAVIGATION MENU -->
         <ul class="nav-links">
             <!-- Using Checkbox Hack-->
-             <input type="checkbox" id="checkbox_toggle">
-             <label for="checkbox_toggle" class="hamburger">&#9776</label>
+            <input type="checkbox" id="checkbox_toggle">
+            <label for="checkbox_toggle" class="hamburger">&#9776</label>
             <!-- NAVIGATION MENU-->
-             <div class="menu">
+            <div class="menu">
                 <li> <a href="./index.html">Home </a></li>
                 <li class="products"> 
-    
                     <a href="./products.html">Products</a>
                     <!-- DROPDOWN MENU-->
-                     <ul class="dropdown">
+                    <ul class="dropdown">
                         <li></li>
                         <li><a href="./compensation.html"> Compensation and Benefits</a></li>
                         <li><a href="./data.html"> HR Data and Analytics </a></li>
@@ -35,97 +128,136 @@
                         <li><a href="./recruitment.html"> Recruitment </a></li>
                         <li><a href="./attendance.html"> Time and Attendance </a></li>
                         <li><a href="./pricing.html"> Pricing </a></li>
-                        <li><a href="./paye.html"> Free PAYE Calculator </a></li>
+                        <li><a href="./Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html"> Free PAYE Calculator </a></li>
                         <li><a href="./demo.html"> Request a Demo </a></li>
-                     </ul>
+                    </ul>
                 </li>
                 <li> <a href="./pricing.html" >Pricing </a></li>
                 <li> <a href="./contact.html">Contact Us </a></li>
                 <li> <a href="./about.html">About </a></li>
                 <li> <a href="https://www.hrcottage.com/blog">Blog</a></li>
-                <li> <a href="./paye.html" >Free PAYE Calculator </a></li>
-             </div> 
-         </ul>
-         <div>
-            <a href="./demo.html"> <button class="demo"> REQUEST DEMO </button></a>
+                <li> <a href="./Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html" >Free PAYE Calculator </a></li>
+            </div> 
+        </ul>
+     
+        <div>
+            <a href="./demo.html">
+                <button class="demo"> REQUEST DEMO </button>
+            </a>
         </div>
+    </div>
+
+    <!-- HERO SECTION (tweaked, with brand-colour "HR Cottage") -->
+    <div class="heroes">
+        <h2> Home of Everything <slot> ~ </slot> <span class="strongg"> HR </span> </h2>
+        <div class="paras">
+            <p class="hero-tagline">Modern HR, built for Nigerian and African businesses.</p>
+            <p>
+              At
+              <span class="brand-highlight">
+                <span class="brand-hr">HR</span> 
+                <span class="brand-cottage">Cottage</span>
+              </span>, 
+              our mission is simple: make powerful HR systems accessible to every organisation.
+            </p>
+            <p>Streamline recruitment, payroll, time & attendance, onboarding, performance and HR analytics in one place.</p>
+            <p>Reduce manual work, stay compliant with Nigerian regulations, and give leaders real-time insight into their people.</p>
+            <p>Whether you are a growing SME or a larger enterprise, HR Cottage helps you run HR that feels modern, not stressful.</p>
         </div>
-        
+        <div class="call-to-action">
+            <a href="./demo.html"><button class="hero-demo"> Request Demo</button></a>
+            <a href="./contact.html"><button class="hero-contact"> Contact Us</button></a>
+        </div>
+    </div>
 
+    <!-- HERO IMAGE -->
+    <div class="upper-sunrise">
+        <div>
+            <img class="sunrise" src="./happy staff.png" alt="Happy employees using HR Cottage"/>
+        </div>
+    </div>
 
+    <!-- WHO WE ARE / WHY HR COTTAGE -->
+    <section class="company-purpose">
+        <div class="mission">
+            <h3>Our Mission</h3>
+            <p>To liberalise HR practice in Nigeria and across Africa by giving businesses tools that match their reality.</p>
+            <p>We combine deep HR expertise with simple technology so you can focus on people, not paperwork.</p>
+        </div>
 
-<div class="heroes">
-    <h2> Contact <slot> - </slot><strong class="strongg"> HR <slot class="black"> ~ </slot> </strong> <strong class="green"> Cottage </strong>  </h2>
-    <div class="paras">
-    <p>
-        Thank you for checking us out. 
-    </p>
-    <p>
-        Now is the time to contact us.
-    </p>     
-    
-    </div>
-    <div class="call-to-action">
-        <a href="./demo.html"><button class="hero-demo"> Request Demo</button></a>
-        <a href="./contact.html"><button class="hero-contact"> Contact Us</button></a>
-    </div>
-</div>
-<div class="upper-sunrise">
-    <div>
-        <img class="sunrise" src="./happy staff.png" alt="happy staff"/>
-    </div>
-</div>
-    <!--Contact Form begin-->
-    <div class="contact-form">
-        <form onsubmit="sendEmail(); reset(); return false">
-            <fieldset>
-                <legend>Contact HR Cottage</legend>
-                <h3>Contact Information</h3>
-                <section>
-                    <label for="f-name">First Name</label>
-                    <input type="text" id="f-name" placeholder="Enter your First Name" required name="fi-name">
-                </section>
-                <section>
-                    <label for="l-name">Last Name</label>
-                    <input type="text" id="l-name" placeholder="Enter your Last Name" required name="la-name">
-                </section>
-                <section>
-                    <label for="e-mail">E-mail Address</label>
-                    <input type="email" id="e-mail" placeholder="abc@hrcottage.com" required name="em-name">
-                </section>
-                <section>
-                    <label for="phone-number">phone-number</label>
-                    <input type="phone-number" id="phone-number" placeholder="+2349011111111" required name="em-name">
-                </section>
-                <section>
-                    <label for="coy-name">Company Name</label>
-                    <input type="text" id="coy-name" placeholder="Enter Company Name" required name="co-name">
-                </section>
-                <section>
-                    <label for="country">Select Your Country</label>
-                    <select name="country" id="country">
-                        <option value="" selected disabled>Countries</option>
-                        <option value="nigeria">Nigeria</option>
-                        <option value="ghana">Ghana</option>
-                        <option value="kenya">Kenya</option>
-                        <option value="sa">South Africa</option>
-                    </select>
-                </section>
-                <button type="submit">Submit</button>
-            </fieldset>
-        </form>
-    </div>
-    <div  style="text-align: center; font-size: larger; background-color: seagreen; padding: 5px; margin: 5px; max-width: 100%;">
-        <p style="color: white">Alternatively, you can send us a direct email through:  </p>
-        <p style="color: white">info@hrcottage.com</p>
-        <p style="color: white">Or</p>
-        <p style="color: white">Ring us on +2348110458340</p>
-    </div>
-    
-    <!--Contact Form begin-->
+        <div class="vision">
+            <h3>Our Vision</h3>
+            <p>To become the most trusted HR technology partner for organisations in Nigeria and beyond.</p>
+            <p>We see a continent where HR is data-led, compliant and genuinely employee-centred.</p>
+        </div>
 
+        <div class="strategy">
+            <h3>Our Approach</h3>
+            <p>We build around local rules and real-world workflows: Nigerian payroll, labour laws and African HR realities.</p>
+            <p>Light to deploy, powerful enough to scale with your organisation.</p>
+        </div>
+    </section>
+
+    <!-- VALUE PROPS (using your pricing-card styles) -->
+    <section class="pricing-container">
+        <article class="pricing-plan">
+            <h3 class="plan-title">For HR & People Teams</h3>
+            <p class="plan-price">Streamlined Operations</p>
+            <ul class="plan-features">
+                <li>Digitise employee records, approvals and HR documents in one place.</li>
+                <li>Automate leave, attendance and basic workflows without heavy IT projects.</li>
+                <li>Generate HR and management reports in minutes, not days.</li>
+            </ul>
+            <button class="plan-button" onclick="window.location.href='./products.html'">Explore Products</button>
+        </article>
+
+        <article class="pricing-plan">
+            <h3 class="plan-title">For Business Owners & CEOs</h3>
+            <p class="plan-price">Visibility & Control</p>
+            <ul class="plan-features">
+                <li>See headcount, payroll trends and key HR metrics at a glance.</li>
+                <li>Stay compliant with Nigerian regulations and reduce HR-related risk.</li>
+                <li>Support faster decisions with reliable, real-time people data.</li>
+            </ul>
+            <button class="plan-button" onclick="window.location.href='./pricing.html'">View Pricing</button>
+        </article>
+
+        <article class="pricing-plan">
+            <h3 class="plan-title">For Employees</h3>
+            <p class="plan-price">Better Experience</p>
+            <ul class="plan-features">
+                <li>Transparent visibility into payslips, leave balances and performance feedback.</li>
+                <li>Modern self-service options that reduce back-and-forth with HR.</li>
+                <li>Feel heard in a system designed for people, not just processes.</li>
+            </ul>
+            <button class="plan-button" onclick="window.location.href='./contact.html'">Talk to Us</button>
+        </article>
+    </section>
+
+    <!-- LATEST FROM THE BLOG (SLIDER) -->
+    <div class="heroes">
+        <h2> Latest from the HR Cottage Blog </h2>
+        <div class="paras">
+            <p>Practical insights on HR, payroll, compliance and people analytics for Nigerian and African organisations.</p>
+        </div>
+    </div>
+
+    <div class="blog-section-wrapper">
+      <section class="blog-slider-wrapper">
+        <ul class="blog-slider" id="blog-slider">
+          <!-- Slides will be injected here -->
+        </ul>
+        <div style="margin-top: 10px; font-size: 0.85rem; color: rgb(120,116,116);">
+          New posts rotate automatically. You can always explore more on the 
+          <a href="https://www.hrcottage.com/blog">HR Cottage Blog</a>.
+        </div>
+      </section>
+    </div>
+
+    <!-- PRE-FOOTER LINKS -->
     <div class="before-footer">
-        <div class="b4-footer"> <h2> Products</h2>
+        <div class="b4-footer">
+            <h2> Products</h2>
             <ul>
                 <li></li>
                 <li><a href="./compensation.html"> Compensation and Benefits</a></li>
@@ -135,12 +267,11 @@
                 <li><a href="./performance.html"> Performance Management </a></li>
                 <li><a href="./recruitment.html"> Recruitment </a></li>
                 <li><a href="./attendance.html"> Time and Attendance </a></li>
-                
-                
-                
             </ul>
         </div>
-        <div class="b4-footer"> <h2> Company</h2>
+
+        <div class="b4-footer">
+            <h2> Company</h2>
             <ul>
                 <li><a href="./about.html"> About</a></li>
                 <li><a href="./about.html"> Mission </a></li>
@@ -149,12 +280,13 @@
                 <li><a href="./careers.html"> Careers </a></li>
                 <li><a href="./about.html"> Management Team</a></li>
                 <li><a href="./pricing.html"> Pricing </a></li> 
-                
             </ul>
         </div>
-        <div class="b4-footer"> <h2> Supports And Resources</h2>
+
+        <div class="b4-footer">
+            <h2> Supports And Resources</h2>
             <ul>
-                <li><a href="./paye.html"> Free PAYE Calculator </a></li>
+                <li><a href="./Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html"> Tax Act 2025 Free PAYE Calculator </a></li>
                 <li><a href="./demo.html"> Request a Demo </a></li>
                 <li><a href="https://www.hrcottage.com/blog">Blog</a></li>
                 <li><a href="./legal.html"> Legal - Privacy - Cookies </a></li>
@@ -163,60 +295,110 @@
                 <li><a href="./faq.html"> FAQ</a></li>
             </ul>
         </div>
-        
-        </div>
+    </div>
 
-        </div>
-        <hr class="line"/>
-            <footer> 
-                <div>
-                    <a href="https://hrcottage.com">HR Cottage</a>  &copy; 2024 All Rights Reserved 
-                </div>
-                <div class="SM">
-                    <a href="https://www.linkedin.com/showcase/hr-cottage/?viewAsMember=true"> <img src="./linkedin-icon.png" height="55"></a>
-                    <a href="https://web.facebook.com/profile.php?id=61563759020293"> <img src="./facebook-icon.png" height="55"></a>
-                    <a href="https://x.com/HrCottageTech"> <img src="./white-twitterx-icon.png" height="55"></a>
-                    <a href="https://www.instagram.com/hrcottagetech/"> <img src="./instagram-icon.png" height="55"></a>
-                </div>
-            </footer>
-        </footer>
+    <hr class="line"/>
 
-    <!-- Default Statcounter code for HR Cottage
-https://www.hrcottage.com -->
-<script type="text/javascript">
-    var sc_project=13019953; 
-    var sc_invisible=1; 
-    var sc_security="5e778fb5"; 
+    <!-- FOOTER -->
+    <footer> 
+        <div>
+            <a href="https://hrcottage.com">HR Cottage</a> © 
+            <script>document.write(new Date().getFullYear());</script>. All Rights Reserved. 
+        </div>
+        <div class="SM">
+            <a href="https://www.linkedin.com/showcase/hr-cottage/?viewAsMember=true">
+                <img src="./linkedin-icon.png" height="55" alt="LinkedIn">
+            </a>
+            <a href="https://web.facebook.com/profile.php?id=61563759020293">
+                <img src="./facebook-icon.png" height="55" alt="Facebook">
+            </a>
+            <a href="https://x.com/HrCottageTech">
+                <img src="./white-twitterx-icon.png" height="55" alt="X (Twitter)">
+            </a>
+            <a href="https://www.instagram.com/hrcottagetech/">
+                <img src="./instagram-icon.png" height="55" alt="Instagram">
+            </a>
+        </div>
+    </footer>
+
+    <!-- Default Statcounter code for HR Cottage -->
+    <script type="text/javascript">
+        var sc_project=13019953; 
+        var sc_invisible=1; 
+        var sc_security="5e778fb5"; 
     </script>
     <script type="text/javascript"
-    src="https://www.statcounter.com/counter/counter.js"
-    async></script>
-    <noscript><div class="statcounter"><a title="Web Analytics
-    Made Easy - Statcounter" href="https://statcounter.com/"
-    target="_blank"><img class="statcounter"
-    src="https://c.statcounter.com/13019953/0/5e778fb5/1/"
-    alt="Web Analytics Made Easy - Statcounter"
-    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+      src="https://www.statcounter.com/counter/counter.js"
+      async></script>
+    <noscript>
+        <div class="statcounter">
+            <a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/"
+               target="_blank">
+                <img class="statcounter"
+                     src="https://c.statcounter.com/13019953/0/5e778fb5/1/"
+                     alt="Web Analytics Made Easy - Statcounter"
+                     referrerPolicy="no-referrer-when-downgrade">
+            </a>
+        </div>
+    </noscript>
     <!-- End of Statcounter Code -->
 
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-
+    <!-- Blog feed slider (using WordPress RSS feed) -->
     <script>
-        function sendEmail() {
-            Email.send({
-    Host : "smtp.gmail.com",
-    Username : "hrcottagetech@gmail.com",
-    Password : "Easterhit11",
-    To : 'chilearsap@gmail.com',
-    From : document.getElementById("e-mail").value,
-    Subject : "This is the subject",
-    Body : "And this is the body"
-}).then(
-  message => alert(message)
-);
+        async function loadBlogPosts() {
+            try {
+                const response = await fetch('https://www.hrcottage.com/blog/feed/');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const text = await response.text();
+
+                // Parse RSS XML
+                const parser = new DOMParser();
+                const xml = parser.parseFromString(text, 'application/xml');
+
+                const items = Array.from(xml.getElementsByTagName('item'));
+                const slider = document.getElementById('blog-slider');
+                if (!slider || items.length === 0) return;
+
+                // Take latest 5 posts
+                const latest = items.slice(0, 5);
+
+                latest.forEach((item, idx) => {
+                    const titleNode = item.getElementsByTagName('title')[0];
+                    const linkNode = item.getElementsByTagName('link')[0];
+                    const dateNode = item.getElementsByTagName('pubDate')[0];
+
+                    const title = titleNode ? titleNode.textContent : 'Untitled post';
+                    const url = linkNode ? linkNode.textContent : '#';
+                    const dateText = dateNode ? new Date(dateNode.textContent).toLocaleDateString() : '';
+
+                    const li = document.createElement('li');
+                    li.className = 'blog-slide' + (idx === 0 ? ' active' : '');
+                    li.innerHTML = `
+                        <a href="${url}">${title}</a>
+                        <span class="date">${dateText}</span>
+                    `;
+                    slider.appendChild(li);
+                });
+
+                // Simple auto-rotating slider
+                const slides = slider.querySelectorAll('.blog-slide');
+                if (slides.length <= 1) return;
+
+                let current = 0;
+                setInterval(() => {
+                    slides[current].classList.remove('active');
+                    current = (current + 1) % slides.length;
+                    slides[current].classList.add('active');
+                }, 6000); // change slide every 6 seconds
+            } catch (error) {
+                console.error('Error fetching blog posts:', error);
+            }
         }
-        
+
+        window.onload = loadBlogPosts;
     </script>
 </body>
-
 </html>
