@@ -606,3 +606,27 @@ input[type=checkbox] {
     background-color: rgb(236, 211, 191);
 }
 
+.products-header-clean {
+    text-align: center;
+    margin: 20px 0 25px;
+}
+
+.products-header-clean h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, serif;
+    font-weight: bold;
+    color: seagreen; /* main title color */
+    letter-spacing: 0.5px;
+}
+
+.products-header-clean h3::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #f59a12; /* brand orange underline */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+

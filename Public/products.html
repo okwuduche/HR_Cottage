@@ -1,196 +1,447 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR Products in Nigeria</title>
-    <link
-    rel="stylesheet"
-    href="./style.css"
-    />
-    <link rel="icon" type="image/png" href="./favicon-32x32.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HR Cottage Products – Modern HR tools for Nigeria & Africa</title>
+
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" />
+
+  <!-- Local styles to polish the page: centered header, tighter spacing, subtle card animation -->
+  <style>
+    /* Header: centered, bold, brand underline */
+    .products-header {
+      text-align: center;
+      margin: 28px 0 20px;
+    }
+    .products-header h2 {
+      margin: 0;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: seagreen;
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0.4px;
+    }
+    .products-header h2::after {
+      content: "";
+      display: block;
+      width: 90px;
+      height: 4px;
+      background: #f59a12; /* orange underline */
+      margin: 10px auto 0;
+      border-radius: 3px;
+    }
+    .products-sub {
+      text-align:center;
+      color: rgb(100,96,96);
+      max-width: 880px;
+      margin: 10px auto 0;
+      font-size: 0.98rem;
+    }
+
+    /* Wrapper spacing */
+    .products-grid-wrapper {
+      width: 95%;
+      max-width: 1200px;
+      margin: 18px auto 34px;
+      box-sizing: border-box;
+    }
+
+    /* Card styling - gentle lift and shadow on hover */
+    .pricing-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      justify-content: space-between;
+    }
+
+    .pricing-plan {
+      flex: 1 1 300px;
+      max-width: 360px;
+      background-color: #ffffff;
+      border: 2px solid rgba(46,139,87,0.08);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 6px rgba(20,20,20,0.03);
+      transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .pricing-plan:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 36px rgba(16, 24, 32, 0.12);
+    }
+
+    .product-meta {
+      font-size: 0.9rem;
+      color: rgb(100,96,96);
+      margin-bottom: 8px;
+    }
+
+    .plan-title {
+      color: seagreen;
+      margin: 6px 0 8px;
+      font-size: 1.15rem;
+    }
+
+    .plan-price {
+      color: #f59a12;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 14px;
+      color: rgb(80,76,76);
+      flex: 1 0 auto;
+    }
+
+    .plan-features li {
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .plan-actions {
+      display:flex;
+      gap:8px;
+      margin-top: 12px;
+      align-items:center;
+    }
+
+    .plan-button {
+      padding: 10px 14px;
+      background-color: seagreen;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    .plan-button:hover { opacity: 0.95; }
+
+    .plan-button.alt {
+      background: #f59a12;
+      color: #000;
+      border: none;
+    }
+
+    /* CTA block below grid to ensure no overlap */
+    .cta-section {
+      clear: both;
+      padding: 28px 12px;
+      text-align: center;
+      margin-top: 12px;
+    }
+    .cta-section p {
+      margin: 0;
+      color: rgb(100,96,96);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 980px) {
+      .pricing-plan { max-width: 100%; flex: 1 1 48%; }
+      .pricing-container { justify-content: center; }
+    }
+    @media (max-width: 640px) {
+      .products-header h2 { font-size: 1.6rem; }
+      .pricing-plan { flex: 1 1 100%; }
+    }
+  </style>
+</head>
 <body>
-    <div class="upper_overall">
- 
-        <div><a href="./index.html"><img class="logo" src="./Flat 400x100.png" alt="Company Logo" /></a></div>
-    
-        <!-- NAVIGATION MENU -->
-        <ul class="nav-links">
-            <!-- Using Checkbox Hack-->
-             <input type="checkbox" id="checkbox_toggle">
-             <label for="checkbox_toggle" class="hamburger">&#9776</label>
-            <!-- NAVIGATION MENU-->
-             <div class="menu">
-                <li> <a href="./index.html">Home </a></li>
-                <li class="products"> 
-    
-                    <a href="./products.html">Products</a>
-                    <!-- DROPDOWN MENU-->
-                     <ul class="dropdown">
-                        <li></li>
-                        <li><a href="./compensation.html"> Compensation and Benefits</a></li>
-                        <li><a href="./data.html"> HR Data and Analytics </a></li>
-                        <li><a href="./infosys.html"> HR Information System</a></li>
-                        <li><a href="./learning.html"> Learning and Development </a></li>
-                        <li><a href="./performance.html"> Performance Management </a></li>
-                        <li><a href="./recruitment.html"> Recruitment </a></li>
-                        <li><a href="./attendance.html"> Time and Attendance </a></li>
-                        <li><a href="./pricing.html"> Pricing </a></li>
-                        <li><a href="./paye.html"> Free PAYE Calculator </a></li>
-                        <li><a href="./demo.html"> Request a Demo </a></li>
-                     </ul>
-                </li>
-                <li> <a href="./pricing.html" >Pricing </a></li>
-                <li> <a href="./contact.html">Contact Us </a></li>
-                <li> <a href="./about.html">About </a></li>
-                <li> <a href="https://www.hrcottage.com/blog">Blog</a></li>
-                <li> <a href="./paye.html" >Free PAYE Calculator </a></li>
-             </div> 
-         </ul>
-         <div>
-            <a href="./demo.html"> <button class="demo"> REQUEST DEMO </button></a>
-        </div>
-        </div>
-        
+  <!-- Top nav (original markup preserved) -->
+  <div class="upper_overall"> 
+      <a href="./index.html"><img class="logo" src="./Flat 400x100.png" alt="Company Logo" /></a>
 
-    <!--Placeholder begin-->
+      <!-- NAVIGATION MENU -->
+      <ul class="nav-links">
+       <input type="checkbox" id="checkbox_toggle">
+       <label for="checkbox_toggle" class="hamburger">&#9776</label>
+       <div class="menu">
+          <li> <a href="./index.html">Home </a></li>
+          <li class="products"> 
+              <a href="./products.html">Products</a>
+              <ul class="dropdown">
+                 <li></li>
+                 <li><a href="./compensation.html"> Compensation and Benefits</a></li>
+                 <li><a href="./data.html"> HR Data and Analytics </a></li>
+                 <li><a href="./infosys.html"> HR Information System</a></li>
+                 <li><a href="./learning.html"> Learning and Development </a></li>
+                 <li><a href="./performance.html"> Performance Management </a></li>
+                 <li><a href="./recruitment.html"> Recruitment </a></li>
+                 <li><a href="./attendance.html"> Time and Attendance </a></li>
+                 <li><a href="./pricing.html"> Pricing </a></li>
+                 <li><a href="./Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html"> Free PAYE Calculator </a></li>
+                 <li><a href="./demo.html"> Request a Demo </a></li>
+              </ul>
+          </li>
+          <li> <a href="./pricing.html" >Pricing </a></li>
+          <li> <a href="./contact.html">Contact Us </a></li>
+          <li> <a href="./about.html">About </a></li>
+          <li> <a href="https://www.hrcottage.com/blog">Blog</a></li>
+          <li> <a href="./Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html" >Free PAYE Calculator </a></li>
+       </div> 
+     </ul>
+     
+     <div>
+        <a href="./demo.html"> <button class="demo"> REQUEST DEMO </button></a>
+     </div>
+  </div>
 
-    <div class="heroes">
-        <h2>  <strong class="strongg"> HR <slot class="black"> ~ </slot> </strong> <strong class="green"> Cottage </strong> <slot> - </slot> Products</h2>
-        <div class="paras">
-        <p>
-            At HR Cottage, we did not master what we do by chance. 
-        </p>
-        <p>
-            We are intentional about every single action that we take.
-        </p>     
-        <p>
-            With over 20 years of combined HR experience, 
-        </p>
-        <p>
-            our team are determined to ensure that no willing HR professional in 
-        </p>
-        <p>
-            Nigeria will go through some huddles that we went through.
-        </p>
-           <p>  
-            HR Cottage offers world-class services in the following areas
-           </p>
-        </div>
-        <div class="call-to-action">
-            <a href="./demo.html"><button class="hero-demo"> Request Demo</button></a>
-            <a href="./contact.html"><button class="hero-contact"> Contact Us</button></a>
-        </div>
-        
+  <!-- Page header -->
+  <header class="products-header">
+    <h2>Our Modules</h2>
+    <p class="products-sub">A connected suite of HR tools for Nigerian and African organisations — pick the modules you need and scale gradually.</p>
+  </header>
+
+  <!-- Grid wrapper -->
+  <main class="products-grid-wrapper">
+    <section id="productsGrid" class="pricing-container" aria-live="polite">
+      <!-- JS will populate product cards here (from /products.json or fallback) -->
+    </section>
+    <div class="cta-section">
+      <p>Not sure where to start? Try our <a href="./Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html">Free PAYE Calculator</a> or <a href="./demo.html">request a demo</a>.</p>
     </div>
+  </main>
 
-    <div class="upper-sunrise">
-        <div>
-            <img class="sunrise" src="./happy staff.png" alt="happy staff"/>
-        </div>
-    </div>
-
-<div>
-    <h3 class="b4-footer">Our Products</h3>
-    <ul class="product-list">
-            <li></li>
-            <li><a href="./compensation.html"> Compensation and Benefits</a></li>
-            <li><a href="./data.html"> HR Data and Analytics </a></li>
-            <li><a href="./infosys.html"> HR Information System</a></li>
-            <li><a href="./learning.html"> Learning and Development </a></li>
-            <li><a href="./performance.html"> Performance Management </a></li>
-            <li><a href="./recruitment.html"> Recruitment </a></li>
-            <li><a href="./attendance.html"> Time and Attendance </a></li>
-            <li><a href="./pricing.html"> Pricing </a></li>
-            <li><a href="./paye.html"> Free PAYE Calculator </a></li>
-            <li><a href="./demo.html"> Request a Demo </a></li>
-        </ul>
-</div>
-    
-<!--Placeholder end-->
-
-<div class="before-footer">
+  <!-- Pre-footer & footer (keeps your site structure) -->
+  <div class="before-footer">
     <div class="b4-footer"> <h2> Products</h2>
-        <ul>
-            <li></li>
-            <li><a href="./compensation.html"> Compensation and Benefits</a></li>
-            <li><a href="./data.html"> HR Data and Analytics </a></li>
-            <li><a href="./infosys.html"> HR Information System</a></li>
-            <li><a href="./learning.html"> Learning and Development </a></li>
-            <li><a href="./performance.html"> Performance Management </a></li>
-            <li><a href="./recruitment.html"> Recruitment </a></li>
-            <li><a href="./attendance.html"> Time and Attendance </a></li>
-            <li><a href="./pricing.html"> Pricing </a></li>
-            <li><a href="./paye.html"> Free PAYE Calculator </a></li>
-            <li><a href="./demo.html"> Request a Demo </a></li>
-        </ul>
+      <ul>
+          <li></li>
+          <li><a href="./compensation.html"> Compensation and Benefits</a></li>
+          <li><a href="./data.html"> HR Data and Analytics</a></li>
+          <li><a href="./infosys.html"> HR Information System</a></li>
+          <li><a href="./learning.html"> Learning and Development</a></li>
+          <li><a href="./performance.html"> Performance Management</a></li>
+          <li><a href="./recruitment.html"> Recruitment </a></li>
+          <li><a href="./attendance.html"> Time and Attendance </a></li>
+      </ul>
     </div>
-
     <div class="b4-footer"> <h2> Company</h2>
-        <ul>
-            <li><a href="./about.html"> About</a></li>
-            <li><a href="./about.html"> Mission </a></li>
-            <li><a href="./about.html"> Vision </a></li>
-            <li><a href="./about.html"> Strategy </a></li>
-            <li><a href="./careers.html"> Careers </a></li>
-            <li><a href="./legal.html"> Legal - Privacy - Cookies </a></li>
-            <li><a href="./about.html"> Management Team</a></li>
-        </ul>
+      <ul>
+          <li><a href="./about.html"> About</a></li>
+          <li><a href="./about.html"> Mission </a></li>
+          <li><a href="./about.html"> Vision </a></li>
+          <li><a href="./about.html"> Strategy </a></li>
+          <li><a href="./careers.html"> Careers </a></li>
+          <li><a href="./about.html"> Management Team</a></li>
+          <li><a href="./pricing.html"> Pricing </a></li> 
+      </ul>
     </div>
-
-    <div class="b4-footer"> <h2> Supports</h2>
-        <ul>
-            <li><a href="./tutorials.html"> Tutorials</a></li>
-            <li>Installations</li>
-            <li><a href="./contact.html"> Contact Us</a></li>
-            <li><a href="./faq.html"> FAQ</a></li>
-            <li><a href="./demo.html"> Request a Demo</a></li>
-        </ul>
+    <div class="b4-footer"> <h2> Supports And Resources</h2>
+      <ul>
+          <li><a href="./Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html"> Tax Act 2025 Free PAYE Calculator </a></li>
+          <li><a href="./demo.html"> Request a Demo </a></li>
+          <li><a href="https://www.hrcottage.com/blog">Blog</a></li>
+          <li><a href="./legal.html"> Legal - Privacy - Cookies </a></li>
+          <li><a href="./tutorials.html"> Tutorials</a></li>
+          <li><a href="./contact.html"> Contact Us</a></li>
+          <li><a href="./faq.html"> FAQ</a></li>
+      </ul>
     </div>
+  </div>
 
-    <div class="b4-footer"> <h2> Resources</h2>
-        <ul>
-            <li><a href="https://www.hrcottage.com/blog">Blog</a></li>
-            <li>News Letter</li>
-            <li>Podcasts</li>
-            <li>Seminars</li>
-            <li>Testimonies</li>
-            <li><a href="./demo.html"> Request a Demo</a></li>
-        </ul>
-    </div>
-</div>
+  <hr class="line"/>
+  <footer> 
+      <div>
+           <a href="https://hrcottage.com">HR Cottage</a> © <script>document.write(new Date().getFullYear());</script>. All Rights Reserved. 
+      </div>
+      <div class="SM">
+          <a href="https://www.linkedin.com/showcase/hr-cottage/?viewAsMember=true"> <img src="./linkedin-icon.png" height="55" alt="LinkedIn"></a>
+          <a href="https://web.facebook.com/profile.php?id=61563759020293"> <img src="./facebook-icon.png" height="55" alt="Facebook"></a>
+          <a href="https://x.com/HrCottageTech"> <img src="./white-twitterx-icon.png" height="55" alt="X (Twitter)"></a>
+          <a href="https://www.instagram.com/hrcottagetech/"> <img src="./instagram-icon.png" height="55" alt="Instagram"></a>
+      </div>
+  </footer>
 
-<hr class="line"/>
+  <!-- Products loader script: fetch /products.json if present, else use fallback -->
+  <script>
+    (function () {
+      const grid = document.getElementById('productsGrid');
 
-    <footer> 
-        <div>
-            <a href="https://hrcottage.com">HR Cottage</a>  &copy; 2024 All Rights Reserved 
-        </div>
-        <div class="SM">
-            <a href="https://www.linkedin.com/showcase/hr-cottage/?viewAsMember=true"> <img src="./linkedin-icon.png" height="55"></a>
-            <a href="https://web.facebook.com/profile.php?id=61563759020293"> <img src="./facebook-icon.png" height="55"></a>
-            <a href=""> <img src="./white-twitterx-icon.png" height="55"></a>
-            <a href=""> <img src="./instagram-icon.png" height="55"></a>
-        </div>
-    
-    </footer>    
+      const fallbackProducts = [
+        {
+          id: "compensation",
+          name: "Compensation & Benefits",
+          tagline: "Payroll built for Nigeria",
+          short: "Automate gross-to-net, PAYE, pension, NHF, and compliant payslips.",
+          features: [
+            "Accurate PAYE & statutory deductions (Tax Act 2025 ready)",
+            "Multiple salary templates & allowance types",
+            "Export-ready reports (Excel / CSV / PDF)"
+          ],
+          href: "./compensation.html"
+        },
+        {
+          id: "hris",
+          name: "HR Information System",
+          tagline: "One source of truth for employee data",
+          short: "Centralise documents, lifecycle events and role changes with audit trails.",
+          features: [
+            "Employee profiles & document storage",
+            "Joins, exits, promotions & role history",
+            "Role-based access control"
+          ],
+          href: "./infosys.html"
+        },
+        {
+          id: "time",
+          name: "Time & Attendance",
+          tagline: "Accurate hours, fewer disputes",
+          short: "Capture attendance and apply shift & overtime rules cleanly.",
+          features: [
+            "Shift patterns and overtime rules",
+            "Simple attendance approvals and export to payroll",
+            "Mobile-friendly capture options"
+          ],
+          href: "./attendance.html"
+        },
+        {
+          id: "learning",
+          name: "Learning & Development",
+          tagline: "Grow skills, measure outcomes",
+          short: "Plan and track training, certifications and ROI.",
+          features: [
+            "Learning paths & course completion tracking",
+            "Align training to performance goals",
+            "Reports on participation and outcomes"
+          ],
+          href: "./learning.html"
+        },
+        {
+          id: "performance",
+          name: "Performance Management",
+          tagline: "Continuous, fair reviews",
+          short: "Run structured reviews, set goals and link to development.",
+          features: [
+            "Goal setting & review templates",
+            "360/line manager feedback workflows",
+            "Calibration & reporting tools"
+          ],
+          href: "./performance.html"
+        },
+        {
+          id: "recruitment",
+          name: "Recruitment",
+          tagline: "Hire with structure",
+          short: "Track pipelines, standardise scoring and build a talent pool.",
+          features: [
+            "Vacancy & interview tracking",
+            "Standardised scoring rubrics",
+            "Candidate notes & history"
+          ],
+          href: "./recruitment.html"
+        },
+        {
+          id: "analytics",
+          name: "HR Data & Analytics",
+          tagline: "Insights that drive decisions",
+          short: "Dashboards for headcount, attrition, absence and engagement.",
+          features: [
+            "Pre-built HR dashboards",
+            "Exportable datasets for finance/leadership",
+            "Custom metrics & scheduled reporting"
+          ],
+          href: "./data.html"
+        },
+        {
+          id: "paye",
+          name: "Free Nigeria PAYE Calculator",
+          tagline: "Tax Act 2025 compliant",
+          short: "Compute PAYE, pension, NHF and rent relief. Single and batch modes.",
+          features: [
+            "Band-by-band tax breakdown",
+            "Batch payroll checks, Excel/CSV/PDF export",
+            "Field-level validation and guided inputs"
+          ],
+          href: "./Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html"
+        }
+      ];
 
-        <!-- Default Statcounter code for HR Cottage
-https://www.hrcottage.com -->
-<script type="text/javascript">
-    var sc_project=13019953; 
-    var sc_invisible=1; 
-    var sc_security="5e778fb5"; 
-    </script>
-    <script type="text/javascript"
-    src="https://www.statcounter.com/counter/counter.js"
-    async></script>
-    <noscript><div class="statcounter"><a title="Web Analytics
-    Made Easy - Statcounter" href="https://statcounter.com/"
-    target="_blank"><img class="statcounter"
-    src="https://c.statcounter.com/13019953/0/5e778fb5/1/"
-    alt="Web Analytics Made Easy - Statcounter"
-    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-    <!-- End of Statcounter Code -->
+      function createCard(prod) {
+        const article = document.createElement('article');
+        article.className = 'pricing-plan';
+
+        const meta = document.createElement('div');
+        meta.className = 'product-meta';
+        meta.textContent = prod.tagline || '';
+        article.appendChild(meta);
+
+        const title = document.createElement('h3');
+        title.className = 'plan-title';
+        title.textContent = prod.name || '';
+        article.appendChild(title);
+
+        const price = document.createElement('div');
+        price.className = 'plan-price';
+        price.textContent = prod.tagline ? '' : '';
+        article.appendChild(price);
+
+        const short = document.createElement('p');
+        short.style.color = 'rgb(80,76,76)';
+        short.style.margin = '8px 0 10px';
+        short.textContent = prod.short || '';
+        article.appendChild(short);
+
+        const ul = document.createElement('ul');
+        ul.className = 'plan-features';
+        (prod.features || []).forEach(f => {
+          const li = document.createElement('li');
+          li.textContent = f;
+          ul.appendChild(li);
+        });
+        article.appendChild(ul);
+
+        const actions = document.createElement('div');
+        actions.className = 'plan-actions';
+
+        const learnBtn = document.createElement('button');
+        learnBtn.className = 'plan-button';
+        learnBtn.textContent = 'Learn more';
+        learnBtn.addEventListener('click', () => { window.location.href = prod.href || '#'; });
+
+        const demoBtn = document.createElement('button');
+        demoBtn.className = 'plan-button alt';
+        demoBtn.textContent = 'Request demo';
+        demoBtn.addEventListener('click', () => { window.location.href = './demo.html'; });
+
+        actions.appendChild(learnBtn);
+        actions.appendChild(demoBtn);
+        article.appendChild(actions);
+
+        return article;
+      }
+
+      async function loadProducts() {
+        try {
+          const resp = await fetch('/products.json', { cache: 'no-cache' });
+          if (resp.ok) {
+            const data = await resp.json();
+            if (Array.isArray(data) && data.length) {
+              grid.innerHTML = '';
+              data.forEach(p => grid.appendChild(createCard(p)));
+              return;
+            }
+          }
+        } catch (e) {
+          // ignore and use fallback
+        }
+        // fallback
+        grid.innerHTML = '';
+        fallbackProducts.forEach(p => grid.appendChild(createCard(p)));
+      }
+
+      // initial load
+      loadProducts();
+
+      // optional: refresh every 10 minutes to keep in sync with /products.json
+      setInterval(loadProducts, 10 * 60 * 1000);
+    })();
+  </script>
 </body>
 </html>

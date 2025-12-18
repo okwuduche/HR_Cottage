@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HR Cottage Job Board – Daily Updated Jobs in Nigeria</title>
+<link rel="stylesheet" href="./style.css">
+<link rel="icon" type="image/png" href="./favicon-32x32.png">
+
+<!-- Adsense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7579557888084861"
+crossorigin="anonymous"></script>
+
+<style>
+.fade-in { opacity:0; animation: fadeIn 0.8s forwards ease-out; }
+@keyframes fadeIn { to { opacity:1; } }
+
+.job-container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+.job-filter-box {
+  display: flex; gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.job-filter-box input, select {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  flex: 1;
+  min-width: 180px;
+}
+
+.job-card {
+  background: rgb(250,250,244);
+  border: 2px solid seagreen;
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 20px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.job-card h3 {
+  color: seagreen;
+  margin-bottom: 5px;
+}
+
+.job-card .company {
+  font-weight: bold;
+  color: rgb(100,100,100);
+}
+
+.job-card .meta {
+  margin: 6px 0;
+  font-size: 0.85rem;
+  color: rgb(110,110,110);
+}
+
+.job-card a {
+  display: inline-block;
+  margin-top: 10px;
+  background: seagreen;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.pagination {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+.pagination button {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  background: orange;
+  color: white;
+  cursor: pointer;
+}
+
+.ads-block {
+  margin: 20px 0;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV BAR EXACTLY LIKE INDEX -->
+<div class="upper_overall">
+    <a href="./index.html"><img class="logo" src="./Flat 400x100.png" alt="Company Logo"></a>
+
+    <ul class="nav-links">
+        <input type="checkbox" id="checkbox_toggle">
+        <label for="checkbox_toggle" class="hamburger">&#9776</label>
+
+        <div class="menu">
+            <li><a href="./index.html">Home</a></li>
+            <li class="products">
+                <a href="./products.html">Products</a>
+                <ul class="dropdown">
+                    <li><a href="./compensation.html">Compensation and Benefits</a></li>
+                    <li><a href="./data.html">HR Data and Analytics</a></li>
+                    <li><a href="./infosys.html">HR Information System</a></li>
+                    <li><a href="./learning.html">Learning & Development</a></li>
+                    <li><a href="./performance.html">Performance Management</a></li>
+                    <li><a href="./recruitment.html">Recruitment</a></li>
+                    <li><a href="./attendance.html">Time & Attendance</a></li>
+                    <li><a href="./pricing.html">Pricing</a></li>
+                    <li><a href="./Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html">Free PAYE Calculator</a></li>
+                    <li><a href="./demo.html">Request a Demo</a></li>
+                </ul>
+            </li>
+            <li><a href="./contact.html">Contact Us</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="https://www.hrcottage.com/blog">Blog</a></li>
+        </div>
+    </ul>
+
+    <a href="./demo.html"><button class="demo">REQUEST DEMO</button></a>
+</div>
+
+<!-- HERO SECTION -->
+<div class="heroes fade-in">
+  <h2>Daily Updated Job Openings Across Nigeria</h2>
+  <div class="paras">
+    <p>We automatically scan the web daily to bring you updated, verified job opportunities.</p>
+    <p>Browse by location, search by title, and explore genuine open roles.</p>
+  </div>
+</div>
+
+<div class="ads-block">
+  <!-- Adsense slot -->
+  <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-7579557888084861"
+      data-ad-slot="1234567890"
+      data-ad-format="auto"
+      data-full-width-responsive="true">
+  </ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- JOB LISTING SECTION -->
+<div class="job-container fade-in">
+
+    <!-- FILTERS -->
+    <div class="job-filter-box">
+      <input id="searchInput" placeholder="Search job title…">
+      <select id="locationFilter">
+        <option value="">All Locations</option>
+        <option>Lagos</option>
+        <option>Abuja</option>
+        <option>Port Harcourt</option>
+        <option>Kano</option>
+        <option>Remote</option>
+      </select>
+    </div>
+
+    <!-- JOB RESULTS -->
+    <div id="jobList"></div>
+
+    <!-- PAGINATION -->
+    <div class="pagination" id="pagination"></div>
+
+</div>
+
+<!-- FOOTER EXACT LIKE INDEX -->
+<hr class="line"/>
+<footer> 
+    <div>
+         <a href="https://hrcottage.com">HR Cottage</a> © 
+         <script>document.write(new Date().getFullYear());</script>. All Rights Reserved.
+    </div>
+    <div class="SM">
+        <a href="https://www.linkedin.com/showcase/hr-cottage/"><img src="./linkedin-icon.png" height="55"></a>
+        <a href="https://web.facebook.com/profile.php?id=61563759020293"><img src="./facebook-icon.png" height="55"></a>
+        <a href="https://x.com/HrCottageTech"><img src="./white-twitterx-icon.png" height="55"></a>
+        <a href="https://www.instagram.com/hrcottagetech/"><img src="./instagram-icon.png" height="55"></a>
+    </div>
+</footer>
+
+<script>
+// -----------------------------
+// FRONTEND JOB LOADER
+// -----------------------------
+let jobData = [];
+let jobsPerPage = 8;
+let currentPage = 1;
+
+// Fetch scraped jobs from backend API endpoint
+async function loadJobs() {
+    try {
+        const response = await fetch('/api/jobs'); // YOU WILL CREATE THIS ENDPOINT
+        jobData = await response.json();
+        displayJobs();
+        buildPagination();
+    } catch (error) {
+        console.error("Job load error:", error);
+        document.getElementById("jobList").innerHTML =
+          "<p style='color:red'>Unable to load job listings. Please try again later.</p>";
+    }
+}
+
+function displayJobs() {
+    const list = document.getElementById("jobList");
+    list.innerHTML = "";
+
+    // filter
+    const search = document.getElementById("searchInput").value.toLowerCase();
+    const location = document.getElementById("locationFilter").value;
+
+    const filtered = jobData.filter(job =>
+        job.title.toLowerCase().includes(search) &&
+        (location === "" || job.location.includes(location))
+    );
+
+    const start = (currentPage - 1) * jobsPerPage;
+    const end = start + jobsPerPage;
+    const pageItems = filtered.slice(start, end);
+
+    pageItems.forEach(job => {
+        const card = document.createElement("div");
+        card.className = "job-card";
+        card.innerHTML = `
+            <h3>${job.title}</h3>
+            <div class="company">${job.company}</div>
+            <div class="meta">${job.location} • Posted: ${job.date}</div>
+            <p>${job.summary}</p>
+            <a href="${job.url}" target="_blank">Apply Now</a>
+        `;
+        list.appendChild(card);
+    });
+
+    if (filtered.length === 0) {
+        list.innerHTML = "<p>No jobs found.</p>";
+    }
+}
+
+function buildPagination() {
+    const paginateDiv = document.getElementById("pagination");
+    paginateDiv.innerHTML = "";
+
+    const totalPages = Math.ceil(jobData.length / jobsPerPage);
+
+    for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement("button");
+        btn.innerText = i;
+        btn.onclick = () => { currentPage = i; displayJobs(); };
+        paginateDiv.appendChild(btn);
+    }
+}
+
+// attach filters
+document.getElementById("searchInput").addEventListener("input", displayJobs);
+document.getElementById("locationFilter").addEventListener("change", displayJobs);
+
+// load on page start
+loadJobs();
+</script>
+
+</body>
+</html>

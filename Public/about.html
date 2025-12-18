@@ -1,189 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About HR Cottage</title>
-    <link 
-    rel="stylesheet"
-    href="./style.css"/>
-    <link rel="icon" type="image/png" href="./favicon-32x32.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – HR Cottage</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" href="./favicon-32x32.png">
+
+  <style>
+    .fade-in { opacity:0; transform:translateY(20px); animation:fadeInUp 0.7s ease forwards; }
+    @keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
+
+    .about-container {
+      width: 95%; max-width: 1100px; margin: 40px auto; padding: 20px;
+    }
+
+    .about-section {
+      background: rgb(250,250,244);
+      border: 2px solid seagreen;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+    }
+
+    .about-section h3 { color: seagreen; margin-bottom: 10px; }
+
+    .about-section p, .about-section li {
+      color: rgb(80,80,80); line-height: 1.7;
+    }
+
+    .about-title {
+      text-align:center; font-size:2rem; margin-bottom:10px; color: seagreen;
+      font-weight:bold;
+    }
+    .about-sub { text-align:center; color: rgb(100,96,96); margin-bottom:25px; }
+  </style>
 </head>
+
 <body>
-    <div class="upper_overall">
-        <div><a href="./index.html"><img class="logo" src="./Flat 400x100.png" alt="Company Logo" /></a></div>
-        <!-- NAVIGATION MENU -->
-        <ul class="nav-links">
-            <!-- Using Checkbox Hack-->
-             <input type="checkbox" id="checkbox_toggle">
-             <label for="checkbox_toggle" class="hamburger">&#9776</label>
-            <!-- NAVIGATION MENU-->
-             <div class="menu">
-                <li> <a href="./index.html">Home </a></li>
-                <li class="products"> 
-    
-                    <a href="./products.html">Products</a>
-                    <!-- DROPDOWN MENU-->
-                     <ul class="dropdown">
-                        <li></li>
-                        <li><a href="./compensation.html"> Compensation and Benefits</a></li>
-                        <li><a href="./data.html"> HR Data and Analytics </a></li>
-                        <li><a href="./infosys.html"> HR Information System</a></li>
-                        <li><a href="./learning.html"> Learning and Development </a></li>
-                        <li><a href="./performance.html"> Performance Management </a></li>
-                        <li><a href="./recruitment.html"> Recruitment </a></li>
-                        <li><a href="./attendance.html"> Time and Attendance </a></li>
-                        <li><a href="./pricing.html"> Pricing </a></li>
-                        <li><a href="./paye.html"> Free PAYE Calculator </a></li>
-                        <li><a href="./demo.html"> Request a Demo </a></li>
-                     </ul>
-                </li>
-                <li> <a href="./pricing.html" >Pricing </a></li>
-                <li> <a href="./contact.html">Contact Us </a></li>
-                <li> <a href="./about.html">About </a></li>
-                <li> <a href="https://www.hrcottage.com/blog">Blog</a></li>
-                <li> <a href="./paye.html" >Free PAYE Calculator </a></li>
-             </div> 
-         </ul>
-         <div>
-            <a href="./demo.html"> <button class="demo"> REQUEST DEMO </button></a>
-        </div>
-        </div>
-    <!--Placeholder begin-->
-    <div class="heroes">
-        <h2> About <slot> - </slot><strong class="strongg"> HR <slot class="black"> ~ </slot> </strong> <strong class="green"> Cottage </strong>  </h2>
-        <div class="paras">
-        <p>
-            At HR Cottage, we did not master what we do by chance. 
-        </p>
-        <p>
-            We are intentional about every single action that we take.
-        </p>     
-        <p>
-            With over 20 years of combined HR experience, 
-        </p>
-        <p>
-            our team are determined to ensure that no willing HR professional in 
-        </p>
-        <p>
-            Nigeria will go through some huddles that we went through.
-        </p>
-        <p>  
-            Hence, the reason we at HR Cottage offer world-class HR services.
-           </p>
-           
-        </div>
-        <div class="call-to-action">
-            <a href="./demo.html"><button class="hero-demo"> Request Demo</button></a>
-            <a href="./contact.html"><button class="hero-contact"> Contact Us</button></a>
-        </div>
+
+  <!-- NAVIGATION -->
+  <div class="upper_overall">
+    <a href="./index.html"><img class="logo" src="./Flat 400x100.png"></a>
+
+    <ul class="nav-links">
+      <input type="checkbox" id="checkbox_toggle">
+      <label for="checkbox_toggle" class="hamburger">&#9776</label>
+
+      <div class="menu">
+        <li><a href="./index.html">Home</a></li>
+
+        <li class="products">
+          <a href="./products.html">Products</a>
+          <ul class="dropdown">
+            <li><a href="./compensation.html">Compensation & Benefits</a></li>
+            <li><a href="./data.html">HR Data & Analytics</a></li>
+            <li><a href="./infosys.html">HR Information System</a></li>
+            <li><a href="./learning.html">Learning & Development</a></li>
+            <li><a href="./performance.html">Performance Management</a></li>
+            <li><a href="./recruitment.html">Recruitment</a></li>
+            <li><a href="./attendance.html">Time & Attendance</a></li>
+            <li><a href="./pricing.html">Pricing</a></li>
+            <li><a href="./Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html">PAYE Calculator</a></li>
+            <li><a href="./demo.html">Request a Demo</a></li>
+          </ul>
+        </li>
+
+        <li><a href="./pricing.html">Pricing</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="https://www.hrcottage.com/blog">Blog</a></li>
+      </div>
+    </ul>
+
+    <a href="./demo.html"><button class="demo">REQUEST DEMO</button></a>
+  </div>
+
+  <!-- HERO -->
+  <div class="heroes fade-in">
+    <h2>About HR Cottage</h2>
+    <div class="paras">
+      <p>Building modern HR solutions designed for Africa’s workforce and business realities.</p>
     </div>
-    <div class="upper-sunrise">
-        <div>
-            <img class="sunrise" src="./happy staff.png" alt="happy staff"/>
-        </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="about-container fade-in">
+
+    <h2 class="about-title">Who We Are</h2>
+    <p class="about-sub">HR Cottage is transforming how organizations manage people, payroll, compliance, and performance.</p>
+
+    <div class="about-section">
+      <h3>Our Mission</h3>
+      <p>
+        To fully liberalize HR practice in Nigeria and Africa by providing simple, affordable,
+        technology-driven tools that empower HR teams, business owners, accountants, and employees
+        to work smarter, stay compliant, and unlock real productivity.
+      </p>
     </div>
-    
-        <div class="company-purpose"> 
-                    <div class="mission">
-            <h3> Mission</h3>
-            <p> Our Mission is Simple - to fully libralise HR practice in Nigeria and Africa.<br>
-                Transform your organization's HR by streamlining recruitment, payroll, time & attendance, onboarding, data analytics, performance management and employee management using advanced, yet, simple to implement AI and cloud technology.<br>
-                Overcome HR challenges with real-time insights and automated compliance.<br>
-                Join HR Cottage today to enhance efficiency, drive growth, and improve employee satisfaction effortlessly.
-            </p>
-        </div>
-        <div class="vision">
-            <h3> Vission</h3>
-            <p>
-                We aspire to be the only brand that comes to mind when HR comes to mind in Nigeria and Africa.
-                We are confident that you will agree with this vision after our first encounter.
-            </p>
-        </div>
-        <div class="strategy">
-            <h3>Strategy</h3>
-            <p> To achieve both our Mission and Vision, we adopt an all inclusive strategy of empowering as many HR professionals that have the zeal to help others as possible.
-                We provide high end tools so that you can succeed in your quest to help others achive their professional goals
-            </p>
-        </div>
-        </div>
-<!--Placeholder end-->
-<div class="before-footer">
-    <div class="b4-footer"> <h2> Products</h2>
-        <ul>
-            <li></li>
-            <li><a href="./compensation.html"> Compensation and Benefits</a></li>
-            <li><a href="./data.html"> HR Data and Analytics </a></li>
-            <li><a href="./infosys.html"> HR Information System</a></li>
-            <li><a href="./learning.html"> Learning and Development </a></li>
-            <li><a href="./performance.html"> Performance Management </a></li>
-            <li><a href="./recruitment.html"> Recruitment </a></li>
-            <li><a href="./attendance.html"> Time and Attendance </a></li>
-            <li><a href="./pricing.html"> Pricing </a></li>
-            <li><a href="./paye.html"> Free PAYE Calculator </a></li>
-            <li><a href="./demo.html"> Request a Demo </a></li>
-        </ul>
+
+    <div class="about-section">
+      <h3>Our Vision</h3>
+      <p>
+        A continent where every organisation — from micro businesses to large enterprises —
+        has access to world-class HR systems that improve employee experience, boost efficiency,
+        and build trust.
+      </p>
     </div>
-    <div class="b4-footer"> <h2> Company</h2>
-        <ul>
-            <li><a href="./about.html"> About</a></li>
-            <li><a href="./about.html"> Mission </a></li>
-            <li><a href="./about.html"> Vision </a></li>
-            <li><a href="./about.html"> Strategy </a></li>
-            <li><a href="./careers.html"> Careers </a></li>
-            <li><a href="./legal.html"> Legal - Privacy - Cookies </a></li>
-            <li><a href="./about.html"> Management Team</a></li>
-        </ul>
+
+    <div class="about-section">
+      <h3>What We Do</h3>
+      <p>We build powerful yet simple HR systems, including:</p>
+      <ul>
+        <li>Payroll automation & PAYE computation (2025 Tax Act compliant)</li>
+        <li>Compensation & benefits administration</li>
+        <li>HR analytics & reporting</li>
+        <li>Learning & development workflows</li>
+        <li>Performance management systems</li>
+        <li>Recruitment & hiring tools</li>
+        <li>Employee data and records information system</li>
+        <li>Time & attendance tracking</li>
+      </ul>
     </div>
-    <div class="b4-footer"> <h2> Supports</h2>
-        <ul>
-            <li><a href="./tutorials.html"> Tutorials</a></li>
-            <li>Installations</li>
-            <li><a href="./contact.html"> Contact Us</a></li>
-            <li><a href="./faq.html"> FAQ</a></li>
-            <li><a href="./demo.html"> Request a Demo</a></li>
-        </ul>
+
+    <div class="about-section">
+      <h3>Why HR Cottage?</h3>
+      <ul>
+        <li>Built for Nigerian HR laws, payroll logic, and compliance realities</li>
+        <li>Affordable and accessible to SMEs, NGOs, schools, and startups</li>
+        <li>Fully cloud-based — no installations needed</li>
+        <li>Designed to reduce manual work and increase HR capacity</li>
+        <li>Transparent tools like our Free PAYE Calculator build trust</li>
+      </ul>
     </div>
-    <div class="b4-footer"> <h2> Resources</h2>
-        <ul>
-            <li><a href="https://www.hrcottage.com/blog">Blog</a></li>
-            <li>News Letter</li>
-            <li>Podcasts</li>
-            <li>Seminars</li>
-            <li>Testimonies</li>
-            <li><a href="./demo.html"> Request a Demo</a></li>
-        </ul>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="before-footer">
+    <div class="b4-footer">
+      <h2>Products</h2>
+      <ul>
+        <li><a href="./compensation.html">Compensation & Benefits</a></li>
+        <li><a href="./data.html">HR Data & Analytics</a></li>
+        <li><a href="./infosys.html">HR Information System</a></li>
+        <li><a href="./learning.html">Learning & Development</a></li>
+        <li><a href="./performance.html">Performance Management</a></li>
+        <li><a href="./recruitment.html">Recruitment</a></li>
+        <li><a href="./attendance.html">Time & Attendance</a></li>
+      </ul>
     </div>
-</div>
-<hr class="line"/>
-    <footer> 
-        <div>
-            <a href="https://hrcottage.com">HR Cottage</a> © <script>document.write(new Date().getFullYear());</script>. All Rights Reserved. 
-        </div>
-        
-        <div class="SM">
-            <a href="https://www.linkedin.com/showcase/hr-cottage/?viewAsMember=true"> <img src="./linkedin-icon.png" height="55"></a>
-            <a href="https://web.facebook.com/profile.php?id=61563759020293"> <img src="./facebook-icon.png" height="55"></a>
-            <a href=""> <img src="./white-twitterx-icon.png" height="55"></a>
-            <a href=""> <img src="./instagram-icon.png" height="55"></a>
-        </div>
-    </footer>
-<!-- Default Statcounter code for HR Cottage
-https://www.hrcottage.com -->
-<script type="text/javascript">
-    var sc_project=13019953; 
-    var sc_invisible=1; 
-    var sc_security="5e778fb5"; 
-    </script>
-    <script type="text/javascript"
-    src="https://www.statcounter.com/counter/counter.js"
-    async></script>
-    <noscript><div class="statcounter"><a title="Web Analytics
-    Made Easy - Statcounter" href="https://statcounter.com/"
-    target="_blank"><img class="statcounter"
-    src="https://c.statcounter.com/13019953/0/5e778fb5/1/"
-    alt="Web Analytics Made Easy - Statcounter"
-    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-    <!-- End of Statcounter Code -->
+
+    <div class="b4-footer">
+      <h2>Company</h2>
+      <ul>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./careers.html">Careers</a></li>
+        <li><a href="./pricing.html">Pricing</a></li>
+      </ul>
+    </div>
+
+    <div class="b4-footer">
+      <h2>Support & Resources</h2>
+      <ul>
+        <li><a href="./tutorials.html">Tutorials</a></li>
+        <li><a href="./faq.html">FAQ</a></li>
+        <li><a href="./Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html">PAYE Calculator</a></li>
+        <li><a href="https://www.hrcottage.com/blog">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="line">
+
+  <footer>
+    <div>
+      <a href="https://www.hrcottage.com">HR Cottage</a> © 
+      <script>document.write(new Date().getFullYear());</script> All Rights Reserved.
+    </div>
+
+    <div class="SM">
+      <a href="https://www.linkedin.com/showcase/hr-cottage/"><img src="./linkedin-icon.png" height="55"></a>
+      <a href="https://facebook.com"><img src="./facebook-icon.png" height="55"></a>
+      <a href="https://x.com/HrCottageTech"><img src="./white-twitterx-icon.png" height="55"></a>
+      <a href="https://instagram.com/hrcottagetech"><img src="./instagram-icon.png" height="55"></a>
+    </div>
+  </footer>
+
 </body>
 </html>

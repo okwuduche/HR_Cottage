@@ -1,57 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR Cottage Tutorials</title>
-    <link
-    rel="stylesheet"
-    href="./style.css"
-    />
-    <link rel="icon" type="image/png" href="./favicon-32x32.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorials – HR Cottage</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" href="./favicon-32x32.png">
+
+<!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7579557888084861"
+    crossorigin="anonymous"></script>
+    
+
+  <style>
+    /* Smooth fade-in effect for sections */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .tutorial-container {
+      width: 95%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .tutorial-section {
+      background: rgb(250, 250, 244);
+      border: 2px solid seagreen;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+
+    .tutorial-section h3 {
+      color: seagreen;
+      margin-bottom: 10px;
+    }
+
+    .tutorial-section p,
+    .tutorial-section li {
+      color: rgb(80, 80, 80);
+      line-height: 1.6;
+    }
+
+    .tutorial-section ul {
+      padding-left: 20px;
+    }
+
+    .cta-box {
+      border-left: 4px solid orange;
+      padding: 15px;
+      background: #fff7ec;
+      margin-top: 20px;
+      border-radius: 8px;
+      font-size: 1em;
+      color: #444;
+    }
+
+    .tutorial-title {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: Arial, Helvetica, serif;
+      color: seagreen;
+    }
+
+    .tutorial-sub {
+      text-align: center;
+      font-size: 1.15rem;
+      color: rgb(100, 96, 96);
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="upper_overall">
- 
-        <div><a href="./index.html"><img class="logo" src="./apple-icon-76x76.png" alt="Company Logo" /></a></div>
+
+  <!-- NAVIGATION BAR -->
+  <div class="upper_overall"> 
+    <a href="./index.html"><img class="logo" src="./Flat 400x100.png" alt="Company Logo" /></a>
+
+    <ul class="nav-links">
+      <input type="checkbox" id="checkbox_toggle">
+      <label for="checkbox_toggle" class="hamburger">&#9776</label>
+
+      <div class="menu">
+        <li><a href="./index.html">Home</a></li>
+        <li class="products">
+          <a href="./products.html">Products</a>
+          <ul class="dropdown">
+            <li><a href="./compensation.html"> Compensation & Benefits</a></li>
+            <li><a href="./data.html"> HR Data & Analytics</a></li>
+            <li><a href="./infosys.html"> HR Information System</a></li>
+            <li><a href="./learning.html"> Learning & Development</a></li>
+            <li><a href="./performance.html"> Performance Management</a></li>
+            <li><a href="./recruitment.html"> Recruitment</a></li>
+            <li><a href="./attendance.html"> Time & Attendance</a></li>
+            <li><a href="./pricing.html"> Pricing</a></li>
+            <li><a href="./Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html"> Free PAYE Calculator</a></li>
+            <li><a href="./demo.html"> Request a Demo</a></li>
+          </ul>
+        </li>
+        <li><a href="./pricing.html">Pricing</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="https://www.hrcottage.com/blog">Blog</a></li>
+        <li><a href="./Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html">PAYE Calculator</a></li>
+      </div>
+    </ul>
+
+    <div>
+      <a href="./demo.html"><button class="demo">REQUEST DEMO</button></a>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <div class="heroes fade-in">
+    <h2>Tutorials & How-To Guides</h2>
+    <div class="paras">
+      <p>Learn how to use HR Cottage’s tools effectively — explained step-by-step for HR teams, business owners, accountants, and employees.</p>
+      <p>Your first tutorial: <strong>How to Use the 2025 PAYE Calculator</strong></p>
+    </div>
+  </div>
+
+  <!-- TUTORIAL CONTENT -->
+  <div class="tutorial-container fade-in">
     
-        <!-- NAVIGATION MENU -->
-        <ul class="nav-links">
-            <!-- Using Checkbox Hack-->
-             <input type="checkbox" id="checkbox_toggle">
-             <label for="checkbox_toggle" class="hamburger">&#9776</label>
-            <!-- NAVIGATION MENU-->
-             <div class="menu">
-                <li> <a href="./index.html">Home </a></li>
-                <li class="products"> 
-    
-                    <a href="./products.html">Products</a>
-                    <!-- DROPDOWN MENU-->
-                     <ul class="dropdown">
-                        <li></li>
-                        <li><a href="./compensation.html"> Compensation and Benefits</a></li>
-                        <li><a href="./data.html"> HR Data and Analytics </a></li>
-                        <li><a href="./infosys.html"> HR Information System</a></li>
-                        <li><a href="./learning.html"> Learning and Development </a></li>
-                        <li><a href="./performance.html"> Performance Management </a></li>
-                        <li><a href="./recruitment.html"> Recruitment </a></li>
-                        <li><a href="./attendance.html"> Time and Attendance </a></li>
-                        <li><a href="./pricing.html"> Pricing </a></li>
-                        <li><a href="./paye.html"> Free PAYE Calculator </a></li>
-                        <li><a href="./demo.html"> Request a Demo </a></li>
-                     </ul>
-                </li>
-                <li> <a href="./pricing.html" >Pricing </a></li>
-                <li> <a href="./contact.html">Contact Us </a></li>
-                <li> <a href="./about.html">About </a></li>
-                <li> <a href="https://www.hrcottage.com/blog">Blog</a></li>
-                <li> <a href="./paye.html" >Free PAYE Calculator </a></li>
-             </div> 
-         </ul>
-         <div>
-            <a href="./demo.html"> <button class="demo"> REQUEST DEMO </button></a>
-        </div>
-        </div>
-        
+    <h2 class="tutorial-title">How to Use the HR Cottage FREE PAYE Calculator</h2>
+    <p class="tutorial-sub">A clear step-by-step guide for HR professionals, auditors, accountants and employees.</p>
+
+    <!-- SECTION 1 -->
+    <div class="tutorial-section fade-in">
+      <h3>1. Enter Monthly Gross Pay</h3>
+      <p>This includes basic salary and all taxable allowances. Enter the monthly figure in naira (without commas or % signs). The tool automatically annualises it.</p>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="tutorial-section fade-in">
+      <h3>2. Pension Rate (Automatic Calculation)</h3>
+      <p>Enter the pension rate (e.g., 8). The calculator computes the pension amount and subtracts it from taxable income.</p>
+      <p>You do <em>not</em> need to calculate the pension manually.</p>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="tutorial-section fade-in">
+      <h3>3. NHF Toggle</h3>
+      <p>Select whether NHF applies. If set to “Yes”, the tool automatically deducts 2.5% of gross pay and treats it as tax-allowable.</p>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="tutorial-section fade-in">
+      <h3>4. Additional Allowable Deductions</h3>
+      <ul>
+        <li>AVC (Additional Voluntary Contribution)</li>
+        <li>Life insurance premiums</li>
+        <li>NHIS / health insurance</li>
+        <li>Other allowable deductions</li>
+      </ul>
+      <p>Enter monthly values only. The calculator annualises them automatically.</p>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="tutorial-section fade-in">
+      <h3>5. Annual Rent (Rent Relief)</h3>
+      <p>Enter annual rent paid personally. The tool applies rent relief as:</p>
+      <p><strong>20% of annual rent, capped at ₦500,000</strong></p>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div class="tutorial-section fade-in">
+      <h3>6. Click “Calculate PAYE”</h3>
+      <p>You instantly receive:</p>
+      <ul>
+        <li>Annual gross income</li>
+        <li>Annual taxable income</li>
+        <li>Annual & monthly PAYE</li>
+        <li>Annual pension & NHF</li>
+        <li>Rent relief applied</li>
+        <li>Effective tax rate</li>
+        <li>Full band-by-band breakdown</li>
+      </ul>
+    </div>
+
+    <!-- SECTION 7 -->
+    <div class="tutorial-section fade-in">
+      <h3>7. Batch Employee Mode (New!)</h3>
+      <p>You can now add multiple employees, calculate their PAYE at once, and download the results as:</p>
+      <ul>
+        <li>Excel</li>
+        <li>CSV</li>
+        <li>PDF</li>
+      </ul>
+      <p>This makes the tool useful for real payroll processing, audits, and HR verification.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box fade-in">
+      <p>👉 Try the calculator here:<br>
+        <a href="./Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html" style="color: seagreen; font-weight:bold;">
+          HR Cottage Free PAYE Calculator (2025 Tax Act)
+        </a>
+      </p>
+      <p>Bookmark the page — every payroll run becomes easier.</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="before-footer">
+    <div class="b4-footer">
+      <h2>Products</h2>
+      <ul>
+        <li><a href="./compensation.html">Compensation & Benefits</a></li>
+        <li><a href="./data.html">HR Data & Analytics</a></li>
+        <li><a href="./infosys.html">HR Information System</a></li>
+        <li><a href="./learning.html">Learning & Development</a></li>
+        <li><a href="./performance.html">Performance Management</a></li>
+        <li><a href="./recruitment.html">Recruitment</a></li>
+        <li><a href="./attendance.html">Time & Attendance</a></li>
+      </ul>
+    </div>
+
+    <div class="b4-footer">
+      <h2>Company</h2>
+      <ul>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./careers.html">Careers</a></li>
+        <li><a href="./pricing.html">Pricing</a></li>
+      </ul>
+    </div>
+
+    <div class="b4-footer">
+      <h2>Support & Resources</h2>
+      <ul>
+        <li><a href="./Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html">PAYE Calculator</a></li>
+        <li><a href="./tutorials.html">Tutorials</a></li>
+        <li><a href="https://www.hrcottage.com/blog">Blog</a></li>
+        <li><a href="./faq.html">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="line" />
+
+  <footer>
+    <div>
+      <a href="https://www.hrcottage.com">HR Cottage</a> © 
+      <script>document.write(new Date().getFullYear());</script>. All Rights Reserved.
+    </div>
+
+    <div class="SM">
+      <a href="https://www.linkedin.com/showcase/hr-cottage/"><img src="./linkedin-icon.png" height="55"></a>
+      <a href="https://web.facebook.com/profile.php?id=61563759020293"><img src="./facebook-icon.png" height="55"></a>
+      <a href="https://x.com/HrCottageTech"><img src="./white-twitterx-icon.png" height="55"></a>
+      <a href="https://www.instagram.com/hrcottagetech/"><img src="./instagram-icon.png" height="55"></a>
+    </div>
+  </footer>
+
 </body>
 </html>

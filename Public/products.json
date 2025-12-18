@@ -1,0 +1,98 @@
+[
+  {
+    "id": "compensation",
+    "name": "Compensation & Benefits",
+    "tagline": "Payroll built for Nigeria",
+    "short": "Automate gross-to-net, PAYE, pension, NHF, and compliant payslips.",
+    "features": [
+      "Accurate PAYE & statutory deductions (Tax Act 2025 ready)",
+      "Multiple salary templates & allowance types",
+      "Export-ready reports (Excel / CSV / PDF)"
+    ],
+    "href": "./compensation.html"
+  },
+  {
+    "id": "hris",
+    "name": "HR Information System",
+    "tagline": "One source of truth for employee data",
+    "short": "Centralise documents, lifecycle events and role changes with audit trails.",
+    "features": [
+      "Employee profiles & document storage",
+      "Joins, exits, promotions & role history",
+      "Role-based access control"
+    ],
+    "href": "./infosys.html"
+  },
+  {
+    "id": "time",
+    "name": "Time & Attendance",
+    "tagline": "Accurate hours, fewer disputes",
+    "short": "Capture attendance and apply shift & overtime rules cleanly.",
+    "features": [
+      "Shift patterns and overtime rules",
+      "Simple attendance approvals and export to payroll",
+      "Mobile-friendly capture options"
+    ],
+    "href": "./attendance.html"
+  },
+  {
+    "id": "learning",
+    "name": "Learning & Development",
+    "tagline": "Grow skills, measure outcomes",
+    "short": "Plan and track training, certifications and ROI.",
+    "features": [
+      "Learning paths & course completion tracking",
+      "Align training to performance goals",
+      "Reports on participation and outcomes"
+    ],
+    "href": "./learning.html"
+  },
+  {
+    "id": "performance",
+    "name": "Performance Management",
+    "tagline": "Continuous, fair reviews",
+    "short": "Run structured reviews, set goals and link to development.",
+    "features": [
+      "Goal setting & review templates",
+      "360/line manager feedback workflows",
+      "Calibration & reporting tools"
+    ],
+    "href": "./performance.html"
+  },
+  {
+    "id": "recruitment",
+    "name": "Recruitment",
+    "tagline": "Hire with structure",
+    "short": "Track pipelines, standardise scoring and build a talent pool.",
+    "features": [
+      "Vacancy & interview tracking",
+      "Standardised scoring rubrics",
+      "Candidate notes & history"
+    ],
+    "href": "./recruitment.html"
+  },
+  {
+    "id": "analytics",
+    "name": "HR Data & Analytics",
+    "tagline": "Insights that drive decisions",
+    "short": "Dashboards for headcount, attrition, absence and engagement.",
+    "features": [
+      "Pre-built HR dashboards",
+      "Exportable datasets for finance/leadership",
+      "Custom metrics & scheduled reporting"
+    ],
+    "href": "./data.html"
+  },
+  {
+    "id": "paye",
+    "name": "Free Nigeria PAYE Calculator",
+    "tagline": "Tax Act 2025 compliant",
+    "short": "Compute PAYE, pension, NHF and rent relief. Single and batch modes.",
+    "features": [
+      "Band-by-band tax breakdown",
+      "Batch payroll checks, Excel/CSV/PDF export",
+      "Field-level validation and guided inputs"
+    ],
+    "href": "./Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "getting-started-payroll",
+    "title": "Getting started with payroll (first run)",
+    "url": "/tutorials/getting-started-payroll.html",
+    "summary": "Step-by-step setup checklist to configure payroll for your organisation.",
+    "duration_minutes": 12
+  },
+  {
+    "id": "using-paye-calculator",
+    "title": "Using the PAYE calculator effectively",
+    "url": "/tutorials/using-paye-calculator.html",
+    "summary": "How to run single and batch PAYE calculations, interpret results and export.",
+    "duration_minutes": 8
+  },
+  {
+    "id": "building-hr-reports",
+    "title": "Building core HR reports",
+    "url": "/tutorials/building-hr-reports.html",
+    "summary": "Create headcount, attrition, and payroll variance reports for management.",
+    "duration_minutes": 10
+  }
+]

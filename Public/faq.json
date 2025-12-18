@@ -1,0 +1,17 @@
+[
+  {
+    "id": "faq-paye-accuracy",
+    "question": "How accurate is the Free PAYE Calculator?",
+    "answer": "The calculator implements the 2025 Nigeria Tax Act banding and common reliefs (pension, NHF, rent relief). It is for guidance and audit checks — always confirm with your tax advisor for complex cases."
+  },
+  {
+    "id": "faq-data-security",
+    "question": "How is customer data protected?",
+    "answer": "We use industry-standard encryption in transit and at rest, role-based access control and routine security reviews. For enterprise customers we offer SOC/ISO attestation details on request."
+  },
+  {
+    "id": "faq-onboarding-time",
+    "question": "How long does onboarding usually take?",
+    "answer": "Small customers can be onboarded in 2–3 weeks for core HR & payroll. Larger deployments vary depending on integrations and payroll complexity."
+  }
+]
