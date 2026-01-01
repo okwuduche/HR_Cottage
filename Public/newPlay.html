@@ -337,6 +337,9 @@ button,
 </head>
 <body>
 
+
+
+
 <!-- Wrap the whole calculator in your contact-form styling -->
 <div class="upper_overall">
     <div>
@@ -379,6 +382,46 @@ button,
         <a href="./demo.html"><button class="demo">REQUEST DEMO</button></a>
     </div>
 </div>
+
+
+<!-- ===============================
+     FLOATING SHARE BUTTONS (NEW)
+     =============================== -->
+<div class="floating-share" aria-label="Share PAYE Calculator">
+  <a href="https://wa.me/?text=Check%20out%20this%20FREE%20Nigeria%20PAYE%20Calculator%20based%20on%20the%20New%20Tax%20Act%202025:%20https://www.hrcottage.com/Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html"
+     target="_blank" rel="noopener" title="Share on WhatsApp">
+    <img src="./whatsapp-icon.png" alt="WhatsApp">
+  </a>
+
+  <a href="https://twitter.com/intent/tweet?text=Free%20Nigeria%20PAYE%20Calculator%20(New%20Tax%20Act%202025)%20by%20HR%20Cottage&url=https://www.hrcottage.com/Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html"
+     target="_blank" rel="noopener" title="Share on X">
+    <img src="./white-twitterx-icon.png" alt="X">
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.hrcottage.com/Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html"
+     target="_blank" rel="noopener" title="Share on Facebook">
+    <img src="./facebook-icon.png" alt="Facebook">
+  </a>
+
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.hrcottage.com/Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html"
+     target="_blank" rel="noopener" title="Share on LinkedIn">
+    <img src="./linkedin-icon.png" alt="LinkedIn">
+  </a>
+
+  <button onclick="copyShareLink()" title="Copy link">
+    <img src="./link-icon.png" alt="Copy link">
+  </button>
+</div>
+
+<script>
+  function copyShareLink() {
+    const url = "https://www.hrcottage.com/Free-Nigeria-PAYE-Calculator-Tax-Act-2025.html";
+    navigator.clipboard.writeText(url).then(function () {
+      alert("Link copied. You can now share it.");
+    });
+  }
+</script>
+
 
   <div class="heroes">
     <h2> Free Nigeria PAYE Calculator (New Tax Act 2025) From <slot> - </slot><strong class="strongg"> HR <slot class="black"> ~ </slot> </strong> <strong class="green"> Cottage </strong>  </h2>
